@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { NavLink as RRNavLink } from 'react-router-dom';
+import { NavLink as RRNavLink, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { logout } from '../actions/authActions';
 
 import {
     Collapse,
@@ -10,6 +11,7 @@ import {
     NavItem,
     NavLink,
     NavbarText,
+    Button,
   } from 'reactstrap';
 
 class AppNavbar extends Component {
@@ -18,13 +20,21 @@ class AppNavbar extends Component {
         super(props);
         this.loggedInNavBar.bind(this);
         this.guestNavBar.bind(this);
+        this.logout.bind(this);
     }
 
+    logout = () => this.props.logout();
+    
     loggedInNavBar = () => {
         return (
             <Nav className ="ml-auto">
                 <NavItem>
                     <NavbarText>Welcome: {this.props.user.username}</NavbarText>
+                </NavItem>
+
+                <NavItem>
+                    <Button onClick={this.logout} style={{marginLeft:"20px"}}>Logout</Button>
+                    {this.props.user === null ? <Redirect to='/'></Redirect> : null}
                 </NavItem>
             </Nav>
         )
@@ -62,5 +72,5 @@ const mapStateToProps = state => ({
     user: state.authReducer.user
 });
 
-export default connect(mapStateToProps, {})(AppNavbar);
+export default connect(mapStateToProps, { logout })(AppNavbar);
 

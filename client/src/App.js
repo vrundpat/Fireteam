@@ -1,13 +1,13 @@
 import React from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
-import Login from './components/Login';
-import Register from './components/Register';
-import AppNavbar from './components/AppNavbar';
+import { BrowserRouter } from 'react-router-dom';
+// import Login from './components/Login';
+// import Register from './components/Register';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers/rootReducer';
+import Routes from './components/Routes';
 
 
 // Store Creation and Setup for global state management 
@@ -20,16 +20,20 @@ const composeEnhancers =
 const enhancers = composeEnhancers(applyMiddleware(...middleware));
 const store = createStore(rootReducer, initialState, enhancers);
 
+// Testing
+const sampleFireteam = {
+  "leader": "Test",
+  "console": "PS4"
+}
+
 function App() {
   return (
     <Provider store={store}>
-      <Router>
+      <BrowserRouter>
         <div className="App">
-          <AppNavbar />
-          <Route path='/login' component={Login}></Route>
-          <Route path='/register' component={Register}></Route>
+          <Routes />
         </div>
-      </Router>
+      </BrowserRouter>
     </Provider>
   );
 }

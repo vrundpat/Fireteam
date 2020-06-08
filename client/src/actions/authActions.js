@@ -36,6 +36,7 @@ export const login = ({username, password}) => dispatch => {
       dispatch({type: CLEAR_ERROR});
     })
     .catch(error => {
+      console.log(error);
       dispatch(get_error(error.response.data, error.response.status));
       dispatch({type: LOGIN_FAIL});
     });

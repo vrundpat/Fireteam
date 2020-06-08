@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { register } from '../actions/authActions';
 import { Redirect } from 'react-router-dom';
 import { clear_error } from '../actions/errorActions';
-
+import AppNavBar from './AppNavbar';
 
 class Register extends Component {
 
@@ -35,11 +35,10 @@ class Register extends Component {
 
     render() {
         return (
-            <div style={{paddingTop: "150px"}}>
-
+            <div>
+                <AppNavBar />
                 {this.props.authenticated ? <Redirect to='/'></Redirect> : null}
-                {this.props.authReducer ? this.props.clear_error() : null}
-                <Form>
+                <Form style={{paddingTop: "150px"}}>
                     <Row>
                         <Col sm="8" md={{size: "4", offset: "4"}}>
                             <FormGroup>
