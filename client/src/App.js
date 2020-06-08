@@ -1,8 +1,6 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
-// import Login from './components/Login';
-// import Register from './components/Register';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk';
@@ -19,12 +17,6 @@ const composeEnhancers =
 
 const enhancers = composeEnhancers(applyMiddleware(...middleware));
 const store = createStore(rootReducer, initialState, enhancers);
-
-// Testing
-const sampleFireteam = {
-  "leader": "Test",
-  "console": "PS4"
-}
 
 function App() {
   return (

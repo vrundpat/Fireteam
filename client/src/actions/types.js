@@ -9,3 +9,10 @@ export const REGISTER_FAIL = "REGISTER_FAIL";
 // Error types
 export const GET_ERROR = "GET_ERROR";
 export const CLEAR_ERROR = "CLEAR_ERROR";
+
+// Fireteam types
+export const CREATE_FIRETEAM = 'CREATE_FIRETEAM';
+export const CREATE_SUCCESS = 'CREATE_SUCCESS';
+export const JOIN_FIRETEAM = 'JOIN_FIRETEAM';
+export const JOIN_SUCCESS = 'JOIN_SUCCESS';
+
