@@ -1,22 +1,67 @@
-import { CREATE_FIRETEAM, JOIN_FIRETEAM, CREATE_SUCCESS, JOIN_SUCCESS, ALL_FIRETEAMS } from './types';
+import { CREATE_FIRETEAM, JOIN_FIRETEAM, CREATE_SUCCESS, JOIN_SUCCESS, ALL_FIRETEAMS, CLEAR_ERROR, GET_FIRETEAM } from './types';
 import { get_error } from './errorActions';
 const axios = require('axios');
 
-export const create_fireteam = ({fireteam_info, leader_info}) => dispatch => {
+
+export const create_fireteam = (fireteam_info, leader_info) => dispatch => {
     dispatch({type: CREATE_FIRETEAM});
+    const headers = {headers: {"Content-type": "application/json", "auth-token": ""}};
+    const data = {
+        leader: leader_info,
+        activity_type: fireteam_info.activity_type,
+        description: fireteam_info.description,
+        capacity: fireteam_info.capacity,
+        platform: fireteam_info.platform
+    };
 
-    // TODO: Implement actions for fireteams making the server api calls on the proxy
+    axios.post('/fireteam/create', data, headers)
+        .then(response => {
+            dispatch({type: CREATE_SUCCESS, payload: response.data});
+            dispatch({type: CLEAR_ERROR});
+        })
+        .catch(error => {
+            dispatch(get_error(error.response.data, error.response.status));
+        });
 }
 
-export const join_fireteam = (member_info) => dispatch => {
+
+
+export const join_fireteam = (member_info, fireteam_id) => dispatch => {
     dispatch({type: JOIN_FIRETEAM});
-    // TODO: Implement actions for fireteams making the server api calls on the proxy
+    const params = {id: fireteam_id}
+    axios.post('/fireteam/join', member_info, {params})
+        .then(response => {
+            dispatch({type: JOIN_SUCCESS, payload: response.data});
+            dispatch({type: CLEAR_ERROR});
+        })
+        .catch(error => {
+            dispatch(get_error(error.response.data, error.response.status));
+        });
 }
+
+
 
 export const all_fireteams = () => dispatch => {
-    // TODO: Implement actions for fireteams making the server api calls on the proxy
+    axios.get('/fireteam/getall')
+        .then(response => {
+            console.log(response.data)
+            dispatch({type: ALL_FIRETEAMS, payload: response.data});
+        })
+        .catch(error => {
+            dispatch(get_error(error.response.data, error.response.status));
+        })
 }
 
-export const get_fireteam = (id) => dispatch => {
-    // TODO: Implement actions for fireteams making the server api calls on the proxy
+
+
+export const get_fireteam = (fireteam_id) => dispatch => {
+    const params = {id: fireteam_id}
+    axios.get('/fireteam/getfireteam', {params})
+        .then(response => {
+            dispatch({type: GET_FIRETEAM, payload: response.data});
+        })
+        .catch(error => {
+            dispatch(get_error(error.response.data, error.response.status));
+        });
 }
+

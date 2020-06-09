@@ -27,7 +27,7 @@ router.post('/create', async (request, response) => {
     if (!validate(leader, false) || !activity_type || !description || !capacity || !platform) return response.status(400).json({msg: "Please enter all fields"});
 
     try {
-        const fireteam = FireTeam({
+        const sample_fireteam = FireTeam({
             leader,
             activity_type,
             description,
@@ -35,7 +35,7 @@ router.post('/create', async (request, response) => {
             platform
         });
         
-        const new_fireteam = await fireteam.save();
+        const new_fireteam = await sample_fireteam.save();
         await FireTeam.update(
             {_id: new_fireteam._id, 'current_members.username': {$ne: leader.username}},
             {$addToSet: 
@@ -50,8 +50,8 @@ router.post('/create', async (request, response) => {
             },
         );
 
-        const finalized_fireteam = await FireTeam.findById(new_fireteam._id)
-        return response.status(200).json({finalized_fireteam});
+        const fireteam = await FireTeam.findById(new_fireteam._id)
+        return response.status(200).json({fireteam});
         
     } catch (error) {
         console.log(error);
@@ -95,8 +95,8 @@ router.post('/join', async (request, response) => {
             },
         );
         
-        const joined_fireteam = await FireTeam.findById(fireteam_id)
-        return response.status(200).json({joined_fireteam});
+        const fireteam = await FireTeam.findById(fireteam_id)
+        return response.status(200).json({fireteam});
 
     } catch (error) {
         console.log(error);
@@ -134,7 +134,7 @@ router.get('/getfireteam', async (request, response) => {
 router.get('/getall', async (request, response) => {
     await FireTeam.find((error, all_fireteams) => {
         if (error) response.status(500).json({msg: "An error occured, please try again."});
-        else response.status(200).json({all_fireteams});
+        else response.status(200).json(all_fireteams);
     });
 })
 
