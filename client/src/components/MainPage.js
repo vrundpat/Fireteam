@@ -3,7 +3,18 @@ import AppNavbar from './AppNavbar';
 import { connect } from 'react-redux';
 import { create_fireteam, join_fireteam, all_fireteams, get_fireteam } from '../actions/fireteamActions';
 
+
 class MainPage extends Component {
+
+    // componentDidMount() {
+    //     this.timer = setInterval(() => this.props.all_fireteams(), 2000);
+    // }
+
+    
+    // componentWillUnmount() {
+    //     clearInterval(this.timer);
+    //     this.timer = null;
+    // }
 
     render() {
         return (
@@ -14,6 +25,7 @@ class MainPage extends Component {
         )
     }
 }
+
 
 const mapStateToProps = state => ({
     authenticated: state.authReducer.authenticated,

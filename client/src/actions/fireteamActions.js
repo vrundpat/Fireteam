@@ -44,7 +44,6 @@ export const join_fireteam = (member_info, fireteam_id) => dispatch => {
 export const all_fireteams = () => dispatch => {
     axios.get('/fireteam/getall')
         .then(response => {
-            console.log(response.data)
             dispatch({type: ALL_FIRETEAMS, payload: response.data});
         })
         .catch(error => {
