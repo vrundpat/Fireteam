@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import AppNavbar from './AppNavbar';
+import AppNavbar from '../AppNavBar/AppNavbar';
 import { connect } from 'react-redux';
-import { create_fireteam, join_fireteam, all_fireteams, get_fireteam } from '../actions/fireteamActions';
+import { create_fireteam, join_fireteam, all_fireteams, get_fireteam } from '../../actions/fireteamActions';
 
 
 class MainPage extends Component {

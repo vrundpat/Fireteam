@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink as RRNavLink, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { logout } from '../actions/authActions';
+import { logout } from '../../actions/authActions';
 
 import {
     Collapse,

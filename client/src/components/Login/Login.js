@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import {Col, Form, FormGroup, Input, Button, Row, Alert} from 'reactstrap';
 import { connect } from 'react-redux';
-import { login } from '../actions/authActions';
+import { login } from '../../actions/authActions';
 import { Redirect } from 'react-router-dom';
-import { clear_error} from '../actions/errorActions';
-import AppNavBar from './AppNavbar';
+import { clear_error} from '../../actions/errorActions';
+import AppNavBar from '../AppNavBar/AppNavbar';
+import './Login.css'
 
 class Login extends Component {
 
@@ -29,7 +30,7 @@ class Login extends Component {
     errorMessage = (error_msg) => {
         var msg = error_msg;
         return (
-        <Alert style={{marginTop: '20px', textAlign: 'center'}} color='danger'>{msg}</Alert>
+        <Alert className="error-alert" color='danger'>{msg}</Alert>
         )
     }
 
@@ -38,7 +39,7 @@ class Login extends Component {
             <div>
                 <AppNavBar />
                 {this.props.authenticated ? <Redirect to='/'></Redirect> : null}
-                <Form style={{paddingTop: "150px"}}>
+                <Form className="login-form-root">
                     <Row>
                         <Col sm="8" md={{size: "4", offset: "4"}}>
                             <FormGroup>
@@ -57,7 +58,7 @@ class Login extends Component {
 
                     <Row>
                         <Col sm="8" md={{size: "4", offset: "4"}}>
-                            <Button style={buttonStyle} size='lg' onClick={this.attempt_login}>Login</Button>
+                            <Button className="submit-button" size='lg' onClick={this.attempt_login}>Login</Button>
                         </Col>
                     </Row> 
 
@@ -71,9 +72,6 @@ class Login extends Component {
         )
     }
 }
-
-const buttonStyle = {width: "100%"}
-
 
 const mapStateToProps = state => ({
     authenticated: state.authReducer.authenticated,

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {Route, Switch} from 'react-router-dom';
-import Login from './Login';
-import Register from './Register';
-import MainPage from "./MainPage";
+import Login from './Login/Login';
+import Register from './Register/Register';
+import MainPage from './MainPage/MainPage';
 
 
 export default class Routes extends Component {
