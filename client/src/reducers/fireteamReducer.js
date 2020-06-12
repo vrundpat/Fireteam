@@ -5,7 +5,7 @@ const initialState = {
     member: [],
     isCreating: null,
     isJoining: null,
-    all_fireteams: null,
+    all_fireteams: [],
     currently_viewing: null
 }
 

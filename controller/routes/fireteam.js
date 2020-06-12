@@ -132,12 +132,15 @@ router.get('/getfireteam', async (request, response) => {
  * Get the information for all of the fireteams 
  */
 router.get('/getall', async (request, response) => {
-    await FireTeam.find((error, all_fireteams) => {
-        if (error) response.status(500).json({msg: "An error occured, please try again."});
+    // await FireTeam.find((error, all_fireteams) => {
+    //     if (error) response.status(500).json({msg: "An error occured, please try again."});
+    //     else response.status(200).json(all_fireteams);
+    // });
+    await FireTeam.find().sort({time_created: -1}).exec((error, all_fireteams) => {
+        if (error) response.status(500).json({msg: "Something went wrong, please try again"})
         else response.status(200).json(all_fireteams);
     });
 })
-
 
 
 module.exports = router;

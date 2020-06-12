@@ -2,25 +2,26 @@ import React, { Component } from 'react';
 import AppNavbar from '../AppNavBar/AppNavbar';
 import { connect } from 'react-redux';
 import { create_fireteam, join_fireteam, all_fireteams, get_fireteam } from '../../actions/fireteamActions';
+import Fireteam, {} from '../Fireteam/Fireteam';
+import { Container } from 'reactstrap';
 
 
 class MainPage extends Component {
 
-    // componentDidMount() {
-    //     this.timer = setInterval(() => this.props.all_fireteams(), 2000);
-    // }
-
+    componentWillMount() {
+        this.timer = setInterval(() => this.props.all_fireteams(), 2000);
+    }
     
-    // componentWillUnmount() {
-    //     clearInterval(this.timer);
-    //     this.timer = null;
-    // }
+    componentWillUnmount() {
+        clearInterval(this.timer);
+        this.timer = null;
+    }
 
     render() {
         return (
             <div>
                 <AppNavbar />
-                {/* Input generation of all fireteams */}
+                {this.props.fireteamState.all_fireteams.map(fireteam => (<div key={fireteam}> <Fireteam fireteam={fireteam} /> </div>))}
             </div>
         )
     }
