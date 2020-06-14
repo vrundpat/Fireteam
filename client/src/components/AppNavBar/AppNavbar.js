@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { NavLink as RRNavLink, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/authActions';
+import './AppNavbar.css';
 
 import {
     Collapse,
@@ -12,15 +13,25 @@ import {
     NavLink,
     NavbarText,
     Button,
+    Container,
+    NavbarToggler,
   } from 'reactstrap';
 
 class AppNavbar extends Component {
 
     constructor(props) {
         super(props);
+        this.state = { collapsed: false }
         this.loggedInNavBar.bind(this);
         this.guestNavBar.bind(this);
         this.logout.bind(this);
+        this.toggleCollapse.bind(this);
+    }
+
+    toggleCollapse = () => {
+        this.setState({
+            collapsed: !this.state.collapsed
+        });
     }
 
     logout = () => this.props.logout();
@@ -33,7 +44,7 @@ class AppNavbar extends Component {
                 </NavItem>
 
                 <NavItem>
-                    <Button onClick={this.logout} style={{marginLeft:"20px"}}>Logout</Button>
+                    <Button onClick={this.logout} id="logout-btn">Logout</Button>
                     {this.props.user === null ? <Redirect to='/'></Redirect> : null}
                 </NavItem>
             </Nav>
@@ -42,7 +53,7 @@ class AppNavbar extends Component {
 
     guestNavBar = () => {
         return (
-            <Nav className="ml-auto" navbar>
+            <Nav  className="ml-auto" navbar>
                 <NavItem>
                     <NavLink activeClassName="active" to="/login" tag={RRNavLink}>Login</NavLink>
                 </NavItem>
@@ -56,11 +67,14 @@ class AppNavbar extends Component {
     render() {
         return (
             <div>
-                <Navbar color="dark" dark expand="md" style={{minHeight:"100px"}}>
-                    <NavbarBrand activeClassName="active" to="/" tag={RRNavLink} className='lead' style={{fontSize:"32px"}}>FireTeam</NavbarBrand>
-                    <Collapse navbar>
-                        {this.props.authenticated ? this.loggedInNavBar() : this.guestNavBar()}
-                    </Collapse>
+                <Navbar color="dark" dark expand="md" className="app-navbar">
+                    <Container>
+                        <NavbarBrand activeClassName="active" to="/" tag={RRNavLink} id="navbar-brand">Fireteam</NavbarBrand>
+                        <NavbarToggler onClick={this.toggleCollapse}></NavbarToggler>
+                        <Collapse isOpen={this.state.collapsed} navbar>
+                            {this.props.authenticated ? this.loggedInNavBar() : this.guestNavBar()}
+                        </Collapse>
+                    </Container>
                 </Navbar>
             </div>
         )

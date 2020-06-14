@@ -39,35 +39,39 @@ class Login extends Component {
             <div>
                 <AppNavBar />
                 {this.props.authenticated ? <Redirect to='/'></Redirect> : null}
-                <Form className="login-form-root">
-                    <Row>
-                        <Col sm="8" md={{size: "4", offset: "4"}}>
-                            <FormGroup>
-                                <Input type='text' onChange={this.onChange} name='username' placeholder='Username' value={this.state.username}></Input>
-                             </FormGroup>
-                        </Col>
-                    </Row>
+                <div className="form-container">
+                    <div className="form-box">
+                        <Form className="login-form-root">
+                            <Row>
+                                <Col sm="8" md={{size: "4", offset: "4"}}>
+                                    <FormGroup>
+                                        <Input type='text' onChange={this.onChange} name='username' placeholder='Username' value={this.state.username}></Input>
+                                    </FormGroup>
+                                </Col>
+                            </Row>
 
-                    <Row>
-                        <Col sm="8" md={{size: "4", offset: "4"}}>
-                            <FormGroup>
-                                <Input type='password' onChange={this.onChange} name='password' placeholder='Password' value={this.state.password}></Input>                                
-                            </FormGroup>
-                        </Col>
-                    </Row>
+                            <Row>
+                                <Col sm="8" md={{size: "4", offset: "4"}}>
+                                    <FormGroup>
+                                        <Input type='password' onChange={this.onChange} name='password' placeholder='Password' value={this.state.password}></Input>                                
+                                    </FormGroup>
+                                </Col>
+                            </Row>
 
-                    <Row>
-                        <Col sm="8" md={{size: "4", offset: "4"}}>
-                            <Button className="submit-button" size='lg' onClick={this.attempt_login}>Login</Button>
-                        </Col>
-                    </Row> 
+                            <Row>
+                                <Col sm="8" md={{size: "4", offset: "4"}}>
+                                    <Button className="submit-button" size='lg' onClick={this.attempt_login}>Login</Button>
+                                </Col>
+                            </Row> 
 
-                    <Row>
-                        <Col sm="8" md={{size: "4", offset: "4"}}>
-                            {this.props.error_msg != null ? this.errorMessage(this.props.error_msg.msg): null}
-                        </Col>
-                    </Row>                   
-                </Form>
+                            <Row>
+                                <Col sm="8" md={{size: "4", offset: "4"}}>
+                                    {this.props.error_msg != null ? this.errorMessage(this.props.error_msg.msg): null}
+                                </Col>
+                            </Row>                   
+                        </Form>
+                    </div>
+                </div>
             </div>
         )
     }
