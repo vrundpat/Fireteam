@@ -4,10 +4,9 @@ import { connect } from 'react-redux';
 import { register } from '../../actions/authActions';
 import { Redirect } from 'react-router-dom';
 import { clear_error } from '../../actions/errorActions';
-import AppNavBar from '../AppNavBar/AppNavbar';
-import './Register.css'
+import './RegisterForm.css'
 
-class Register extends Component {
+class RegisterForm extends Component {
 
     componentDidMount() { this.props.clear_error(); }
 
@@ -37,7 +36,6 @@ class Register extends Component {
     render() {
         return (
             <div>
-                <AppNavBar />
                 {this.props.authenticated ? <Redirect to='/'></Redirect> : null}
                 <Form className="register-form-root">
                     <Row>
@@ -89,7 +87,7 @@ const mapStatetoProps = state => ({
     error_status: state.errorReducer.status
 });
 
-export default connect(mapStatetoProps, { register, clear_error })(Register);
+export default connect(mapStatetoProps, { register, clear_error })(RegisterForm);
 
 
 
