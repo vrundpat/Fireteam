@@ -67,7 +67,7 @@ class AppNavbar extends Component {
     render() {
         return (
             <div>
-                <Navbar color="dark" dark expand="md" className="app-navbar">
+                <Navbar dark expand="md" className="app-navbar">
                     <Container>
                         <NavbarBrand activeClassName="active" to="/" tag={RRNavLink} id="navbar-brand">Fireteam</NavbarBrand>
                         <NavbarToggler onClick={this.toggleCollapse}></NavbarToggler>

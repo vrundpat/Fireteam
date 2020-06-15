@@ -9,5 +9,14 @@
 
 .submit-button {
     width: 100%;
+    color: black;
 }
 
+.login-form-row {
+    padding-top: 15px;
+}
+
+.text-center {
+    font-weight: 300;
+    color: cadetblue;
+}

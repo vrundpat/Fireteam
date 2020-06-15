@@ -38,27 +38,28 @@ class LoginForm extends Component {
             <div>
                 {this.props.authenticated ? <Redirect to='/'></Redirect> : null}
                     <Form className="login-form-root">
-                        <Row>
-                            <Col sm="8" md={{size: "4", offset: "4"}}>
-                                <FormGroup>
+                        <h3 className="text-center">Login</h3>
+                        <Row className="login-form-row">
+                            <Col /*sm="8" md={{size: "4", offset: "4"}}*/>
+                                <FormGroup className="login-form-input">
                                     <Input type='text' onChange={this.onChange} name='username' placeholder='Username' value={this.state.username}></Input>
                                 </FormGroup>
                             </Col>
                         </Row>
-                        <Row className="password-row">
-                            <Col sm="8" md={{size: "4", offset: "4"}}>
+                        <Row className="login-form-row">
+                            <Col>
                                 <FormGroup>
                                     <Input type='password' onChange={this.onChange} name='password' placeholder='Password' value={this.state.password}></Input>                                
                                 </FormGroup>
                             </Col>
                         </Row>
-                        <Row>
-                            <Col sm="8" md={{size: "4", offset: "4"}}>
-                                <Button className="submit-button" size='lg' onClick={this.attempt_login}>Login</Button>
+                        <Row className="login-form-row">
+                            <Col>
+                                <Button className="submit-button" size='lg' color='info' onClick={this.attempt_login}>Login</Button>
                             </Col>
                         </Row> 
-                        <Row>
-                            <Col sm="8" md={{size: "4", offset: "4"}}>
+                        <Row className="login-form-row">
+                            <Col>
                                 {this.props.error_msg != null ? this.errorMessage(this.props.error_msg.msg): null}
                             </Col>
                         </Row>                   
