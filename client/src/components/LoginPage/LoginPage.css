@@ -1,0 +1,14 @@
+.root-background {
+    background-color: royalblue;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url("https://wallpaperaccess.com/full/27583.jpg");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+}
+
+.app-navbar {
+    margin: 10px 10px 0px 10px;
+    min-height: 100px;
+}

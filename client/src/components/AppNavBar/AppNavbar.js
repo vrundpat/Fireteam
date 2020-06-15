@@ -38,7 +38,7 @@ class AppNavbar extends Component {
     
     loggedInNavBar = () => {
         return (
-            <Nav className ="ml-auto">
+            <Nav className="ml-auto">
                 <NavItem>
                     <NavbarText>Welcome: {this.props.user.username}</NavbarText>
                 </NavItem>

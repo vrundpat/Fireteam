@@ -37,7 +37,6 @@ class LoginForm extends Component {
         return (
             <div>
                 {this.props.authenticated ? <Redirect to='/'></Redirect> : null}
-                 <div className="form-box">
                     <Form className="login-form-root">
                         <Row>
                             <Col sm="8" md={{size: "4", offset: "4"}}>
@@ -46,7 +45,7 @@ class LoginForm extends Component {
                                 </FormGroup>
                             </Col>
                         </Row>
-                        <Row>
+                        <Row className="password-row">
                             <Col sm="8" md={{size: "4", offset: "4"}}>
                                 <FormGroup>
                                     <Input type='password' onChange={this.onChange} name='password' placeholder='Password' value={this.state.password}></Input>                                
@@ -64,7 +63,6 @@ class LoginForm extends Component {
                             </Col>
                         </Row>                   
                     </Form>
-                </div>
             </div>
         )
     }
