@@ -29,6 +29,7 @@ export const register = ({username, password, consoleID}) => dispatch => {
 // Login User
 export const login = ({username, password}) => dispatch => {
   const header_info = {headers: {"Content-type": "application/json"}};
+  console.log("here")
   const user_info = JSON.stringify({username, password});
   axios.post('/users/login', user_info, header_info)
     .then(response => {

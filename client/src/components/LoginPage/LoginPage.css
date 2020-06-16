@@ -1,49 +1,4 @@
-/* .root-background {
-    background-color: royalblue;
-    background-color: grey;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    background-size: 100vw 100vh;
-}
-
-.app-navbar {
-    min-height: 100px;
-}
-
-.holder {
-    width: 100%;
-    height: 100%;
-    min-height: 800px;
-    padding: 50px 50px 50px 50px;
-}
-
-.login-img {
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
-    width: 75%;
-    height: 88%;
-    background-color: red;
-    float: left;
-    background-image: url("https://wallpaperaccess.com/full/27583.jpg");
-    background-repeat: no-repeat;
-    background-position: 0vw 0vh;
-    background-size: cover;
-    opacity: 90%;
-}
-
-.login-form {
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-    width: 25%;
-    height: 88%;
-    background-color: whitesmoke;
-    float: right;
-    padding: 0px 20px 0px 20px;
-} */
-
 .root-background {
-    /* background-color: royalblue; */
     background-image: url('https://www.bungie.net/pubassets/98235/07_Preview.jpg?cv=3983621215&av=353636825');
     background-repeat: no-repeat;
     width: 100vw;
@@ -55,24 +10,27 @@
     width: 100%;
     height: 100%;
     background-size: 100vw 100vh;
-    background-color: black;
-    opacity: 60%;
+    /* background-color: black;
+    opacity: 60%; */
+    background: rgba(0, 0, 0, 0.6);
     overflow: hidden;
 }
 
-.app-navbar {
+.login-page-navbar {
     min-height: 100px;
+    background: rgba(0, 0, 0, 0.01);
 }
 
 .login-form-container {
-    width: 30%;
-    height: 60%;
-    background-color: black;
-    opacity: 60%;
+    width: 25%;
+    height: 80%;
     margin: auto;   
     margin-top: 3%; 
+    background: rgba(255, 255, 255, 0.5);
+    /* background: rgba(0, 0, 0, 0); */
 }
 
 .login-form {
     padding: 0px 40px 0px 40px;
+    
 }

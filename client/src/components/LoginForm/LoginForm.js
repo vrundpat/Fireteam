@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Col, Form, FormGroup, Input, Button, Row, Alert} from 'reactstrap';
+import { Form, Row, Col, FormGroup, Input, Alert, Button } from 'reactstrap';
 import { connect } from 'react-redux';
 import { login } from '../../actions/authActions';
 import { Redirect } from 'react-router-dom';
@@ -38,32 +38,43 @@ class LoginForm extends Component {
             <div>
                 {this.props.authenticated ? <Redirect to='/'></Redirect> : null}
                     <Form className="login-form-root">
-                        <h3 className="text-center">Login</h3>
-                        <Row className="login-form-row">
-                            <Col /*sm="8" md={{size: "4", offset: "4"}}*/>
+                        <h3 className="login-form-title">Login</h3>
+                        <Row>
+                            <Col>
                                 <FormGroup className="login-form-input">
-                                    <Input type='text' onChange={this.onChange} name='username' placeholder='Username' value={this.state.username}></Input>
+                                    <Input type='text' onChange={this.onChange} name='username' placeholder='Username' value={this.state.username} className="user-input"></Input>
                                 </FormGroup>
                             </Col>
                         </Row>
-                        <Row className="login-form-row">
+                        <Row>
                             <Col>
                                 <FormGroup>
-                                    <Input type='password' onChange={this.onChange} name='password' placeholder='Password' value={this.state.password}></Input>                                
+                                    <Input type='password' onChange={this.onChange} name='password' placeholder='Password' value={this.state.password} className="password-input"></Input>                                
                                 </FormGroup>
                             </Col>
                         </Row>
-                        <Row className="login-form-row">
+                        <Row>
                             <Col>
                                 <Button className="submit-button" size='lg' color='info' onClick={this.attempt_login}>Login</Button>
                             </Col>
                         </Row> 
-                        <Row className="login-form-row">
+                        <Row>
                             <Col>
                                 {this.props.error_msg != null ? this.errorMessage(this.props.error_msg.msg): null}
                             </Col>
                         </Row>                   
                     </Form>
+                {/* <form className="login-form-root">
+                    <h3 className='login-form-title'>Login</h3>
+                    <input className="user-input"  onChange={this.onChange} name="username" type="text" placeholder="Username" value={this.state.username}></input>
+                    <input className="password-input"  onChange={this.onChange} name="password" type="password" placeholder="Password" value={this.state.password}></input>
+                    <button className="submit-button" onClick={this.attempt_login}>Submit</button>
+                    <Row>
+                        <Col>
+                            {this.props.error_msg != null ? this.errorMessage(this.props.error_msg.msg): null}
+                        </Col>
+                    </Row>
+                </form> */}
             </div>
         )
     }

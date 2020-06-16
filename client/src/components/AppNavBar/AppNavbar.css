@@ -7,6 +7,10 @@
     margin-left: 20px;
 }
 
-.app-navbar {
+.no-alpha-navbar {
     background-color: black;
+}
+
+.alpha-navbar {
+    background-color:rgba(0, 0, 0, 0.001);
 }

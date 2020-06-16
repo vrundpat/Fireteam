@@ -22,10 +22,13 @@ class AppNavbar extends Component {
     constructor(props) {
         super(props);
         this.state = { collapsed: false }
+        this.toggleAlpha = this.props.isAlpha
         this.loggedInNavBar.bind(this);
         this.guestNavBar.bind(this);
         this.logout.bind(this);
         this.toggleCollapse.bind(this);
+        this.navbar.bind(this);
+        this.navbarConstants.bind(this);
     }
 
     toggleCollapse = () => {
@@ -64,10 +67,27 @@ class AppNavbar extends Component {
         )
     }
 
+    navbarConstants = () => {
+        return (
+            <Container>
+                <NavbarBrand activeClassName="active" to="/" tag={RRNavLink} id="navbar-brand">Fireteam</NavbarBrand>
+                <NavbarToggler onClick={this.toggleCollapse}></NavbarToggler>
+                <Collapse isOpen={this.state.collapsed} navbar>
+                    {this.props.authenticated ? this.loggedInNavBar() : this.guestNavBar()}
+                </Collapse>
+            </Container>
+        )
+    }
+
+    navbar = () => {
+        if (!this.toggleAlpha) return ( <Navbar dark expand="md" className="no-alpha-navbar" navbar> {this.navbarConstants()} </Navbar>)
+        else return ( <Navbar dark expand="md" className="alpha-navbar" navbar> {this.navbarConstants()} </Navbar>)
+    }
+
     render() {
         return (
             <div>
-                <Navbar dark expand="md" className="app-navbar">
+                {/* <Navbar dark expand="md" className="app-navbar-comp">
                     <Container>
                         <NavbarBrand activeClassName="active" to="/" tag={RRNavLink} id="navbar-brand">Fireteam</NavbarBrand>
                         <NavbarToggler onClick={this.toggleCollapse}></NavbarToggler>
@@ -75,7 +95,9 @@ class AppNavbar extends Component {
                             {this.props.authenticated ? this.loggedInNavBar() : this.guestNavBar()}
                         </Collapse>
                     </Container>
-                </Navbar>
+                </Navbar> */}
+
+                {this.navbar()}
             </div>
         )
     }
