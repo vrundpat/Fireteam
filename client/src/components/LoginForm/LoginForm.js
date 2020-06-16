@@ -40,33 +40,6 @@ class LoginForm extends Component {
         return (
             <div>
                 {this.props.authenticated ? <Redirect to='/'></Redirect> : null}
-                    {/* <Form className="login-form-root">
-                        <h3 className="login-form-title">Login</h3>
-                        <Row>
-                            <Col>
-                                <FormGroup className="login-form-input">
-                                    <Input type='text' onChange={this.onChange} name='username' placeholder='Username' value={this.state.username} className="user-input"></Input>
-                                </FormGroup>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col>
-                                <FormGroup>
-                                    <Input type='password' onChange={this.onChange} name='password' placeholder='Password' value={this.state.password} className="password-input"></Input>                                
-                                </FormGroup>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col>
-                                <Button className="submit-button" size='lg' color='info' onClick={this.attempt_login}>Login</Button>
-                            </Col>
-                        </Row> 
-                        <Row>
-                            <Col>
-                                {this.props.error_msg != null ? this.errorMessage(this.props.error_msg.msg): null}
-                            </Col>
-                        </Row>                   
-                    </Form> */}
                 <form className="login-form-root" onSubmit={this.attempt_login}>
                     <h3 className='login-form-title'>Login</h3>
                     <input className="user-input"  onChange={this.onChange} name="username" type="text" placeholder="Username" value={this.state.username}></input>
