@@ -3,6 +3,7 @@
     font-weight: 300;
     color: whitesmoke;
     margin-bottom: 10%;
+    letter-spacing: 5px;
 }
 
 .login-form-root {
@@ -44,7 +45,6 @@
     background-color: teal;
     color: whitesmoke;
     font-size: 15px;
-    padding: 5% 0;
     border: none;
     font-size: 17px;
 }

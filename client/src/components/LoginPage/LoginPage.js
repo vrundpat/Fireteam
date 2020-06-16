@@ -7,11 +7,13 @@ export default class LoginPage extends Component {
     render() {
         return (
             <div className="root-background">
-                <div className="blur-screen">
-                    <AppNavbar  className="login-page-navbar" isAlpha={true}/>
-                    <div className="login-form-container">
-                        <div className="login-form">
-                            <LoginForm />
+                <div className="rain">
+                    <div className="blur-screen">
+                        <AppNavbar  className="login-page-navbar" isAlpha={true}/>
+                        <div className="login-form-container">
+                            <div className="login-form">
+                                <LoginForm />
+                            </div>
                         </div>
                     </div>
                 </div>
