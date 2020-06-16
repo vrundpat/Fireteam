@@ -18,7 +18,10 @@ class LoginForm extends Component {
 
     componentDidMount() { this.props.clear_error(); }
 
-    attempt_login = () => this.props.login(this.state);  
+    attempt_login = (event) => {
+        event.preventDefault();
+        this.props.login(this.state);  
+    }
     
     onChange = (event) => {
         this.setState({
@@ -37,7 +40,7 @@ class LoginForm extends Component {
         return (
             <div>
                 {this.props.authenticated ? <Redirect to='/'></Redirect> : null}
-                    <Form className="login-form-root">
+                    {/* <Form className="login-form-root">
                         <h3 className="login-form-title">Login</h3>
                         <Row>
                             <Col>
@@ -63,18 +66,18 @@ class LoginForm extends Component {
                                 {this.props.error_msg != null ? this.errorMessage(this.props.error_msg.msg): null}
                             </Col>
                         </Row>                   
-                    </Form>
-                {/* <form className="login-form-root">
+                    </Form> */}
+                <form className="login-form-root" onSubmit={this.attempt_login}>
                     <h3 className='login-form-title'>Login</h3>
                     <input className="user-input"  onChange={this.onChange} name="username" type="text" placeholder="Username" value={this.state.username}></input>
                     <input className="password-input"  onChange={this.onChange} name="password" type="password" placeholder="Password" value={this.state.password}></input>
-                    <button className="submit-button" onClick={this.attempt_login}>Submit</button>
+                    <button type="submit" className="submit-button">Submit</button>
                     <Row>
                         <Col>
                             {this.props.error_msg != null ? this.errorMessage(this.props.error_msg.msg): null}
                         </Col>
                     </Row>
-                </form> */}
+                </form>
             </div>
         )
     }
