@@ -1,26 +1,63 @@
 .root-background {
-    /* background-image: url('https://wallpaperaccess.com/full/34624.jpg'); */
-    background-image: url('https://images3.alphacoders.com/841/thumb-1920-841918.jpg');
-    background-repeat: no-repeat;
     width: 100vw;
     height: 100vh;
-    background-size: 100vw 100vh;
+}
+
+.bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images3.alphacoders.com/841/thumb-1920-841918.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-origin: content-box;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -2;
+}
+
+.lightning {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://static0.srcdn.com/wordpress/wp-content/uploads/2017/07/Destiny-2-Story-Environments.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-origin: content-box;
+    background-size: cover;
+    background-attachment: fixed;
+    -webkit-filter: brightness(3);
+    filter: brightness(3);
+    -o-filter: brightness(3);
+    -moz-filter: brightness(3);
     z-index: -1;
 }
 
-.rain {
-    width: 100vw;
-    height: 100vh;
+.flashit{
+    -webkit-animation: flash ease-out 7s infinite;
+    -moz-animation: flash ease-out 7s infinite;
+    animation: flash ease-out 7s infinite;
+    animation-delay: 2s;
 }
 
-@keyframes rain {
-    0% {
-        background-position: 0% 0%;
-    }
+@-webkit-keyframes flash {
+	from { opacity: 0; } 
+    92% { opacity: 0; }
+	93% { opacity: 0.6; }
+    94% { opacity: 0.2; }
+    96% { opacity: 0.9; } 
+	to { opacity: 0; }
+}
 
-    100% {
-        background-position: 100% 100%;
-    }
+@keyframes flash {
+	from { opacity: 0; } 
+    92% { opacity: 0; }
+	93% { opacity: 0.6; }
+    94% { opacity: 0.2; }
+    96% { opacity: 1; } 
+	to { opacity: 0; }
 }
 
 .blur-screen {
@@ -28,6 +65,8 @@
     height: 100%;
     background-size: 100vw 100vh;
     background: rgba(0, 0, 0, 0.3);
+    animation: lightning 4s linear infinite;
+
 }
 
 .login-page-navbar {
@@ -66,13 +105,6 @@
         width: 45%;
         height: 80%;
     }
-
-    .rain {
-        width: 100vw;
-        height: 100vh;
-        background: url('../../images/rain.png');
-        animation: rain .3s linear infinite;
-    }
 }
 
 @media only screen and (min-width: 1224px) {
@@ -80,25 +112,11 @@
         width: 25%;
         height: 80%
     }
-
-    .rain {
-        width: 100vw;
-        height: 100vh;
-        background-image: url('../../images/rain.png');
-        animation: rain .3s linear infinite;
-    }
 }
 
 @media only screen and (min-width: 1824px) {
     .login-form-container {
         width: 35%;
         height: 70%;
-    }
-
-    .rain {
-        width: 100vw;
-        height: 100vh;
-        background: url('../../images/rain.png');
-        animation: rain .3s linear infinite;
     }
 }
