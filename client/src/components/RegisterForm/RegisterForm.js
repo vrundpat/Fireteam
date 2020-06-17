@@ -18,7 +18,10 @@ class RegisterForm extends Component {
         this.state = {username: '', password: '', consoleID: ''};
     }
 
-    attempt_to_register = (event) => this.props.register(this.state);
+    attempt_to_register = (event) => {
+        event.preventDefault();
+        this.props.register(this.state);
+    }
     
     onChange = (event) => {
         this.setState({
@@ -29,7 +32,7 @@ class RegisterForm extends Component {
     errorMessage = (error_msg) => {
         var msg = error_msg;
         return (
-            <Alert className="error-alert" color='danger'>{msg}</Alert>
+            <Alert id="register-error-alert" color='danger'>{msg}</Alert>
         )
     }
 
@@ -37,43 +40,18 @@ class RegisterForm extends Component {
         return (
             <div>
                 {this.props.authenticated ? <Redirect to='/'></Redirect> : null}
-                <Form className="register-form-root">
+                <form className="register-form-root" onSubmit={this.attempt_to_register}>
+                    <h3 className='register-form-title'>Register</h3>
+                    <input className="register-input" onChange={this.onChange} name="consoleID" placeholder="Console ID" value={this.state.consoleID}></input>
+                    <input className="register-input"  onChange={this.onChange} name="username" type="text" placeholder="Username" value={this.state.username}></input>
+                    <input className="register-input"  onChange={this.onChange} name="password" type="password" placeholder="Password" value={this.state.password}></input>
+                    <button type="submit" className="register-submit-button">Submit</button>
                     <Row>
-                        <Col sm="8" md={{size: "4", offset: "4"}}>
-                            <FormGroup>
-                                <Input type='text' onChange={this.onChange} name='username' placeholder='Username' value={this.state.username}></Input>
-                             </FormGroup>
-                        </Col>
-                    </Row>
-
-                    <Row>
-                        <Col sm="8" md={{size: "4", offset: "4"}}>
-                            <FormGroup>
-                                <Input type='password' onChange={this.onChange} name='password' placeholder='Password' value={this.state.password}></Input>                                
-                            </FormGroup>
-                        </Col>
-                    </Row>
-
-                    <Row>
-                        <Col sm="8" md={{size: "4", offset: "4"}}>
-                            <FormGroup>
-                                <Input type='text' onChange={this.onChange} name='consoleID' placeholder='Console-Id (PSN/Xbox/Steam)' value={this.state.consoleID}></Input>                                
-                            </FormGroup>
-                        </Col>
-                    </Row>
-
-                    <Row>
-                        <Col sm="8" md={{size: "4", offset: "4"}}>
-                            <Button className="submit-button" size='lg' onClick={this.attempt_to_register}>Register</Button>
-                        </Col>
-                    </Row> 
-
-                    <Row>
-                        <Col sm="8" md={{size: "4", offset: "4"}}>
+                        <Col>
                             {this.props.error_msg != null ? this.errorMessage(this.props.error_msg.msg): null}
                         </Col>
-                    </Row>                      
-                </Form>
+                    </Row>
+                </form>
             </div>
         )
     }

@@ -32,7 +32,7 @@ class LoginForm extends Component {
     errorMessage = (error_msg) => {
         var msg = error_msg;
         return (
-        <Alert className="error-alert" color='danger'>{msg}</Alert>
+        <Alert id="login-error-alert" color='danger'>{msg}</Alert>
         )
     }
 
@@ -42,9 +42,9 @@ class LoginForm extends Component {
                 {this.props.authenticated ? <Redirect to='/'></Redirect> : null}
                 <form className="login-form-root" onSubmit={this.attempt_login}>
                     <h3 className='login-form-title'>Login</h3>
-                    <input className="user-input"  onChange={this.onChange} name="username" type="text" placeholder="Username" value={this.state.username}></input>
-                    <input className="password-input"  onChange={this.onChange} name="password" type="password" placeholder="Password" value={this.state.password}></input>
-                    <button type="submit" className="submit-button">Submit</button>
+                    <input className="login-input"  onChange={this.onChange} name="username" type="text" placeholder="Username" value={this.state.username}></input>
+                    <input className="login-input"  onChange={this.onChange} name="password" type="password" placeholder="Password" value={this.state.password}></input>
+                    <button type="submit" className="login-submit-button">Submit</button>
                     <Row>
                         <Col>
                             {this.props.error_msg != null ? this.errorMessage(this.props.error_msg.msg): null}

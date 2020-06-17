@@ -1,12 +1,48 @@
-.error-alert {
-    margin-top: 20px;
+#register-error-alert {
+    padding-top: 2%;
+}
+
+.register-form-title {
     text-align: center;
+    font-weight: 300;
+    color: whitesmoke;
+    margin-bottom: 10%;
+    letter-spacing: 5px;
 }
 
 .register-form-root {
-    padding-top: 150px;
+    padding-top: 125px;
 }
 
-.submit-button {
+.register-input {
+    text-indent: 30px;
+    color: whitesmoke;
     width: 100%;
+    min-height: 50px;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 0;
+    letter-spacing: 1px;
+    border-radius: 25px;
+    outline: none;
+    margin-bottom: 10%;
 }
+
+.register-submit-button {
+    width: 100%;
+    min-height: 50px;
+    margin-top: 10%;
+    border-radius: 25px;
+    background-color: rgba(128, 125, 201, 0.966);
+    color: whitesmoke;
+    font-size: 15px;
+    border: none;
+    font-size: 17px;
+}
+
+input::placeholder {
+    color: whitesmoke;
+    font-weight: 300;
+}
+
