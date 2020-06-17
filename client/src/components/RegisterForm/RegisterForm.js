@@ -32,7 +32,7 @@ class RegisterForm extends Component {
     errorMessage = (error_msg) => {
         var msg = error_msg;
         return (
-            <Alert id="register-error-alert" color='danger'>{msg}</Alert>
+            <h2 className="register-error-alert">{msg}</h2>
         )
     }
 

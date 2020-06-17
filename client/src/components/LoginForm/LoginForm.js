@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Row, Col, FormGroup, Input, Alert, Button } from 'reactstrap';
+import { Row, Col, Alert } from 'reactstrap';
 import { connect } from 'react-redux';
 import { login } from '../../actions/authActions';
 import { Redirect } from 'react-router-dom';
@@ -32,7 +32,7 @@ class LoginForm extends Component {
     errorMessage = (error_msg) => {
         var msg = error_msg;
         return (
-        <Alert id="login-error-alert" color='danger'>{msg}</Alert>
+            <h2 className="login-error-alert">{msg}</h2>
         )
     }
 
@@ -45,11 +45,7 @@ class LoginForm extends Component {
                     <input className="login-input"  onChange={this.onChange} name="username" type="text" placeholder="Username" value={this.state.username}></input>
                     <input className="login-input"  onChange={this.onChange} name="password" type="password" placeholder="Password" value={this.state.password}></input>
                     <button type="submit" className="login-submit-button">Submit</button>
-                    <Row>
-                        <Col>
-                            {this.props.error_msg != null ? this.errorMessage(this.props.error_msg.msg): null}
-                        </Col>
-                    </Row>
+                    {this.props.error_msg != null ? this.errorMessage(this.props.error_msg.msg): null}
                 </form>
             </div>
         )

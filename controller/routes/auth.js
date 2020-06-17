@@ -59,7 +59,7 @@ router.post('/register', async (request, response) => {
         
         // Check is user with same username already exists 
         const existing_user = await User.findOne({username});
-        if (existing_user) return response.status(400).json({msg: "Username already in use. Please use a different username"});
+        if (existing_user) return response.status(400).json({msg: "Username already in use"});
         
         // Hash the password
         const hashed_password = await bcrypt.hash(password, await bcrypt.genSalt(10));
