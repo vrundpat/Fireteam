@@ -14,3 +14,8 @@
 .alpha-navbar {
     background-color:rgba(0, 0, 0, 0.001);
 }
+
+.ml-auto {
+    margin-left: 5%;
+    margin-right: 5%;
+}

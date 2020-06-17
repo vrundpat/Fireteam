@@ -3,6 +3,7 @@ import { NavLink as RRNavLink, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/authActions';
 import './AppNavbar.css';
+import { Fragment } from 'react';
 
 import {
     Collapse,
@@ -29,12 +30,31 @@ class AppNavbar extends Component {
         this.toggleCollapse.bind(this);
         this.navbar.bind(this);
         this.navbarConstants.bind(this);
+        this.navbarLinks.bind(this);
     }
 
     toggleCollapse = () => {
         this.setState({
             collapsed: !this.state.collapsed
         });
+    }
+
+    navbarLinks = () => {
+        return (
+            <Fragment>
+                <NavItem>
+                    <NavLink activeClassName="active" href="https://www.bungie.net/">Bungie</NavLink>
+                </NavItem>
+
+                <NavItem>
+                    <NavLink activeClassName="active" href="https://www.bungie.net/en/Forums/">Forums</NavLink>
+                </NavItem>
+
+                <NavItem>
+                    <NavLink activeClassName="active" href="https://www.bungie.net/en/ClanV2/MyClans">Clans</NavLink>
+                </NavItem>
+            </Fragment>
+        )
     }
 
     logout = () => this.props.logout();
@@ -50,6 +70,7 @@ class AppNavbar extends Component {
                     <Button onClick={this.logout} id="logout-btn">Logout</Button>
                     {this.props.user === null ? <Redirect to='/'></Redirect> : null}
                 </NavItem>
+                {this.navbarLinks()}
             </Nav>
         )
     }
@@ -62,7 +83,8 @@ class AppNavbar extends Component {
                 </NavItem>
                 <NavItem>
                    <NavLink activeClassName="active" to="/register" tag={RRNavLink}>Register</NavLink>
-                 </NavItem>
+                </NavItem>
+                {this.navbarLinks()}
             </Nav>
         )
     }
@@ -87,16 +109,6 @@ class AppNavbar extends Component {
     render() {
         return (
             <div>
-                {/* <Navbar dark expand="md" className="app-navbar-comp">
-                    <Container>
-                        <NavbarBrand activeClassName="active" to="/" tag={RRNavLink} id="navbar-brand">Fireteam</NavbarBrand>
-                        <NavbarToggler onClick={this.toggleCollapse}></NavbarToggler>
-                        <Collapse isOpen={this.state.collapsed} navbar>
-                            {this.props.authenticated ? this.loggedInNavBar() : this.guestNavBar()}
-                        </Collapse>
-                    </Container>
-                </Navbar> */}
-
                 {this.navbar()}
             </div>
         )
