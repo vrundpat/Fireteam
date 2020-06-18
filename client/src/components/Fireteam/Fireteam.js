@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './Fireteam.css'
 
 export default class Fireteam extends Component {
 
@@ -8,8 +9,9 @@ export default class Fireteam extends Component {
 
     render() {
         return (
-            <div>
-                <h3>{this.props.fireteam.time_created}</h3>
+            <div className="fireteam-root">
+                <div className="activity-type-image"></div>
+                <div className="fireteam-info"></div>
             </div>
         )
     }

@@ -9,6 +9,7 @@
 }
 
 .login-form-title {
+    width: 100%;
     text-align: center;
     font-weight: 300;
     color: whitesmoke;

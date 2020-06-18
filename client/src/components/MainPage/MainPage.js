@@ -3,13 +3,12 @@ import AppNavbar from '../AppNavBar/AppNavbar';
 import { connect } from 'react-redux';
 import { create_fireteam, join_fireteam, all_fireteams, get_fireteam } from '../../actions/fireteamActions';
 import Fireteam, {} from '../Fireteam/Fireteam';
-import { Container } from 'reactstrap';
-
+import './MainPage.css';
 
 class MainPage extends Component {
 
     componentWillMount() {
-        this.timer = setInterval(() => this.props.all_fireteams(), 2000);
+        // this.timer = setInterval(() => this.props.all_fireteams(), 2000);
     }
     
     componentWillUnmount() {
@@ -19,9 +18,21 @@ class MainPage extends Component {
 
     render() {
         return (
-            <div>
+            <div className="mainpage-background-root">
                 <AppNavbar />
-                {this.props.fireteamState.all_fireteams.map(fireteam => (<div key={fireteam}> <Fireteam fireteam={fireteam} /> </div>))}
+                <h1>Insert Jumbotron Here</h1>
+               <div className="all-fireteams-contianer">
+                    <Fireteam fireteam={{
+                        leader: {},
+                        members: [],
+                        activity_type: "Raid",
+                        description: "",
+                        platform: "",
+                        capacity: "",
+                        time_created: ""
+                    }} />
+                    {/* {this.props.fireteamState.all_fireteams.map(fireteam => (<div key={fireteam}> <Fireteam fireteam={fireteam} /> </div>))} */}
+                </div>
             </div>
         )
     }

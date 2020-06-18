@@ -1,0 +1,21 @@
+.fireteam-root {
+    margin: auto;
+    width: 60%;
+    height: 25%;
+    background-color: black;
+    margin-bottom: 1%;
+}
+
+.activity-type-image {
+    width: 30%;
+    height: 100%;
+    background-color: blue;
+    float: left;
+}
+
+.fireteam-info {
+    float: right;
+    width: 70%;
+    height: 100%;
+    background-color: rebeccapurple;
+}

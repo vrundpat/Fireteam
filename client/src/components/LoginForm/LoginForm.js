@@ -41,7 +41,7 @@ class LoginForm extends Component {
             <div>
                 {this.props.authenticated ? <Redirect to='/'></Redirect> : null}
                 <form className="login-form-root" onSubmit={this.attempt_login}>
-                    <h3 className='login-form-title'>Login</h3>
+                    <h3 className='login-form-title  animation-type-writer'>Login</h3>
                     <input className="login-input"  onChange={this.onChange} name="username" type="text" placeholder="Username" value={this.state.username}></input>
                     <input className="login-input"  onChange={this.onChange} name="password" type="password" placeholder="Password" value={this.state.password}></input>
                     <button type="submit" className="login-submit-button">Submit</button>
