@@ -1,21 +1,38 @@
 .fireteam-root {
     margin: auto;
     width: 60%;
-    height: 25%;
+    height: 35%;
     background-color: black;
     margin-bottom: 1%;
 }
 
 .activity-type-image {
-    width: 30%;
+    width: 25%;
     height: 100%;
     background-color: blue;
     float: left;
+    border: 6px solid black;
+    border-right-width: 1.5px;
 }
 
 .fireteam-info {
     float: right;
-    width: 70%;
+    width: 75%;
     height: 100%;
     background-color: rebeccapurple;
+    border: 6px solid black;
+}
+
+.fireteam-info-left-column {
+    float: left;
+    width: 40%;
+    height: 100%;
+    background-color: yellow;
+}
+
+.fireteam-info-right-column {
+    float: right;
+    width: 60%;
+    height: 100%;
+    background-color: purple;
 }
