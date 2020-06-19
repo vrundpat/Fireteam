@@ -7,6 +7,20 @@ import './MainPage.css';
 
 class MainPage extends Component {
 
+    constructor(props) {
+        super(props);
+        this.generate_fireteams.bind(this);
+    }
+
+    generate_fireteams = () => {
+        var temp = []
+        for (var i = 0; i < this.props.fireteamState.all_fireteams.length; i++) {
+            temp.push(<Fireteam fireteam={this.props.fireteamState.all_fireteams[i]} />);
+        }
+
+        return temp;
+    }
+
     componentWillMount() {
         // this.timer = setInterval(() => this.props.all_fireteams(), 2000);
     }
@@ -17,21 +31,24 @@ class MainPage extends Component {
     }
 
     render() {
+
+        var test = {
+            leader: {},
+            current_members: [{"username" : "test1"}, {"username" : "test2"}, {"username" : "test3"}, {"username" : "test4"}, {"username" : "test5"}, {"username" : "test6"}],
+            activity_type: "Raid",
+            description: "",
+            platform: "",
+            capacity: "",
+            time_created: ""
+        }
+
         return (
             <div className="mainpage-background-root">
                 <AppNavbar />
                 <h1>Insert Jumbotron Here</h1>
                <div className="all-fireteams-contianer">
-                    <Fireteam fireteam={{
-                        leader: {},
-                        members: [],
-                        activity_type: "Raid",
-                        description: "",
-                        platform: "",
-                        capacity: "",
-                        time_created: ""
-                    }} />
-                    {/* {this.props.fireteamState.all_fireteams.map(fireteam => (<div key={fireteam}> <Fireteam fireteam={fireteam} /> </div>))} */}
+                    <Fireteam fireteam={test} />
+                    {/* {this.generate_fireteams()} */}
                 </div>
             </div>
         )
