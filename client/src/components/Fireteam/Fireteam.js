@@ -25,7 +25,6 @@ export default class Fireteam extends Component {
     render() {
         return (
             <div className="fireteam-root">
-                <div className="activity-type-image"></div>
                 <div className="fireteam-info">
                     <div className="fireteam-info-left-column">
                         <div className="info-container">

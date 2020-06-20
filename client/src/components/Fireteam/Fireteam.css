@@ -1,88 +1,404 @@
-.fireteam-root {
-    margin: auto;
-    width: 70%;
-    height: 45%;
-    background-color: black;
-    margin-bottom: 2%;
+@media only screen and (max-width: 499px) {
+    .fireteam-root {
+        margin: auto;
+        width: 90%;
+        min-height: 200px;
+        background-color: black;
+        margin-bottom: 2%;
+    }
+
+    .fireteam-info {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: rebeccapurple;
+        border: 6px solid black;
+    } 
+
+    .fireteam-info-left-column {
+        flex: 1;
+        background-color: yellow;
+    }
+    
+    .fireteam-info-right-column {
+        flex: 1;
+        background-color: purple;
+    }
+
+    .fireteam-join-button {
+        width: 96%;
+        height: 20%;
+        font-size: 100%;
+        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: 5px;
+        background-color: #50a1ff;
+        font-weight: 600;
+        color: whitesmoke;
+        border-color: #50a1ff;
+        margin:2% 2%;
+    }
+    
+    .info-tile {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 5%;
+    }
+    
+    .right-col-fireteam-description {
+        width: 100%;
+        height: 25%;
+        margin-bottom: 5%;
+    }
+    
+    .right-col-fireteam-member-list {
+        width: 100%;
+        height: 75%;
+    }
+    
+    .fireteam-member {
+        color: white;
+        margin: 3% 3%;
+        margin-top: 0;
+    }
+    
+    .member-list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    } 
 }
 
-.activity-type-image {
-    width: 25%;
-    height: 100%;
-    background-color: blue;
-    float: left;
-    border: 6px solid black;
-    border-right-width: 1.5px;
+
+
+@media only screen and (min-width: 500px) and (max-width: 768px) {
+    .fireteam-root {
+        margin: auto;
+        width: 70%;
+        height: 30%;
+        background-color: black;
+        margin-bottom: 2%;
+    }
+
+    .fireteam-info {
+        float: right;
+        width: 100%;
+        height: 100%;
+        background-color: rebeccapurple;
+        border: 6px solid black;
+    }
+
+    .fireteam-info-left-column {
+        float: left;
+        width: 40%;
+        height: 100%;
+        background-color: yellow;
+    }
+
+    .fireteam-info-right-column {
+        float: right;
+        width: 60%;
+        height: 100%;
+        background-color: purple;
+    }
+
+    .info-container {
+        width: 90%;
+        height: 90%;
+        margin: 5% 5%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .fireteam-join-button {
+        width: 100%;
+        height: 15%;
+        font-size: 12px;
+        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: 5px;
+        background-color: #50a1ff;
+        font-weight: 600;
+        color: whitesmoke;
+        border-color: #50a1ff;
+        margin-bottom: 5%;
+    }
+    
+    .info-tile {
+        width: 100%;
+        height: 12%;
+        margin: 5% 5%;
+    }
+    
+    .right-col-fireteam-description {
+        width: 100%;
+        height: 20%;
+        margin-bottom: 2%;
+    }
+    
+    .right-col-fireteam-member-list {
+        width: 100%;
+        height: 80%;
+    }
+    
+    .fireteam-member {
+        color: white;
+        margin: 3% 3%;
+        margin-top: 0;
+    }
+    
+    .member-list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
 }
 
-.fireteam-info {
-    float: right;
-    width: 75%;
-    height: 100%;
-    background-color: rebeccapurple;
-    border: 6px solid black;
+
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .fireteam-root {
+        margin: auto;
+        width: 70%;
+        height: 25%;
+        background-color: black;
+        margin-bottom: 2%;
+    }
+
+    .fireteam-info {
+        float: right;
+        width: 100%;
+        height: 100%;
+        background-color: rebeccapurple;
+        border: 6px solid black;
+    }
+
+    .fireteam-info-left-column {
+        float: left;
+        width: 40%;
+        height: 100%;
+        background-color: yellow;
+    }
+
+    .fireteam-info-right-column {
+        float: right;
+        width: 60%;
+        height: 100%;
+        background-color: purple;
+    }
+
+    .info-container {
+        width: 90%;
+        height: 90%;
+        margin: 5% 5%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .fireteam-join-button {
+        width: 100%;
+        height: 15%;
+        font-size: 100%;
+        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: 5px;
+        background-color: #50a1ff;
+        font-weight: 600;
+        color: whitesmoke;
+        border-color: #50a1ff;
+        margin-bottom: 5%;
+    }
+    
+    .info-tile {
+        width: 100%;
+        height: 12%;
+        margin: 3% 3%;
+    }
+    
+    .right-col-fireteam-description {
+        width: 100%;
+        height: 20%;
+        margin-bottom: 5%;
+    }
+    
+    .right-col-fireteam-member-list {
+        width: 100%;
+        height: 80%;
+    }
+    
+    .fireteam-member {
+        color: white;
+        margin: 3% 3%;
+        margin-top: 0;
+    }
+    
+    .member-list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+}   
+
+
+
+@media only screen and (min-width: 1025px) and (max-width: 1224px) {
+    .fireteam-root {
+        margin: auto;
+        width: 70%;
+        height: 45%;
+        background-color: black;
+        margin-bottom: 2%;
+    }
+
+    .fireteam-info {
+        float: right;
+        width: 100%;
+        height: 100%;
+        background-color: rebeccapurple;
+        border: 6px solid black;
+    }
+
+    .fireteam-info-left-column {
+        float: left;
+        width: 40%;
+        height: 100%;
+        background-color: yellow;
+    }
+
+    .fireteam-info-right-column {
+        float: right;
+        width: 60%;
+        height: 100%;
+        background-color: purple;
+    }
+
+    .info-container {
+        width: 90%;
+        height: 90%;
+        margin: 5% 5%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .fireteam-join-button {
+        width: 100%;
+        height: 15%;
+        font-size: 100%;
+        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: 5px;
+        background-color: #50a1ff;
+        font-weight: 600;
+        color: whitesmoke;
+        border-color: #50a1ff;
+        margin-bottom: 5%;
+    }
+    
+    .info-tile {
+        width: 100%;
+        height: 12%;
+        margin-bottom: 5%;
+    }
+    
+    .right-col-fireteam-description {
+        width: 100%;
+        height: 25%;
+        margin-bottom: 5%;
+    }
+    
+    .right-col-fireteam-member-list {
+        width: 100%;
+        height: 75%;
+    }
+    
+    .fireteam-member {
+        color: white;
+        margin: 3% 3%;
+        margin-top: 0;
+    }
+    
+    .member-list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
 }
 
-.fireteam-info-left-column {
-    float: left;
-    width: 40%;
-    height: 100%;
-    background-color: yellow;
-}
+@media only screen and (min-width: 1225px) {
+    .fireteam-root {
+        margin: auto;
+        width: 70%;
+        height: 45%;
+        background-color: black;
+        margin-bottom: 2%;
+    }
 
-.fireteam-info-right-column {
-    float: right;
-    width: 60%;
-    height: 100%;
-    background-color: purple;
-}
+    .fireteam-info {
+        float: right;
+        width: 100%;
+        height: 100%;
+        background-color: rebeccapurple;
+        border: 6px solid black;
+    }
 
-.info-container {
-    width: 90%;
-    height: 90%;
-    margin: 5% 5%;
-    justify-content: center;
-    align-items: center;
-}
+    .fireteam-info-left-column {
+        float: left;
+        width: 40%;
+        height: 100%;
+        background-color: yellow;
+    }
 
-.fireteam-join-button {
-    width: 100%;
-    height: 15%;
-    font-size: 100%;
-    font-family: Arial, Helvetica, sans-serif;
-    letter-spacing: 5px;
-    background-color: #50a1ff;
-    font-weight: 600;
-    color: whitesmoke;
-    border-color: #50a1ff;
-    margin-bottom: 5%;
-}
+    .fireteam-info-right-column {
+        float: right;
+        width: 60%;
+        height: 100%;
+        background-color: purple;
+    }
 
-.info-tile {
-    width: 100%;
-    height: 12%;
-    margin-bottom: 5%;
-}
+    .info-container {
+        width: 90%;
+        height: 90%;
+        margin: 5% 5%;
+        justify-content: center;
+        align-items: center;
+    }
 
-.right-col-fireteam-description {
-    width: 100%;
-    height: 25%;
-    margin-bottom: 5%;
-}
-
-.right-col-fireteam-member-list {
-    width: 100%;
-    height: 75%;
-}
-
-.fireteam-member {
-    color: white;
-    margin: 3% 3%;
-    margin-top: 0;
-}
-
-.member-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    .fireteam-join-button {
+        width: 100%;
+        height: 15%;
+        font-size: 100%;
+        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: 5px;
+        background-color: #50a1ff;
+        font-weight: 600;
+        color: whitesmoke;
+        border-color: #50a1ff;
+        margin-bottom: 5%;
+    }
+    
+    .info-tile {
+        width: 100%;
+        height: 12%;
+        margin: 3% 3%;
+    }
+    
+    .right-col-fireteam-description {
+        width: 100%;
+        height: 20%;
+        margin-bottom: 3%;
+    }
+    
+    .right-col-fireteam-member-list {
+        width: 100%;
+        height: 80%;
+    }
+    
+    .fireteam-member {
+        color: white;
+        margin: 3% 3%;
+        margin-top: 0;
+    }
+    
+    .member-list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
 }
