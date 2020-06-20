@@ -18,17 +18,24 @@
 
     .fireteam-info-left-column {
         flex: 1;
-        background-color: yellow;
+        background-color: black;
+    }
+
+    .fireteam-info-left-column i {
+        font-size: 24px;
+        color: white;
     }
     
     .fireteam-info-right-column {
         flex: 1;
-        background-color: purple;
+        background-color: black;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
     .fireteam-join-button {
         width: 96%;
-        height: 20%;
+        height: 50px;
         font-size: 100%;
         font-family: Arial, Helvetica, sans-serif;
         letter-spacing: 5px;
@@ -43,12 +50,16 @@
         width: 100%;
         height: 100%;
         margin-bottom: 5%;
+        color: white;
     }
     
     .right-col-fireteam-description {
-        width: 100%;
+        width: 80%;
         height: 25%;
+        margin: 5% 10%;
         margin-bottom: 5%;
+        font-size: 15px;
+        font-weight: 300;
     }
     
     .right-col-fireteam-member-list {
@@ -67,6 +78,40 @@
         margin: 0;
         padding: 0;
     } 
+
+    .member-list i {
+        font-size: 18px;
+        margin-left: 5%;
+    }
+
+    .member-list li {
+        margin: 0;
+        font-size: 16px;
+        margin: 0% 0% 3% 0%;
+    }
+
+    .fa {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .fireteam-leader i {
+        color: yellow;
+        margin-top: 3%;
+        margin-left: 7%;
+    }
+    
+    .leader-power {
+        background-color: lightblue;
+        color: black;
+        margin-left: 3%;
+        padding: 2% 2%;
+    }
+
+    .fireteam-activity-type {
+        font-size: 24px;
+        color: #50a1ff;
+    }
 }
 
 
@@ -84,7 +129,7 @@
         float: right;
         width: 100%;
         height: 100%;
-        background-color: rebeccapurple;
+        background-color: black;
         border: 6px solid black;
     }
 
@@ -92,14 +137,16 @@
         float: left;
         width: 40%;
         height: 100%;
-        background-color: yellow;
+        background-color: black;
+        color: white;
     }
 
     .fireteam-info-right-column {
         float: right;
         width: 60%;
         height: 100%;
-        background-color: purple;
+        background-color: black;
+        color: white;
     }
 
     .info-container {
@@ -127,6 +174,7 @@
         width: 100%;
         height: 12%;
         margin: 5% 5%;
+        color: white;
     }
     
     .right-col-fireteam-description {
@@ -155,6 +203,7 @@
 
 
 
+
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
     .fireteam-root {
         margin: auto;
@@ -168,7 +217,7 @@
         float: right;
         width: 100%;
         height: 100%;
-        background-color: rebeccapurple;
+        background-color: black;
         border: 6px solid black;
     }
 
@@ -176,14 +225,16 @@
         float: left;
         width: 40%;
         height: 100%;
-        background-color: yellow;
+        background-color: black;
+        color: white;
     }
 
     .fireteam-info-right-column {
         float: right;
         width: 60%;
         height: 100%;
-        background-color: purple;
+        background-color: black;
+        color: white;
     }
 
     .info-container {
@@ -211,6 +262,7 @@
         width: 100%;
         height: 12%;
         margin: 3% 3%;
+        color: white;
     }
     
     .right-col-fireteam-description {
@@ -239,6 +291,7 @@
 
 
 
+
 @media only screen and (min-width: 1025px) and (max-width: 1224px) {
     .fireteam-root {
         margin: auto;
@@ -252,7 +305,7 @@
         float: right;
         width: 100%;
         height: 100%;
-        background-color: rebeccapurple;
+        background-color: black;
         border: 6px solid black;
     }
 
@@ -260,14 +313,16 @@
         float: left;
         width: 40%;
         height: 100%;
-        background-color: yellow;
+        background-color: black;
+        color: white;
     }
 
     .fireteam-info-right-column {
         float: right;
         width: 60%;
         height: 100%;
-        background-color: purple;
+        background-color: black;
+        color: white;
     }
 
     .info-container {
@@ -295,6 +350,7 @@
         width: 100%;
         height: 12%;
         margin-bottom: 5%;
+        color: white;
     }
     
     .right-col-fireteam-description {
@@ -321,10 +377,13 @@
     }
 }
 
+
+
+
 @media only screen and (min-width: 1225px) {
     .fireteam-root {
         margin: auto;
-        width: 70%;
+        width: 55%;
         height: 45%;
         background-color: black;
         margin-bottom: 2%;
@@ -334,7 +393,7 @@
         float: right;
         width: 100%;
         height: 100%;
-        background-color: rebeccapurple;
+        background-color: black;
         border: 6px solid black;
     }
 
@@ -342,14 +401,16 @@
         float: left;
         width: 40%;
         height: 100%;
-        background-color: yellow;
+        background-color: black;
+        color: white;
     }
 
     .fireteam-info-right-column {
         float: right;
         width: 60%;
         height: 100%;
-        background-color: purple;
+        background-color: black;
+        color: white;
     }
 
     .info-container {
@@ -377,6 +438,7 @@
         width: 100%;
         height: 12%;
         margin: 3% 3%;
+        color: white;
     }
     
     .right-col-fireteam-description {
@@ -401,4 +463,111 @@
         margin: 0;
         padding: 0;
     }
+}
+
+@media only screen and (min-width: 1882px) {
+    .fireteam-root {
+        margin: auto;
+        width: 40%;
+        height: 45%;
+        background-color: black;
+        margin-bottom: 2%;
+    }
+
+    .fireteam-info {
+        float: right;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        border: 6px solid black;
+    }
+
+    .fireteam-info-left-column {
+        float: left;
+        width: 40%;
+        height: 100%;
+        background-color: black;
+        color: white;
+    }
+
+    .fireteam-info-right-column {
+        float: right;
+        width: 60%;
+        height: 100%;
+        background-color: black;
+        color: white;
+    }
+
+    .info-container {
+        width: 90%;
+        height: 90%;
+        margin: 5% 5%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .fireteam-join-button {
+        width: 100%;
+        height: 15%;
+        font-size: 100%;
+        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: 5px;
+        background-color: #50a1ff;
+        font-weight: 600;
+        color: whitesmoke;
+        border-color: #50a1ff;
+        margin-bottom: 5%;
+    }
+    
+    .info-tile {
+        width: 100%;
+        height: 12%;
+        margin: 3% 3%;
+        color: white;
+    }
+    
+    .right-col-fireteam-description {
+        width: 100%;
+        height: 20%;
+        margin-bottom: 3%;
+    }
+    
+    .right-col-fireteam-member-list {
+        width: 100%;
+        height: 80%;
+    }
+    
+    .fireteam-member {
+        color: white;
+        margin: 3% 3%;
+        margin-top: 0;
+    }
+    
+    .member-list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.ps4 {
+    color: #50a1ff;
+    font-size: 24px;
+    display: inline;
+}
+
+.xbox {
+    background-color: darkgreen;
+    display: inline;
+}
+
+.steam {
+    background-color: lightblue;
+    display: inline;
+}
+
+.console-logo {
+    margin-left: 25%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
 }

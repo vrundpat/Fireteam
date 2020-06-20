@@ -33,13 +33,13 @@ class MainPage extends Component {
     render() {
 
         var test = {
-            leader: {},
+            leader: {"username": "Leader"},
             current_members: [{"username" : "test1"}, {"username" : "test2"}, {"username" : "test3"}, {"username" : "test4"}, {"username" : "test5"}, {"username" : "test6"}],
             activity_type: "Raid",
-            description: "",
-            platform: "",
-            capacity: "",
-            time_created: ""
+            description: "Need help with Prophecy dungeon /join",
+            platform: "PS4",
+            capacity: "6",
+            time_created: "..."
         }
 
         return (
