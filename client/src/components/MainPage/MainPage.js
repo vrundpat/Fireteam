@@ -33,8 +33,8 @@ class MainPage extends Component {
     render() {
 
         var test = {
-            leader: {"username": "Leader"},
-            current_members: [{"username" : "test1"}, {"username" : "test2"}, {"username" : "test3"}, {"username" : "test4"}, {"username" : "test5"}, {"username" : "test6"}],
+            leader: {"username": "Leader", "light_level": 1000},
+            current_members: [{"username" : "test1", "light_level": 1000}, {"username" : "test2", "light_level": 1000}, {"username" : "test3", "light_level": 1000}, {"username" : "test4", "light_level": 1000}, {"username" : "test5", "light_level": 1000}, {"username" : "test6", "light_level": 1000}],
             activity_type: "Raid",
             description: "Need help with Prophecy dungeon /join",
             platform: "PS4",
