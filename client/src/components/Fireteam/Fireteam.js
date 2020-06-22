@@ -1,16 +1,26 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './Fireteam.css'
 
-export default class Fireteam extends Component {
+class Fireteam extends Component {
 
     constructor(props) {
         super(props);
         this.get_platform.bind(this);
         this.get_members.bind(this);
         this.get_join_button.bind(this);
+        this.get_power_requirement.bind(this);
     }
 
     get_join_button = () => {
+        if (this.props.authenticated) {
+            if (this.props.fireteam.leader.consoleID === this.props.user.consoleID) {
+                return <button className="fireteam-join-button lead-fireteam" disabled={true}>FIRETEAM LEADER</button>
+            }
+            if (this.props.fireteam.current_members.some(member => member.consoleID === this.props.user.consoleID)) {
+                return <button className="fireteam-join-button joined-fireteam" disabled={true}>JOINED FIRETEAM</button>
+            }
+        }
         if (this.props.fireteam.current_members.length === this.props.fireteam.capacity) return ( <button className="fireteam-join-button full-fireteam" disabled={true}>FULL</button> )
         else return ( <button className="fireteam-join-button">JOIN FIRETEAM</button> )
     }
@@ -21,6 +31,11 @@ export default class Fireteam extends Component {
         else if (platform_name == "Steam") return ( <i className="fa fa-gamepad gamepad"><span className="steam console-logo">Steam</span></i>)
         else return ( <i className="fa fa-gamepad"></i> )
 
+    }
+
+    get_power_requirement = () => {
+        if (this.props.fireteam.power_requirement != "None") return this.props.fireteam.power_requirement + "+";
+        else return "N/A";
     }
 
     get_members = () => {
@@ -46,8 +61,8 @@ export default class Fireteam extends Component {
                             <div className="fireteam-platform info-tile">
                                 <h7>{this.get_platform(this.props.fireteam.platform)}</h7>
                             </div>
-                            <div className="fireteam-activity-type info-tile">
-                                <h7><i className="fa fa-wrench left-col-i"></i>{this.props.fireteam.activity_type}</h7>
+                            <div className="fireteam-power-req info-tile">
+                                <h6><i className="fa fa-star left-col-i"></i>Power Requirement: <span className="power-req">{this.get_power_requirement()}</span></h6>
                             </div>
                             <div className="fireteam-capacity info-tile">
                                 <h7><i className="fa fa-users left-col-i"></i>{this.props.fireteam.current_members.length} / {this.props.fireteam.capacity} Guardians</h7>
@@ -58,7 +73,10 @@ export default class Fireteam extends Component {
                         </div>
                     </div>
                     <div className="fireteam-info-right-column">
-                        <div className="info-container">
+                        <div className="info-container right-col-info-container">
+                            <div className="right-col-fireteam-activity-type">
+                                <span>{this.props.fireteam.activity_type}</span>
+                            </div>
                             <div className="right-col-fireteam-description">
                                 <span>{this.props.fireteam.description}</span>
                             </div>
@@ -75,3 +93,12 @@ export default class Fireteam extends Component {
         )
     }
 }
+
+const mapStateToProps = state => ({
+    authenticated: state.authReducer.authenticated,
+    user: state.authReducer.user,
+    error_msg: state.errorReducer.error_msg,
+    error_status: state.errorReducer.status
+});
+
+export default connect(mapStateToProps, { })(Fireteam);

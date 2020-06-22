@@ -22,7 +22,7 @@ class MainPage extends Component {
     }
 
     componentWillMount() {
-        // this.timer = setInterval(() => this.props.all_fireteams(), 2000);
+        this.timer = setInterval(() => this.props.all_fireteams(), 2000);
     }
     
     componentWillUnmount() {
@@ -33,13 +33,14 @@ class MainPage extends Component {
     render() {
 
         var test = {
-            leader: {"username": "Leader", "light_level": 1000},
-            current_members: [{"username" : "test1", "light_level": 1000}, {"username" : "test2", "light_level": 1000}, {"username" : "test3", "light_level": 1000}, {"username" : "test4", "light_level": 1000}, {"username" : "test5", "light_level": 1000}, {"username" : "test6", "light_level": 1000}],
-            activity_type: "Raid",
+            leader: {"consoleID": "testLeader", "light_level": 1000},
+            current_members: [{"consoleID" : "testLeader", "light_level": 1000}, {"consoleID" : "test2", "light_level": 1000}, {"consoleID" : "test3", "light_level": 1000}, {"consoleID" : "test4", "light_level": 1000}, {"consoleID" : "test5", "light_level": 1000}, {"consoleID" : "test6", "light_level": 1000}],
+            activity_type: "Dungeon: Prophecy",
             description: "Need help with Prophecy dungeon /join",
             platform: "PS4",
             capacity: "6",
-            time_created: "..."
+            time_created: "...",
+            power_requirement: "None"
         }
 
         return (
@@ -47,8 +48,8 @@ class MainPage extends Component {
                 <AppNavbar />
                 <h1>Insert Jumbotron Here</h1>
                <div className="all-fireteams-contianer">
-                    <Fireteam fireteam={test} />
-                    {/* {this.generate_fireteams()} */}
+                    {/* <Fireteam fireteam={test} /> */}
+                    {this.generate_fireteams()}
                 </div>
             </div>
         )

@@ -70,6 +70,11 @@ const FireTeamSchema = new Schema({
         required: true
     },
 
+    power_requirement: {
+        type: String,
+        default: "None"
+    },
+
     time_created: {
         type: Date,
         default: Date.now

@@ -21,6 +21,18 @@
     color: black;
 }
 
+.joined-fireteam {
+    background-color: whitesmoke;
+    color: black;
+    border: none;
+}
+
+.lead-fireteam {
+    background-color: green;
+    color: black;
+    border: none;
+}
+
 .info-tile {
     width: 100%;
     height: 12%;
@@ -28,11 +40,29 @@
     color: white;
 }
 
+.power-req {
+    background-color: lightskyblue;
+    color: black;
+    padding: 2% 2%;
+    margin-left: 2%;
+    font-size: 12px;
+    font-weight: 250;
+}
+
+.right-col-fireteam-activity-type {
+    margin: 2% 0%;
+    width: 100%;
+    font-size: 24px;
+    color: #50a1ff;
+    font-weight: 800;
+    text-align: center;
+}
+
 .right-col-fireteam-description {
     width: 100%;
     height: 20%;
-    margin-bottom: 3%;
     font-weight: 220;
+    text-align: center;
 }
 
 .right-col-fireteam-member-list {
@@ -89,6 +119,7 @@
     margin-left: 3%;
     padding: 2% 2%;
     font-size: 12px;
+    font-weight: 250;
 }
 
 .member-power {
@@ -160,13 +191,19 @@
     .info-tile {
         width: 100%;
         height: 12%;
-        margin: 0% 0% 2% 0%;
+        margin: 0% 0% 3% 0%;
     }
 
     .right-col-fireteam-description {
         margin: auto;
-        margin-bottom: 10%;
+        margin-bottom: 6%;
         width: 80%;
+    }
+}
+
+@media only screen and (max-width: 321px) {
+    .right-col-fireteam-activity-type {
+        font-size: 20px;
     }
 }
 
@@ -175,7 +212,7 @@
 @media only screen and (min-width: 500px) and (max-width: 768px) {
     .fireteam-root {
         margin: auto;
-        width: 70%;
+        width: 85%;
         height: 30%;
         margin-bottom: 2%;
     }
@@ -202,30 +239,44 @@
     }
     
     .info-container {
-        width: 90%;
-        height: 90%;
-        margin: 5% 5%;
+        width: 95%;
+        height: 95%;
+        margin: 2% 2%;
         justify-content: center;
         align-items: center;
+    }
+
+    .right-col-info-container {
+        padding-left: 5%;
     }
 
     .fireteam-join-button {
         font-size: 11px;
         letter-spacing: 3px;
+        margin: 3% 5%;
     }
 
     .console-logo {
         margin-left: 15%;
     }
+
+    .right-col-fireteam-description {
+        margin-bottom: 0;
+        height: 15%;
+        text-align: center;
+    }
+
+    .member-list {
+        padding-left: 15%;
+    }
 }
 
-
-
+/* iPad Pro and devices that do not have that large of a height ratio*/
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
     .fireteam-root {
         margin: auto;
-        width: 60%;
-        height: 25%;
+        width: 70%;
+        height: 40%;
         margin-bottom: 2%;
     }
     
@@ -238,14 +289,14 @@
     
     .fireteam-info-left-column {
         float: left;
-        width: 40%;
+        width: 45%;
         height: 100%;
         color: white;
     }
     
     .fireteam-info-right-column {
         float: right;
-        width: 60%;
+        width: 55%;
         height: 100%;
         color: white;
     }
@@ -256,6 +307,10 @@
         margin: 5% 5%;
         justify-content: center;
         align-items: center;
+    }
+
+    .right-col-info-container {
+        margin: 3% 3%;
     }
 
     .fireteam-join-button {
@@ -267,15 +322,28 @@
     .console-logo {
         margin-left: 22%;
     }
+
+    .member-list {
+        padding-left: 20%;
+    }
 }
 
+/* iPad Pro*/
+@media only screen and (min-width: 1024px) and (max-height: 1366px) {
+    .fireteam-root {
+        margin: auto;
+        width: 70%;
+        height: 25%;
+        margin-bottom: 2%;
+    }
+}
 
 
 @media only screen and (min-width: 1025px) and (max-width: 1224px) {
     .fireteam-root {
         margin: auto;
-        width: 60%;
-        height: 20%;
+        width: 70%;
+        height: 45%;
         margin-bottom: 2%;
     }
     
@@ -288,14 +356,14 @@
     
     .fireteam-info-left-column {
         float: left;
-        width: 40%;
+        width: 45%;
         height: 100%;
         color: white;
     }
     
     .fireteam-info-right-column {
         float: right;
-        width: 60%;
+        width: 55%;
         height: 100%;
         color: white;
     }
@@ -306,6 +374,14 @@
         margin: 5% 5%;
         justify-content: center;
         align-items: center;
+    }
+
+    .right-col-info-container {
+        margin: 3% 3%;
+    }
+
+    .member-list {
+        padding-left: 10%;
     }
 }
 
@@ -347,6 +423,18 @@
         justify-content: center;
         align-items: center;
     }
+
+    .right-col-fireteam-activity-type {
+        font-size: 30px;
+    }
+
+    .right-col-info-container {
+        margin: 3% 2%;
+    }
+
+    .member-list {
+        padding-left: 20%;
+    }
 }
 
 
@@ -354,8 +442,8 @@
 @media only screen and (min-width: 1882px) {
     .fireteam-root {
         margin: auto;
-        width: 40%;
-        height: 25%;
+        width: 50%;
+        height: 55%;
         margin-bottom: 2%;
     }
     
@@ -387,6 +475,18 @@
         justify-content: center;
         align-items: center;
     }
+
+    .right-col-fireteam-activity-type {
+        font-size: 30px;
+    }
+
+    .right-col-info-container {
+        margin: 3% 2%;
+    }
+
+    .member-list {
+        padding-left: 20%;
+    }
 }
 
 
@@ -408,7 +508,7 @@
         font-size: 20px;
     }
 
-    .fireteam-activity-type i {
+    .fireteam-power-req i {
         font-size: 22px;
     }
 }
