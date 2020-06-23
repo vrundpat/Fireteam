@@ -56,6 +56,7 @@ html {
 
 .animated-typewriter {
     color: whitesmoke;
+    font-weight: 250;
     border-right: 2px solid whitesmoke;
     overflow: hidden;
     white-space: nowrap;
@@ -145,6 +146,7 @@ html {
 
     .animated-typewriter {
         margin-top: 50%;
+        margin-left: 10%;
     }
 
     .mainpage-jumbotron {
