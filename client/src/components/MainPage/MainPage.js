@@ -3,7 +3,6 @@ import AppNavbar from '../AppNavBar/AppNavbar';
 import { connect } from 'react-redux';
 import { create_fireteam, join_fireteam, all_fireteams, get_fireteam } from '../../actions/fireteamActions';
 import Fireteam from '../Fireteam/Fireteam';
-import AppJumbotron from '../AppJumbotron/AppJumbotron'
 import './MainPage.css';
 
 class MainPage extends Component {
@@ -51,7 +50,7 @@ class MainPage extends Component {
                     <div className="mainpage-blurscreen">
                         <AppNavbar isAlpha={true}/>
                         <div className="animated-text-container">
-                            <h3 className="animated-typewriter">Find your team.</h3>
+                            <h3 className="animated-typewriter">FIND YOUR FIRETEAM.</h3>
                         </div>
                     </div>
                 </div>

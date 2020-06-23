@@ -1,3 +1,13 @@
+/* Hide scrollbars on Chrome, Safari, Opera*/
+html::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbars on Internet Explorer / Microsoft Edge*/
+html {
+    -ms-overflow-style: none;
+}
+  
 .mainpage-background-root {
     width: 100vw;
     height: 100vh;
@@ -26,5 +36,163 @@
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.87);
-    border-top: 3rem solid rgba(0, 0, 0, 0.01);
+    border-top: 2rem solid rgba(0, 0, 0, 0.01);
+}
+
+.all-fireteams-contianer::-webkit-scrollbar {
+    display: none;
+}
+
+.all-fireteams-contianer {
+    -ms-overflow-style: none;
+}
+
+.animated-text-container {
+    margin: auto;
+    margin-top: 15%;
+    width: 60%;
+    height: 10%;
+}
+
+.animated-typewriter {
+    color: whitesmoke;
+    border-right: 2px solid whitesmoke;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: type 8s steps(45) forwards, blinkcursor .8s step-end infinite;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blinkcursor {
+    0% {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: whitesmoke;
+    }
+}
+
+@keyframes type {
+    0% {width: 0%;}
+    30% {width: 100%;}
+    80% {width: 100%;}
+    90% {width: 0%;}
+    100% {width: 0%;}
+}
+
+@media only screen and (max-width: 320px) {
+    .animated-text-container {
+        width: 55%;
+    }
+
+    .animated-typewriter {
+        margin-top: 50%;
+        font-size: 16px;
+    }
+
+    .mainpage-jumbotron {
+        height: 70%;;
+    }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 400px) {
+    .animated-text-container {
+        width: 80%;
+    }
+
+    .animated-typewriter {
+        margin-top: 50%;
+    }
+
+    .mainpage-jumbotron {
+        height: 60%;;
+    }
+}
+
+@media only screen and (min-width: 401px) and (max-width: 479px) {
+    .animated-text-container{
+        width: 70%;
+    }
+
+    .animated-typewriter {
+        margin-top: 50%;
+    }
+
+    .mainpage-jumbotron {
+        height: 60%;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .animated-text-container{
+        width: 40%;
+    }
+
+    .animated-typewriter {
+        margin-top: 50%;
+    }
+
+    .mainpage-jumbotron {
+        height: 60%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .animated-text-container{
+        width: 30%;
+    }
+
+    .animated-typewriter {
+        margin-top: 50%;
+    }
+
+    .mainpage-jumbotron {
+        height: 60%;
+    }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1224px) {
+    .animated-text-container{
+        width: 35%;
+    }
+
+    .animated-typewriter {
+        margin-top: 50%;
+        font-size: 36px;
+    }
+}
+
+@media only screen and (min-width: 1225px) and (max-width: 1444px) {
+    .animated-text-container{
+        width: 22%;
+    }
+
+    .animated-typewriter {
+        margin-top: 50%;
+        font-size: 36;
+    }
+}
+
+@media only screen and (min-width: 1445px) and (max-width: 1823px) {
+    .animated-text-container{
+        width: 21%;
+    }
+
+    .animated-typewriter {
+        margin-top: 50%;
+        font-size: 36px;
+    }
+}
+
+
+@media only screen and (min-width: 1824px) {
+    .animated-text-container{
+        width: 21%;
+    }
+
+    .animated-typewriter {
+        margin-top: 50%;
+        font-size: 36px;
+    }
 }
