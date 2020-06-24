@@ -488,11 +488,24 @@
     }
 }
 
-@media only screen and (min-width: 1882px) {
+@media only screen and (min-width: 1883px) and (max-width: 1999px) {
     .fireteam-root {
-        height: 30%;
+        height: 40%;
     }
 }
+
+@media only screen and (min-width: 2000px) and (max-width: 2400px) {
+    .fireteam-root {
+        height: 55%;
+    }
+}
+
+@media only screen and (min-width: 2401px) {
+    .fireteam-root {
+        height: 35%;
+    }
+}
+
 
 
 /* For the left-column FA symbols for screens larger than an iPad Pro*/

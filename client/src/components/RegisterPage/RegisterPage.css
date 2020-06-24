@@ -77,6 +77,13 @@
     }
 }
 
+@media only screen and (min-width: 2100px) {
+    .register-form-root {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+}
+
 @media only screen and (min-width: 768px) {
     .register-blur-screen {
         width: 100%;

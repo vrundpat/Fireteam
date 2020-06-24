@@ -43,15 +43,15 @@ class AppNavbar extends Component {
         return (
             <Fragment>
                 <NavItem>
-                    <NavLink activeClassName="active" href="https://www.bungie.net/">Bungie</NavLink>
+                    <NavLink className="login-navlinks" activeClassName="active" href="https://www.bungie.net/">Bungie</NavLink>
                 </NavItem>
 
                 <NavItem>
-                    <NavLink activeClassName="active" href="https://www.bungie.net/en/Forums/">Forums</NavLink>
+                    <NavLink className="login-navlinks" activeClassName="active" href="https://www.bungie.net/en/Forums/">Forums</NavLink>
                 </NavItem>
 
                 <NavItem>
-                    <NavLink activeClassName="active" href="https://www.bungie.net/en/ClanV2/MyClans">Clans</NavLink>
+                    <NavLink className="login-navlinks" activeClassName="active" href="https://www.bungie.net/en/ClanV2/MyClans">Clans</NavLink>
                 </NavItem>
             </Fragment>
         )
@@ -77,12 +77,12 @@ class AppNavbar extends Component {
 
     guestNavBar = () => {
         return (
-            <Nav  className="ml-auto" navbar>
+            <Nav className="ml-auto" navbar>
                 <NavItem>
-                    <NavLink activeClassName="active" to="/login" tag={RRNavLink}>Login</NavLink>
+                    <NavLink className="login-navlinks" activeClassName="active" to="/login" tag={RRNavLink}>Login</NavLink>
                 </NavItem>
                 <NavItem>
-                   <NavLink activeClassName="active" to="/register" tag={RRNavLink}>Register</NavLink>
+                   <NavLink className="login-navlinks" activeClassName="active" to="/register" tag={RRNavLink}>Register</NavLink>
                 </NavItem>
                 {this.navbarLinks()}
             </Nav>
