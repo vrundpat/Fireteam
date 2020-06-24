@@ -6,7 +6,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     flex-basis: 100%;
-    margin: 5% 10%;
+    margin: 5% 5%;
 }
 
 #navbar-brand {
@@ -28,15 +28,38 @@
 
 .ml-auto {
     margin-left: 5%;
-    margin-right: 5%;
 }
 
-@media only screen and (min-width: 1823px) {
+
+
+@media only screen and (min-width: 1440px) and (max-width: 1822px) {
+    #navbar-brand {
+        font-size: 2vw;
+    }
+  
+    .nav-item {
+        font-size: 1.1vw;
+    }
+}
+
+@media only screen and (min-width: 1823px) and (max-width: 2200px) {
   #navbar-brand {
-      font-size: 3rem;
+      font-size: 3vw;
   }
 
-  .navlinks {
-      font-size: 2rem;
+  .nav-item {
+      font-size: 2vw;
+      padding: 2% 2%;
   }
+}
+
+@media only screen and (min-width: 2201px) {
+    #navbar-brand {
+        font-size: 2vw;
+    }
+  
+    .nav-item {
+        font-size: 1.5vw;
+        padding: 2% 2%;
+    }
 }

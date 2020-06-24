@@ -65,6 +65,7 @@
     background-size: 100vw 100vh;
     background: rgba(0, 0, 0, 0.3);
     animation: lightning 4s linear infinite;
+    overflow: hidden;
 
 }
 
@@ -94,7 +95,7 @@
 
 @media only screen and (min-width: 480px) and (max-width: 768px) {
     .login-form-container {
-        width: 35%;
+        width: 55%;
         height: 80%;
     }
 }
@@ -118,6 +119,10 @@
         width: 35%;
         height: 70%;
     }
+
+    .login-submit-button {
+        margin-top: 2%;
+    }
 }
 
 @media only screen and (min-width: 2100px) {
@@ -130,6 +135,26 @@
 
 /* For Portrait Smartphones */
 @media screen and (orientation: landscape) and (min-width: 500px) and (max-width: 825px) {
+    .login-blur-screen {
+        overflow: auto;
+    }
+
+    .navbar {
+        min-height: 75px;
+    }
+
+    .login-form-root {
+        width: 100%;
+        padding-top: 0;
+    }
+
+    .login-submit-button {
+        margin-top: 2%;
+    }
+}
+
+/* For Portrait Smartphones */
+@media screen and (orientation: landscape) and (min-width: 826px) {
     .login-blur-screen {
         overflow: auto;
     }
