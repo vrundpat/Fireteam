@@ -154,7 +154,6 @@
 }
 
 
-
 @media only screen and (max-width: 499px) {
     .fireteam-root {
         margin: auto;
@@ -443,7 +442,7 @@
     .fireteam-root {
         margin: auto;
         width: 50%;
-        height: 40%;
+        height: 55%;
         margin-bottom: 2%;
     }
     
@@ -489,6 +488,12 @@
     }
 }
 
+@media only screen and (min-width: 1882px) {
+    .fireteam-root {
+        height: 30%;
+    }
+}
+
 
 /* For the left-column FA symbols for screens larger than an iPad Pro*/
 @media only screen and (min-width: 1025px) {
@@ -510,5 +515,21 @@
 
     .fireteam-power-req i {
         font-size: 22px;
+    }
+}
+
+/* For Portrait Smartphones */
+@media screen and (orientation: landscape) and (min-width: 500px) and (max-width: 825px) {
+    .fireteam-root {
+        width: 90%;
+        height: 90%;
+    }
+}
+
+/* For Portrait Tablets */
+@media only screen and (orientation: landscape) and (min-width: 1024px) and (max-width: 1400px){
+    .fireteam-root {
+        width: 80%;
+        height: 50%;
     }
 }

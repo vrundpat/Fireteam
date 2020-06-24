@@ -87,3 +87,26 @@
         animation: rain .3s linear infinite;
     }
 }
+
+/* For Portrait Smartphones */
+@media screen and (orientation: landscape) and (min-width: 500px) and (max-width: 825px) {
+    .register-blur-screen {
+        overflow: auto;
+    }
+
+    .navbar {
+        min-height: 75px;
+    }
+
+    .register-form-root {
+        padding-top: 0;
+    }
+
+    .register-input {
+        min-height: 35px;
+    }
+
+    .register-submit-button {
+        margin-top: 2%;
+    }
+}

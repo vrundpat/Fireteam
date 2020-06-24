@@ -119,3 +119,24 @@
         height: 70%;
     }
 }
+
+
+/* For Portrait Smartphones */
+@media screen and (orientation: landscape) and (min-width: 500px) and (max-width: 825px) {
+    .login-blur-screen {
+        overflow: auto;
+    }
+
+    .navbar {
+        min-height: 75px;
+    }
+
+    .login-form-root {
+        width: 100%;
+        padding-top: 0;
+    }
+
+    .login-submit-button {
+        margin-top: 2%;
+    }
+}
