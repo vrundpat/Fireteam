@@ -299,10 +299,19 @@ html {
     }
 }
 
-
 @media only screen and (min-width: 1824px) {
     .mainpage-jumbotron {
-        height: 130%;
+        height: 100%;
+    }
+
+    .navbar {
+        min-height: 200px;
+    }
+}
+
+@media only screen and (min-width: 2100px) {
+    .mainpage-jumbotron {
+        height: 100%;
     }
 }
 

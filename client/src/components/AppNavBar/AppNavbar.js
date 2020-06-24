@@ -43,15 +43,15 @@ class AppNavbar extends Component {
         return (
             <Fragment>
                 <NavItem>
-                    <NavLink className="login-navlinks" activeClassName="active" href="https://www.bungie.net/">Bungie</NavLink>
+                    <NavLink className="navlinks" activeClassName="active" href="https://www.bungie.net/">Bungie</NavLink>
                 </NavItem>
 
                 <NavItem>
-                    <NavLink className="login-navlinks" activeClassName="active" href="https://www.bungie.net/en/Forums/">Forums</NavLink>
+                    <NavLink className="navlinks" activeClassName="active" href="https://www.bungie.net/en/Forums/">Forums</NavLink>
                 </NavItem>
 
                 <NavItem>
-                    <NavLink className="login-navlinks" activeClassName="active" href="https://www.bungie.net/en/ClanV2/MyClans">Clans</NavLink>
+                    <NavLink className="navlinks" activeClassName="active" href="https://www.bungie.net/en/ClanV2/MyClans">Clans</NavLink>
                 </NavItem>
             </Fragment>
         )
@@ -79,10 +79,10 @@ class AppNavbar extends Component {
         return (
             <Nav className="ml-auto" navbar>
                 <NavItem>
-                    <NavLink className="login-navlinks" activeClassName="active" to="/login" tag={RRNavLink}>Login</NavLink>
+                    <NavLink className="navlinks" activeClassName="active" to="/login" tag={RRNavLink}>Login</NavLink>
                 </NavItem>
                 <NavItem>
-                   <NavLink className="login-navlinks" activeClassName="active" to="/register" tag={RRNavLink}>Register</NavLink>
+                   <NavLink className="navlinks" activeClassName="active" to="/register" tag={RRNavLink}>Register</NavLink>
                 </NavItem>
                 {this.navbarLinks()}
             </Nav>
@@ -91,13 +91,13 @@ class AppNavbar extends Component {
 
     navbarConstants = () => {
         return (
-            <Container>
+            <div className="navbar-container">
                 <NavbarBrand activeClassName="active" to="/" tag={RRNavLink} id="navbar-brand">Fireteam</NavbarBrand>
                 <NavbarToggler onClick={this.toggleCollapse}></NavbarToggler>
                 <Collapse isOpen={this.state.collapsed} navbar>
                     {this.props.authenticated ? this.loggedInNavBar() : this.guestNavBar()}
                 </Collapse>
-            </Container>
+            </div>
         )
     }
 

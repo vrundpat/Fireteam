@@ -1,5 +1,14 @@
+.navbar-container {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    margin: 5% 10%;
+}
+
 #navbar-brand {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 200;
 }
 
@@ -21,27 +30,11 @@
 }
 
 @media only screen and (min-width: 1823px) {
-    #navbar-brand {
-        font-size: 2vw;
-    }
+  #navbar-brand {
+      font-size: 3rem;
+  }
 
-    .navbar-collapse {
-        margin-right: 0%;
-    }
-
-    .navbar {
-        padding: 0;
-        margin: 0;
-    }
-    
-    .login-navlinks {
-        font-size: 1.25vw;
-        margin: 0% 10%;
-    }  
-
-    .container {
-        padding-top: 2%;
-        margin-left: 0;
-        margin-right: 0;
-    }
+  .navlinks {
+      font-size: 2rem;
+  }
 }
