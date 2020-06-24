@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Row, Col, Alert } from 'reactstrap';
 import { connect } from 'react-redux';
 import { login } from '../../actions/authActions';
 import { Redirect } from 'react-router-dom';

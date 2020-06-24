@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Col, Form, FormGroup, Input, Button, Row, Alert} from 'reactstrap';
+import {Col, Row} from 'reactstrap';
 import { connect } from 'react-redux';
 import { register } from '../../actions/authActions';
 import { Redirect } from 'react-router-dom';

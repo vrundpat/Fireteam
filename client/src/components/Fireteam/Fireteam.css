@@ -160,7 +160,7 @@
         margin: auto;
         width: 80%;
         min-height: 300px;
-        margin-bottom: 2%;
+        margin-bottom: 10%;
     }
     
     .fireteam-info {
@@ -196,7 +196,7 @@
 
     .right-col-fireteam-description {
         margin: auto;
-        margin-bottom: 6%;
+        margin-bottom: 8%;
         width: 80%;
     }
 }
@@ -443,7 +443,7 @@
     .fireteam-root {
         margin: auto;
         width: 50%;
-        height: 55%;
+        height: 40%;
         margin-bottom: 2%;
     }
     

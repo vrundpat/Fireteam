@@ -50,9 +50,18 @@ class MainPage extends Component {
                     <div className="mainpage-blurscreen">
                         <AppNavbar isAlpha={true}/>
                         <div className="animated-text-container">
-                            <h3 className="animated-typewriter">FIND YOUR FIRETEAM.</h3>
+                            <p className="animated-typewriter">FIND YOUR FIRETEAM.</p>
                         </div>
                     </div>
+                </div>
+                <div className="site-intro-root">
+                    <p className="site-description">
+                        Join any of the groups below. Can't find your ideal fireteam? Need help with a tough raid, mission or acitivty?
+                    </p>
+                    <p className="site-description">
+                        Simply create a fireteam below.
+                    </p>
+                    <button className="create-fireteam-button">CREATE FIRETEAM</button>
                 </div>
                 <div className="all-fireteams-contianer">
                     {/* <Fireteam fireteam={test} /> */}

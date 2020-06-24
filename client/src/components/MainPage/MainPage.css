@@ -32,10 +32,39 @@ html {
     min-height: 100px;
 }
 
+.site-intro-root {
+    width: 100%;
+    height: 35%;
+    padding: 5% 5% 5% 5%;
+    background-color: #24292e;
+    text-align: center;
+    color: whitesmoke;
+}
+
+.site-description {
+    font-size: 1.5vw;
+    font-weight: 200;
+    letter-spacing: 2px;
+}
+
+.create-fireteam-button {
+    color: whitesmoke;
+    margin: 1% 0% 3% 0%;
+    width: 40%;
+    height: 40%;
+    background-color: #50a1ff;
+    font-size: 1.25vw;
+    font-weight: 250;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 4px;
+    outline: none;
+    border: none;
+}
+
 .all-fireteams-contianer {
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.87);
+    background-color: #24292e;
     border-top: 2rem solid rgba(0, 0, 0, 0.01);
 }
 
@@ -50,13 +79,13 @@ html {
 .animated-text-container {
     margin: auto;
     margin-top: 15%;
-    width: 60%;
-    height: 10%;
+    height: 15%;
+    background-color: rgba(0, 0, 0, 0.01);
 }
 
 .animated-typewriter {
     color: whitesmoke;
-    font-weight: 250;
+    font-weight: 200;
     border-right: 2px solid whitesmoke;
     overflow: hidden;
     white-space: nowrap;
@@ -82,119 +111,186 @@ html {
     100% {width: 0%;}
 }
 
-@media only screen and (max-width: 320px) {
+
+/* Animated text and site-intro for all smartphones up with a width max of 767px */
+@media only screen and (max-width: 767px) {
     .animated-text-container {
-        width: 55%;
+        width: 70%;
     }
 
     .animated-typewriter {
-        margin-top: 50%;
-        font-size: 16px;
+        font-size: 6.7vw;
+        padding-left: 4%;
+        font-weight: 250;
     }
 
+    .site-intro-root {
+        height: 25%;
+    }
+
+    .site-description {
+        font-size: 3vw;
+        font-weight: 400;
+        letter-spacing: 0px;
+    }
+
+    .create-fireteam-button {
+        margin: 1% 0% 3% 0%;
+        width: 60%;
+        height: 30%;
+        background-color: #50a1ff;
+        font-size: 3vw;
+        font-weight: 400;
+        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: 2px;
+    }
+}
+
+/* Animated text and site-intro for all tablets up with a max-width of 1225px */
+@media only screen and (min-width: 768px) and (max-width: 1225px) {
+    .animated-text-container {
+        width: 40%;
+    }
+    .animated-typewriter {
+        font-size: 3.8vw;
+        padding-left: 5%;
+    }
+
+    .site-intro-root {
+        height: 20%;
+    }
+
+    .site-description {
+        font-weight: 350;
+        letter-spacing: 0px;
+        font-size: 1.7vw;
+    }
+
+    .create-fireteam-button {
+        font-weight: 400;
+        letter-spacing: 1px;
+        font-size: 1.5vw;
+    }
+}
+
+/* Animated text for all laptops/general monitors up with a min-width of 1225px */
+@media only screen and (min-width: 1225px) and (max-width: 1823px) {
+    .animated-text-container {
+        width: 40%;
+    }
+    .animated-typewriter {
+        font-size: 4vw;
+        padding-left: 5%;
+    }
+
+    .site-intro-root {
+        height: 40%;
+        font-size: 1.25vw;
+    }
+
+    .create-fireteam-button {
+        height: 30%;
+        font-size: 1.25vw;
+    }
+
+}
+
+/* Animated text for all wide screens up with a min-width of 1823px */
+@media only screen and (min-width: 1824px) and (max-width: 2000px) {
+    .animated-text-container {
+        width: 30%;
+    }
+    .animated-typewriter {
+        font-size: 2.95vw;
+        padding-left: 5%;
+    }
+
+    .site-intro-root {
+        height: 40%;
+        font-size: 1.25vw;
+    }
+
+    .create-fireteam-button {
+        height: 40%;
+        font-size: 1.5vw;
+    }
+}
+
+@media only screen and (min-width: 2001px) {
+    .animated-text-container {
+        width: 30%;
+    }
+    .animated-typewriter {
+        font-size: 2.95vw;
+        padding-left: 5%;
+    }
+
+    .site-intro-root {
+        height: 35%;
+        font-size: 1.25vw;
+    }
+
+    .create-fireteam-button {
+        height: 5vw;
+        font-size: 1.25vw;
+    }
+}
+
+
+
+
+/* Other general media queires*/
+@media only screen and (max-width: 320px) {
     .mainpage-jumbotron {
-        height: 70%;;
+        height: 70%;
     }
 }
 
 @media only screen and (min-width: 321px) and (max-width: 400px) {
-    .animated-text-container {
-        width: 80%;
-    }
-
-    .animated-typewriter {
-        margin-top: 50%;
-    }
-
     .mainpage-jumbotron {
         height: 60%;;
     }
 }
 
 @media only screen and (min-width: 401px) and (max-width: 479px) {
-    .animated-text-container{
-        width: 70%;
-    }
-
-    .animated-typewriter {
-        margin-top: 50%;
-    }
-
     .mainpage-jumbotron {
         height: 60%;
     }
 }
 
 @media only screen and (min-width: 480px) and (max-width: 768px) {
-    .animated-text-container{
-        width: 40%;
-    }
-
-    .animated-typewriter {
-        margin-top: 50%;
-    }
-
     .mainpage-jumbotron {
         height: 60%;
     }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-    .animated-text-container{
-        width: 30%;
-    }
-
-    .animated-typewriter {
-        margin-top: 50%;
-        margin-left: 10%;
-    }
-
     .mainpage-jumbotron {
         height: 60%;
     }
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1224px) {
-    .animated-text-container{
-        width: 35%;
-    }
-
-    .animated-typewriter {
-        margin-top: 50%;
-        font-size: 36px;
+    .mainpage-jumbotron {
+        height: 60%;
     }
 }
 
 @media only screen and (min-width: 1225px) and (max-width: 1444px) {
-    .animated-text-container{
-        width: 22%;
-    }
-
-    .animated-typewriter {
-        margin-top: 50%;
-        font-size: 36;
+    .mainpage-jumbotron {
+        height: 80%;
     }
 }
 
 @media only screen and (min-width: 1445px) and (max-width: 1823px) {
-    .animated-text-container{
-        width: 21%;
-    }
-
-    .animated-typewriter {
-        margin-top: 50%;
-        font-size: 36px;
+    .mainpage-jumbotron {
+        height: 80%;
     }
 }
 
 
 @media only screen and (min-width: 1824px) {
-    .animated-text-container{
-        width: 21%;
-    }
-
-    .animated-typewriter {
-        margin-top: 50%;
-        font-size: 36px;
+    .mainpage-jumbotron {
+        height: 80%;
     }
 }

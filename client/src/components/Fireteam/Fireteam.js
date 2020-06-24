@@ -26,22 +26,22 @@ class Fireteam extends Component {
     }
 
     get_platform = (platform_name) => {
-        if (platform_name == "PS4") return ( <i className="fa fa-gamepad gamepad"><span className="ps4 console-logo">PS4</span></i>)
-        else if (platform_name == "Xbox") return ( <i className="fa fa-gamepad gamepad"><span className="xbox console-logo">Xbox</span></i>)
-        else if (platform_name == "Steam") return ( <i className="fa fa-gamepad gamepad"><span className="steam console-logo">Steam</span></i>)
+        if (platform_name === "PS4") return ( <i className="fa fa-gamepad gamepad"><span className="ps4 console-logo">PS4</span></i>)
+        else if (platform_name === "Xbox") return ( <i className="fa fa-gamepad gamepad"><span className="xbox console-logo">Xbox</span></i>)
+        else if (platform_name === "Steam") return ( <i className="fa fa-gamepad gamepad"><span className="steam console-logo">Steam</span></i>)
         else return ( <i className="fa fa-gamepad"></i> )
 
     }
 
     get_power_requirement = () => {
-        if (this.props.fireteam.power_requirement != "None") return this.props.fireteam.power_requirement + "+";
+        if (this.props.fireteam.power_requirement !== "None") return this.props.fireteam.power_requirement + "+";
         else return "N/A";
     }
 
     get_members = () => {
         var accumulator = [];
         for (var i = 0; i < this.props.fireteam.current_members.length; i++) {
-            if (i == 0) accumulator.push(<li className="fireteam-member"><i className="fa fa-user-circle member-logo"></i>{this.props.fireteam.current_members[i].consoleID} <span className="leader-power">{this.props.fireteam.current_members[i].light_level}</span></li>);
+            if (i === 0) accumulator.push(<li className="fireteam-member"><i className="fa fa-user-circle member-logo"></i>{this.props.fireteam.current_members[i].consoleID} <span className="leader-power">{this.props.fireteam.current_members[i].light_level}</span></li>);
             else accumulator.push(<li className="fireteam-member"><i className="fa fa-user-circle member-logo"></i>{this.props.fireteam.current_members[i].consoleID} <span className="member-power">{this.props.fireteam.current_members[i].light_level}</span></li>);
         }
 
