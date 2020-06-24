@@ -278,19 +278,19 @@ html {
 
 @media only screen and (min-width: 1225px) and (max-width: 1444px) {
     .mainpage-jumbotron {
-        height: 80%;
+        height: 100%;
     }
 }
 
 @media only screen and (min-width: 1445px) and (max-width: 1823px) {
     .mainpage-jumbotron {
-        height: 80%;
+        height: 100%;
     }
 }
 
 
 @media only screen and (min-width: 1824px) {
     .mainpage-jumbotron {
-        height: 80%;
+        height: 100%;
     }
 }
