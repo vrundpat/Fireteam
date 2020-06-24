@@ -4,6 +4,8 @@
     display: flex;
     align-items: stretch;
     justify-content: space-between;
+    flex-wrap: wrap;
+    flex-basis: 100%;
     margin: 5% 10%;
 }
 

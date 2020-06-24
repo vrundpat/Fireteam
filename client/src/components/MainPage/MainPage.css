@@ -318,7 +318,7 @@ html {
 
 
 /* For Portrait Smartphones */
-@media screen and (orientation: landscape) and (min-width: 500px) and (max-width: 825px) {
+@media screen and (orientation: landscape) and (min-width: 500px) and (max-width: 1023px) {
     .mainpage-jumbotron {
         height: 90%;
     }

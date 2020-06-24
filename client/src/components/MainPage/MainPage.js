@@ -64,7 +64,7 @@ class MainPage extends Component {
                     <button className="create-fireteam-button">CREATE FIRETEAM</button>
                 </div>
                 <div className="all-fireteams-contianer">
-                    {/* <Fireteam fireteam={test} /> */}
+                    <Fireteam fireteam={test} />
                     {this.generate_fireteams()}
                 </div>
             </div>
