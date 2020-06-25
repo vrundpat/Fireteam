@@ -304,6 +304,10 @@ html {
         height: 100%;
     }
 
+    .site-intro-root {
+        height: 50%;
+    }
+
     .navbar {
         min-height: 200px;
     }
@@ -312,6 +316,10 @@ html {
 @media only screen and (min-width: 2100px) {
     .mainpage-jumbotron {
         height: 100%;
+    }
+
+    .site-intro-root {
+        height: 60%;
     }
 }
 
