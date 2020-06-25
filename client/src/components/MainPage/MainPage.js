@@ -3,14 +3,19 @@ import AppNavbar from '../AppNavBar/AppNavbar';
 import { connect } from 'react-redux';
 import { create_fireteam, join_fireteam, all_fireteams, get_fireteam } from '../../actions/fireteamActions';
 import Fireteam from '../Fireteam/Fireteam';
+import CreateModal from '../CreateModal/CreateModal'
 import './MainPage.css';
 
 class MainPage extends Component {
 
     constructor(props) {
         super(props);
+        this.state = { isModalOpen: true };
         this.generate_fireteams.bind(this);
+        this.toggleModal.bind(this);
     }
+
+    toggleModal = () => this.setState({isModalOpen: !this.state.isModalOpen})
 
     generate_fireteams = () => {
         var temp = []
@@ -32,7 +37,6 @@ class MainPage extends Component {
     }
 
     render() {
-
         var test = {
             leader: {"consoleID": "testLeader", "light_level": 1000},
             current_members: [{"consoleID" : "testLeader", "light_level": 1000}, {"consoleID" : "test2", "light_level": 1000}, {"consoleID" : "test3", "light_level": 1000}, {"consoleID" : "test4", "light_level": 1000}, {"consoleID" : "test5", "light_level": 1000}, {"consoleID" : "test6", "light_level": 1000}],
@@ -61,7 +65,8 @@ class MainPage extends Component {
                     <p className="site-description">
                         Simply create a fireteam below.
                     </p>
-                    <button className="create-fireteam-button">CREATE FIRETEAM</button>
+                    <button className="create-fireteam-button" onClick={this.toggleModal}>CREATE FIRETEAM</button>
+                    <CreateModal isModalOpen={this.state.isModalOpen} toggleModal={this.toggleModal}/>
                 </div>
                 <div className="all-fireteams-contianer">
                     <Fireteam fireteam={test} />
