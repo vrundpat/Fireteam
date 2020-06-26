@@ -1,3 +1,23 @@
+.modal-content {
+    background: rgba(0, 0, 0, 0.7) !important;
+    color: whitesmoke !important;
+}
+
+.modal-header {
+    color: #50a1ff !important;
+    float: left !important;
+}
+
+.modal-title {
+    font-weight: 150 !important;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.close {
+    color: whitesmoke !important;
+    float: right !important;
+}
+
 .leader-power-slider-root p {
     margin-bottom: 0;
 }
@@ -54,3 +74,104 @@
 .modal-button-container p {
     margin: 3% 0%;
 }
+
+
+@media only screen and (max-width: 320px) {
+    .leader-power-text {
+        font-size: 5vw;
+    }
+
+    .power-req-text {
+        font-size: 5vw;
+    }
+
+    .modal-body select {
+        font-size: 10px !important;
+    }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 499px) {
+    .leader-power-text {
+        font-size: 4vw;
+    }
+
+    .power-req-text {
+        font-size: 4vw;
+    }
+
+    .modal-body select {
+        font-size: 12px !important;
+    }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 768px) {
+    .leader-power-text {
+        font-size: 3vw;
+    }
+
+    .power-req-text {
+        font-size: 3vw;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .leader-power-text {
+        font-size: 2vw;
+    }
+
+    .power-req-text {
+        font-size: 2vw;
+    }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1224px) {
+    .leader-power-text {
+        font-size: 0.9vw;
+    }
+
+    .power-req-text {
+        font-size: 1vw;
+    }
+}
+
+@media only screen and (min-width: 1225px) and (max-width: 1881px) {
+    .leader-power-text {
+        font-size: 0.9vw;
+    }
+
+    .power-req-text {
+        font-size: 1vw;
+    }
+}
+
+@media only screen and (min-width: 1882px) and (max-width: 2000px) {
+    .leader-power-text {
+        font-size: 0.9vw;
+    }
+
+    .power-req-text {
+        font-size: 1vw;
+    }
+}
+
+@media only screen and (min-width: 2001px) and (max-width: 2399px) {
+    .leader-power-text {
+        font-size: 0.9vw;
+    }
+
+    .power-req-text {
+        font-size: 1vw;
+    }
+}
+
+@media only screen and (min-width: 2500px) {
+    .leader-power-text {
+        font-size: 0.9vw;
+    }
+
+    .power-req-text {
+        font-size: 1vw;
+    }
+}
+
+

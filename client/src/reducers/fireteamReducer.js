@@ -1,10 +1,12 @@
-import { CREATE_FIRETEAM, JOIN_FIRETEAM, CREATE_SUCCESS, JOIN_SUCCESS, ALL_FIRETEAMS, GET_FIRETEAM } from '../actions/types';
+import { CREATE_FIRETEAM, JOIN_FIRETEAM, CREATE_SUCCESS, JOIN_SUCCESS, CREATE_FAIL, JOIN_FAIL, ALL_FIRETEAMS, GET_FIRETEAM } from '../actions/types';
 
 const initialState = {
     leader: [],
     member: [],
-    isCreating: null,
-    isJoining: null,
+    isCreating: false,
+    isJoining: false,
+    create_fail: false,
+    join_fail: false,
     all_fireteams: [],
     currently_viewing: null
 }
@@ -26,16 +28,32 @@ export default function(state = initialState, action) {
         case CREATE_SUCCESS:
             return {
                 ...state,
-                isCreating: null,
+                isCreating: false,
+                create_fail: false,
                 leader: [ ...state.leader, action.payload.fireteam],
                 member: [ ...state.member, action.payload.fireteam]
+            }
+
+        case CREATE_FAIL:
+            return {
+                ...state,
+                create_fail: true,
+                isCreating: false
             }
             
         case JOIN_SUCCESS:
             return {
                 ...state,
-                isJoining: null,
+                isJoining: false,
+                join_fail: false,
                 member: [...state.member, action.payload.fireteam]
+            }
+            
+        case JOIN_FAIL:
+            return {
+                ...state,
+                join_fail: true,
+                isJoining: false
             }
         
         case ALL_FIRETEAMS:

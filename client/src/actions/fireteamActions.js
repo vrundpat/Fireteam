@@ -1,4 +1,4 @@
-import { CREATE_FIRETEAM, JOIN_FIRETEAM, CREATE_SUCCESS, JOIN_SUCCESS, ALL_FIRETEAMS, CLEAR_ERROR, GET_FIRETEAM } from './types';
+import { CREATE_FIRETEAM, JOIN_FIRETEAM, CREATE_SUCCESS, JOIN_SUCCESS, CREATE_FAIL, JOIN_FAIL, ALL_FIRETEAMS, CLEAR_ERROR, GET_FIRETEAM } from './types';
 import { get_error } from './errorActions';
 const axios = require('axios');
 
@@ -21,6 +21,8 @@ export const create_fireteam = (fireteam_info, leader_info) => dispatch => {
             dispatch({type: CLEAR_ERROR});
         })
         .catch(error => {
+            console.log("Create error occured");
+            dispatch({type: CREATE_FAIL});
             dispatch(get_error(error.response.data, error.response.status));
         });
 }
@@ -36,6 +38,7 @@ export const join_fireteam = (member_info, fireteam_id) => dispatch => {
             dispatch({type: CLEAR_ERROR});
         })
         .catch(error => {
+            dispatch({type: JOIN_FAIL});
             dispatch(get_error(error.response.data, error.response.status));
         });
 }

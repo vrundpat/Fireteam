@@ -6,11 +6,11 @@ const router = Router();
 
 function validate(user, isNewMember) {
     if (isNewMember) {
-        if (!user.username || !user.guardianType || !user.light_level || !user.platform || !user.consoleID) return false;
+        if (!user.username || user.guardianType == "" || !user.light_level || user.platform == "" || !user.consoleID) return false;
         else return true;
     }  
     else {
-        if (!user.username || !user.guardianType || !user.light_level || !user.consoleID) return false;
+        if (!user.username || user.guardianType == "" || !user.light_level || !user.consoleID) return false;
         else return true;
     }
 }
@@ -22,9 +22,9 @@ function validate(user, isNewMember) {
  * @Private
  * Add verifyUser again, was removed for testing!
  */
-router.post('/create', async (request, response) => {
+router.post('/create', verifyUser, async (request, response) => {
     const {leader, activity_type, description, capacity, platform, power_requirement} = request.body;
-    if (!validate(leader, false) || !activity_type || !description || !capacity || !platform) return response.status(400).json({msg: "Please enter all fields"});
+    if (!validate(leader, false) || activity_type == "" || description == "" || capacity == "" || platform == "") return response.status(400).json({msg: "Please enter all fields"});
 
     try {
         const sample_fireteam = FireTeam({
@@ -68,7 +68,7 @@ router.post('/create', async (request, response) => {
  * Route used to join a fireteam
  * Add verifyUser again, was removed for testing!
  */
-router.post('/join', async (request, response) => {
+router.post('/join', verifyUser, async (request, response) => {
     const fireteam_id = request.query.id;
     const new_member = request.body;
     if (!fireteam_id) return response.status(404).json({msg: "Fireteam not found!"});

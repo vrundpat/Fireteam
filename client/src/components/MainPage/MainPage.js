@@ -10,7 +10,7 @@ class MainPage extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { isModalOpen: false };
+        this.state = { isModalOpen: true };
         this.generate_fireteams.bind(this);
         this.toggleModal.bind(this);
     }

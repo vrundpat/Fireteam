@@ -2,8 +2,9 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import React, { Component } from 'react';
 import { Redirect} from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Alert } from 'reactstrap';
 import { create_fireteam } from '../../actions/fireteamActions';
+import { clear_error } from '../../actions/errorActions'
 import './CreateModal.css';
 
 class CreateModal extends Component {
@@ -23,7 +24,7 @@ class CreateModal extends Component {
         this.setState({[event.target.name] : event.target.value});
     }
 
-    handleModalSubmit = () => {
+    handleModalSubmit = async () => {
         var leader_guardianType_ref = document.getElementById("leader-guardianType");
         var fireteam_platform_ref = document.getElementById("fireteam-platform");
         var fireteam_capacity_ref = document.getElementById("fireteam-capacity");
@@ -46,7 +47,13 @@ class CreateModal extends Component {
         }
 
         this.props.create_fireteam(fireteam_info, leader_info);
-        this.props.toggleModal();
+        setTimeout(() => {
+            // console.log("Create Fail: " + this.props.create_fail);
+            // console.log("isCreating: " + this.props.isCreating  + "\n\n");
+            if (this.props.create_fail === false) {
+                this.props.toggleModal();
+            }
+        }, 200);
     }
 
     authenticated_modal = () => {
@@ -72,7 +79,7 @@ class CreateModal extends Component {
                     <div className="row">
                             <div className="col form-group">
                                 <select id="leader-guardianType" className="form-control">
-                                    <option selected="Leader Guardian Type">Leader Guardian Type</option>
+                                    <option selected="Leader Guardian Type" value={""}>Leader Guardian Type</option>
                                     <option value="Hunter">Hunter</option>
                                     <option value="Warlock">Warlock</option>
                                     <option value="Titan">Titan</option>
@@ -85,7 +92,7 @@ class CreateModal extends Component {
                     <div className="row">
                         <div className="col form-group">
                             <select id="fireteam-platform" className="form-control">
-                                <option selected="Choose Platform">Fireteam Platform</option>
+                                <option selected="Choose Platform" value={""}>Fireteam Platform</option>
                                 <option value="PS4">PS4</option>
                                 <option value="Steam">Steam</option>
                                 <option value="Xbox">Xbox</option>
@@ -94,7 +101,7 @@ class CreateModal extends Component {
 
                         <div className="col form-group">
                             <select id="fireteam-capacity" className="form-control">
-                                <option selected="Choose Capacity">Fireteam Capacity</option>
+                                <option selected="Choose Capacity" value={""}>Fireteam Capacity</option>
                                 <option value={1}>1</option>
                                 <option value={2}>2</option>
                                 <option value={3}>3</option>
@@ -108,7 +115,8 @@ class CreateModal extends Component {
                     <div className="row">
                         <div className="col form-group">
                             <select id="fireteam-activity" className="form-control">
-                                <option selected="Leader Guardian Type">Choose Activity</option>
+                                <option selected="Leader Guardian Type" value={""}>Choose Activity</option>
+                                <option value="Dungeon: Prophecy">Dungeon: Prophecy</option>
                             </select>
                             </div>
                     </div>
@@ -128,6 +136,12 @@ class CreateModal extends Component {
                             </div>
                         </div>
                     </div>
+
+                    <div className="row">
+                        <div className="col">
+                            {this.props.error_msg ? <Alert className="alert alert-danger text-center">{this.props.error_msg.msg}</Alert> : null}
+                        </div>
+                    </div>
                 </form>
         )
     }
@@ -145,9 +159,12 @@ class CreateModal extends Component {
         return (
             <div className="modal-root">
                 <Modal isOpen={this.props.isModalOpen} toggle={this.props.toggleModal}>
-                    <ModalHeader toggle={this.props.toggleModal}>Create your Fireteam</ModalHeader>
+                    <ModalHeader className="text-center" toggle={this.props.toggleModal}>
+                        <h3>Create your Fireteam</h3>
+                    </ModalHeader>
                     <ModalBody>
-                        {this.props.authenticated ? this.authenticated_modal() : this.unauthenicated_modal()}
+                        {/* {this.props.authenticated ? this.authenticated_modal() : this.unauthenicated_modal()} */}
+                        {this.authenticated_modal()}
                     </ModalBody>
                     <ModalFooter>
                         {this.props.authenticated ? <Button color="primary" onClick={this.handleModalSubmit}>Create Fireteam</Button> : null}
@@ -162,9 +179,11 @@ class CreateModal extends Component {
 const mapStateToProps = state => ({
     authenticated: state.authReducer.authenticated,
     user: state.authReducer.user,
+    create_fail: state.fireteamReducer.create_fail,
+    isCreating: state.fireteamReducer.isCreating,
     error_msg: state.errorReducer.error_msg,
     error_status: state.errorReducer.status
 });
 
-export default connect(mapStateToProps, { create_fireteam })(CreateModal);
+export default connect(mapStateToProps, { create_fireteam, clear_error })(CreateModal);
 
