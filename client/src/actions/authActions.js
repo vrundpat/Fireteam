@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { get_error } from './errorActions'; 
 import {
-    AUTH_ERROR,
     LOGIN_SUCCESS,
     LOGIN_FAIL,
     LOGOUT_SUCCESS,

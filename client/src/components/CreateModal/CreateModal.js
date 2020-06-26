@@ -65,7 +65,7 @@ class CreateModal extends Component {
                         <div className="col">
                             <div className="form-group">
                                 <label>Leader's ConsoleID</label>
-                                <input className="form-control" type="text" placeholder="hahaha" readOnly/>
+                                <input className="form-control" type="text" placeholder={this.props.user.consoleID} readOnly/>
                             </div>
                         </div>
                     </div>
@@ -163,8 +163,7 @@ class CreateModal extends Component {
                         <h3>Create your Fireteam</h3>
                     </ModalHeader>
                     <ModalBody>
-                        {/* {this.props.authenticated ? this.authenticated_modal() : this.unauthenicated_modal()} */}
-                        {this.authenticated_modal()}
+                        {this.props.authenticated ? this.authenticated_modal() : this.unauthenicated_modal()}
                     </ModalBody>
                     <ModalFooter>
                         {this.props.authenticated ? <Button color="primary" onClick={this.handleModalSubmit}>Create Fireteam</Button> : null}

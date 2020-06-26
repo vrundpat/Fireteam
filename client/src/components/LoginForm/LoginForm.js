@@ -37,7 +37,7 @@ class LoginForm extends Component {
 
     render() {
         return (
-            <div>
+            <div className="container">
                 {this.props.authenticated ? <Redirect to='/'></Redirect> : null}
                 <form className="login-form-root" onSubmit={this.attempt_login}>
                     <h3 className='login-form-title  animation-type-writer'>Login</h3>

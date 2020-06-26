@@ -447,7 +447,7 @@
 @media only screen and (min-width: 1882px) {
     .fireteam-root {
         margin: auto;
-        width: 50%;
+        width: 40%;
         margin-bottom: 2%;
     }
     
@@ -503,6 +503,10 @@
     .right-col-fireteam-description {
         margin-bottom: 5%;
     }
+
+    .fireteam-root {
+        width: 40%;
+    }
 }
 
 @media only screen and (min-width: 2401px) {
@@ -516,6 +520,10 @@
 
     .fireteam-info-right-column {
         margin-bottom: 3%;
+    }
+
+    .fireteam-root {
+        width: 30%;
     }
 }
 

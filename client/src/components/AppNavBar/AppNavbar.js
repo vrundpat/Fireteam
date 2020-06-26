@@ -108,9 +108,9 @@ class AppNavbar extends Component {
 
     render() {
         return (
-            <div>
+            <>
                 {this.navbar()}
-            </div>
+            </>
         )
     }
 }

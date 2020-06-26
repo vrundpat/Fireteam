@@ -53,13 +53,16 @@
   }
 }
 
-@media only screen and (min-width: 2201px) {
+@media only screen and (min-width: 1882px) {
     #navbar-brand {
-        font-size: 2vw;
+        font-size: 1vw;
     }
   
     .nav-item {
-        font-size: 1.5vw;
+        font-size: 0.76vw;
         padding: 2% 2%;
     }
 }
+
+
+

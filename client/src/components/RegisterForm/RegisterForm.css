@@ -52,3 +52,47 @@ input::placeholder {
     font-weight: 300;
 }
 
+
+@media only screen and (orientation: Landscape) and (max-width: 800px) {
+    .register-form-title {
+        font-size: 3vw;
+    }
+
+    .register-input {
+        min-height: 30px;
+        font-size: 4vw;
+    }
+
+    .register-submit-button {
+        min-height: 40px;
+        margin-top: 3%;
+    }
+
+    input::placeholder {
+        text-align: start;
+        font-size: 16px;
+        line-height: 25px;
+    }
+}
+
+@media only screen and (orientation: Landscape) and (min-width: 801px) and (max-width: 1000px) {
+    .register-form-title {
+        font-size: 2vw;
+    }
+
+    .register-input {
+        min-height: 25px;
+        font-size: 2vw;
+    }
+
+    .register-submit-button {
+        min-height: 30px;
+        margin-top: 3%;
+    }
+
+    input::placeholder {
+        text-align: start;
+        font-size: 16px;
+        line-height: 25px;
+    }
+}

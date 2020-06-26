@@ -53,3 +53,52 @@ input::placeholder {
     font-weight: 300;
 }
 
+
+@media only screen and (max-width: 320px) {
+
+}
+
+@media only screen and (min-width: 321px) and (max-width: 500px) {
+    .login-form-title {
+        font-size: 6vw;
+    }
+
+    .login-input {
+        min-height: 40px;
+        font-size: 4vw;
+    }
+
+    .login-submit-button {
+        min-height: 40px;
+        margin-top: 3%;
+    }
+
+    input::placeholder {
+        text-align: start;
+    }
+}
+
+
+
+/* Landscape Orientations */
+@media only screen and (orientation: Landscape) and (max-width: 825px) {
+    .login-form-title {
+        font-size: 3vw;
+    }
+
+    .login-input {
+        min-height: 30px;
+        font-size: 4vw;
+    }
+
+    .login-submit-button {
+        min-height: 40px;
+        margin-top: 3%;
+    }
+
+    input::placeholder {
+        text-align: start;
+        font-size: 16px;
+        line-height: 25px;
+    }
+}
