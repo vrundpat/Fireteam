@@ -78,7 +78,7 @@ class CreateModal extends Component {
                     </div>               
                     <div className="row">
                             <div className="col form-group">
-                                <select id="leader-guardianType" className="form-control">
+                                <select id="leader-guardianType" className="form-control font-lg">
                                     <option selected="Leader Guardian Type" value={""}>Leader Guardian Type</option>
                                     <option value="Hunter">Hunter</option>
                                     <option value="Warlock">Warlock</option>
@@ -91,7 +91,7 @@ class CreateModal extends Component {
                     <br/>
                     <div className="row">
                         <div className="col form-group">
-                            <select id="fireteam-platform" className="form-control">
+                            <select id="fireteam-platform" className="form-control font-sm">
                                 <option selected="Choose Platform" value={""}>Fireteam Platform</option>
                                 <option value="PS4">PS4</option>
                                 <option value="Steam">Steam</option>
@@ -100,7 +100,7 @@ class CreateModal extends Component {
                         </div>
 
                         <div className="col form-group">
-                            <select id="fireteam-capacity" className="form-control">
+                            <select id="fireteam-capacity" className="form-control font-sm">
                                 <option selected="Choose Capacity" value={""}>Fireteam Capacity</option>
                                 <option value={1}>1</option>
                                 <option value={2}>2</option>
@@ -114,7 +114,7 @@ class CreateModal extends Component {
 
                     <div className="row">
                         <div className="col form-group">
-                            <select id="fireteam-activity" className="form-control">
+                            <select id="fireteam-activity" className="form-control font-lg">
                                 <option selected="Leader Guardian Type" value={""}>Choose Activity</option>
                                 <option value="Dungeon: Prophecy">Dungeon: Prophecy</option>
                             </select>

@@ -5,7 +5,7 @@ const axios = require('axios');
 
 export const create_fireteam = (fireteam_info, leader_info) => dispatch => {
     dispatch({type: CREATE_FIRETEAM});
-    const headers = {headers: {"Content-type": "application/json", "auth-token": ""}};
+    const headers = {headers: {"Content-type": "application/json", "auth-token": localStorage.getItem('auth-token')}};
     const data = {
         leader: leader_info,
         activity_type: fireteam_info.activity_type,

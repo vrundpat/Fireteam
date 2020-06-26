@@ -305,7 +305,7 @@ html {
     }
 
     .site-intro-root {
-        height: 50%;
+        height: 40%;
     }
 
     .navbar {
@@ -318,9 +318,9 @@ html {
         height: 100%;
     }
 
-    .site-intro-root {
+    /* .site-intro-root {
         height: 60%;
-    }
+    } */
 }
 
 

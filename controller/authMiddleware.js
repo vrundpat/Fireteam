@@ -3,7 +3,7 @@ const jwtSecret = require('../keys').jwtSecret;
 
 const verifyUser = (request, response, next) => {
     try {
-        const token = request.header('auth-token');
+        const token = request.headers['auth-token'];
         if (!token) return response.status(401).json({msg: "Authorization denied, no token."});
 
         const decoded_user_info = jwt.verify(token, jwtSecret);
