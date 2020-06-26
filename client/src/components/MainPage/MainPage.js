@@ -10,7 +10,7 @@ class MainPage extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { isModalOpen: true };
+        this.state = { isModalOpen: false };
         this.generate_fireteams.bind(this);
         this.toggleModal.bind(this);
     }
@@ -27,8 +27,8 @@ class MainPage extends Component {
     }
 
     componentWillMount() {
-        // this.timer = setInterval(() => this.props.all_fireteams(), 2000);
-        this.props.all_fireteams();
+        this.timer = setInterval(() => this.props.all_fireteams(), 2000);
+        // this.props.all_fireteams();
     }
     
     componentWillUnmount() {
@@ -69,7 +69,7 @@ class MainPage extends Component {
                     <CreateModal isModalOpen={this.state.isModalOpen} toggleModal={this.toggleModal}/>
                 </div>
                 <div className="all-fireteams-contianer">
-                    <Fireteam fireteam={test} />
+                    {/* <Fireteam fireteam={test} /> */}
                     {this.generate_fireteams()}
                 </div>
             </div>

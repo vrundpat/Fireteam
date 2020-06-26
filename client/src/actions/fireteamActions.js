@@ -11,7 +11,8 @@ export const create_fireteam = (fireteam_info, leader_info) => dispatch => {
         activity_type: fireteam_info.activity_type,
         description: fireteam_info.description,
         capacity: fireteam_info.capacity,
-        platform: fireteam_info.platform
+        platform: fireteam_info.platform,
+        power_requirement: fireteam_info.power_requirement
     };
 
     axios.post('/fireteam/create', data, headers)

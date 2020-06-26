@@ -1,0 +1,56 @@
+.leader-power-slider-root p {
+    margin-bottom: 0;
+}
+
+.leader-power-slider {
+    width: 100%;
+}
+
+.leader-power-text {
+    font-size: 0.9vw;
+}
+
+.power-req-slider-root p {
+    margin-bottom: 0;
+}
+
+.power-req-slider {
+    width: 100%;
+    height: 10%;
+    background: black;
+    outline: none;
+}
+
+.power-req-text {
+    font-size: 1vw;
+}
+
+.power-value {
+    color: #50a1ff;
+    font-weight: 600;
+}
+
+.modal-button-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-login-button {
+    width: 80%;
+    outline: none;
+    border: none;
+    background-color: #50a1ff;
+}
+
+.modal-register-button {
+    width: 80%;
+    outline: none;
+    border: none;
+    background-color: #50a1ff;
+}
+
+.modal-button-container p {
+    margin: 3% 0%;
+}
