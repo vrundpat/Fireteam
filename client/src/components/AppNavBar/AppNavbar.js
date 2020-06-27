@@ -61,13 +61,10 @@ class AppNavbar extends Component {
     
     loggedInNavBar = () => {
         return (
-            <Nav className="ml-auto">
+            <Nav className="ml-auto" navbar>
+                <NavbarBrand className="navlinks"><span className="fa fa-user-circle" id="navbarUser"><span id="navbar-user">vrund</span></span></NavbarBrand>
                 <NavItem>
-                    <NavbarText>Welcome: {this.props.user.username}</NavbarText>
-                </NavItem>
-
-                <NavItem>
-                    <Button onClick={this.logout} id="logout-btn">Logout</Button>
+                    <NavLink className="navlinks logout-link" onClick={this.props.logout}>Logout</NavLink>
                     {this.props.user === null ? <Redirect to='/'></Redirect> : null}
                 </NavItem>
                 {this.navbarLinks()}
