@@ -31,7 +31,7 @@
     background-color: rgba(255, 255, 255, 0.2);
     border: 0;
     letter-spacing: 1px;
-    border-radius: 25px;
+    border-radius: 10px;
     outline: none;
     margin-bottom: 10%;
 }
@@ -40,7 +40,7 @@
     width: 100%;
     min-height: 50px;
     margin-top: 10%;
-    border-radius: 25px;
+    border-radius: 10px;
     background-color: rgba(17, 16, 43, 0.705);
     color: whitesmoke;
     font-size: 15px;

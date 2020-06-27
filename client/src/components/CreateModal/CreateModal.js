@@ -186,3 +186,11 @@ const mapStateToProps = state => ({
 
 export default connect(mapStateToProps, { create_fireteam, clear_error })(CreateModal);
 
+
+/* TODOS: 
+    - Finish unauthenticated CreateModal
+    - Test unauthenticated CreateModal's responsiveness on all devices
+    - Add Pagnation in the MainPage for all-fireteams
+    - Start JoinModal (authenticated and unauthenticated)
+    - Re-do login and register pages????
+*/

@@ -128,11 +128,16 @@
 
     .register-input {
         min-height: 35px;
+        font-size: 2.5vw;
     }
 
     .register-submit-button {
         margin-top: 2%;
-        margin-bottom: 10%;
+        margin-bottom: 5%;
+    }
+
+    .register-error-alert {
+        padding-top: 0;
     }
 }
 
@@ -147,7 +152,11 @@
     }
 
     .register-submit-button {
-        margin-bottom: 10%;
+        margin-bottom: 5%;
+    }
+
+    .register-error-alert {
+        padding-top: 0;
     }
 }
 
@@ -162,6 +171,10 @@
     }
 
     .register-submit-button {
-        margin-bottom: 10%;
+        margin-bottom: 5%;
+    }
+
+    .register-error-alert {
+        padding-top: 0;
     }
 }

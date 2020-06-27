@@ -160,6 +160,19 @@
 }
 
 
+@media only screen and (max-width: 321px) {
+    .right-col-fireteam-activity-type {
+        font-size: 20px;
+    }
+
+    .fireteam-join-button {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+
 @media only screen and (max-width: 499px) {
     .fireteam-root {
         margin: auto;
@@ -190,6 +203,7 @@
         font-size: 12px;
         height: 30%;
         padding: 3% 0%;
+        font-weight: 200;
     }
 
     .info-tile {
@@ -203,15 +217,15 @@
         margin-bottom: 8%;
         width: 80%;
     }
-}
 
-@media only screen and (max-width: 321px) {
     .right-col-fireteam-activity-type {
-        font-size: 20px;
+        margin-bottom: 5%;
+    }
+
+    .info-container {
+        padding: 5% 5%;
     }
 }
-
-
 
 @media only screen and (min-width: 500px) and (max-width: 768px) {
     .fireteam-root {
@@ -552,7 +566,7 @@
     }
 }
 
-/* For Portrait Smartphones */
+/* For Landscape Smartphones */
 @media screen and (orientation: landscape) and (min-width: 500px) and (max-width: 1023px) {
     .fireteam-root {
         width: 90%;
@@ -561,9 +575,13 @@
     .fireteam-join-button {
         padding: 5% 5%;
     }
+
+    .right-col-fireteam-description {
+        margin-bottom: 5%;
+    }
 }
 
-/* For Portrait Tablets */
+/* For Landscape Tablets */
 @media only screen and (orientation: landscape) and (min-width: 1024px) and (max-width: 1400px){
     .fireteam-root {
         width: 80%;
