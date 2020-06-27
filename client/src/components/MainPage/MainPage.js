@@ -47,7 +47,8 @@ class MainPage extends Component {
 
     componentWillMount() {
         this.props.all_fireteams();
-        this.timer = setInterval(() => this.props.all_fireteams(), 1000);
+        this.props.all_fireteams();
+        // this.timer = setInterval(() => this.props.all_fireteams(), 1000);
     }
     
     componentWillUnmount() {
@@ -87,11 +88,13 @@ class MainPage extends Component {
                     <button className="create-fireteam-button" onClick={this.toggleModal}>CREATE FIRETEAM</button>
                     <CreateModal isModalOpen={this.state.isModalOpen} toggleModal={this.toggleModal}/>
                 </div>
-                <div className="pagnation-buttons">
-                    <button onClick={this.nextPage}>Next</button>
-                    <button onClick={this.prevPage}>Previous</button>
-                    <button onClick={this.firstPage}>First</button>
-                    <button onClick={this.lastPage}>Last</button>
+                <div className="pagination-buttons-root">
+                    <div className="pagination-buttons-container">
+                        <button className="pagination-button" type="button" onClick={this.nextPage}>Next</button>
+                        <button className="pagination-button" type="button" onClick={this.prevPage}>Previous</button>
+                        <button className="pagination-button" type="button" onClick={this.firstPage}>First</button>
+                        <button className="pagination-button" type="button" onClick={this.lastPage}>Last</button>
+                    </div>
                 </div>
                 <div className="all-fireteams-contianer">
                     {/* <Fireteam fireteam={test} /> */}
