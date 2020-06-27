@@ -12,9 +12,6 @@ import {
     Nav,
     NavItem,
     NavLink,
-    NavbarText,
-    Button,
-    Container,
     NavbarToggler,
   } from 'reactstrap';
 

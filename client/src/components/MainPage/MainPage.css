@@ -297,6 +297,10 @@ html {
     .mainpage-jumbotron {
         height: 100%;
     }
+
+    .site-intro-root {
+        height: 35%;
+    }
 }
 
 @media only screen and (min-width: 1824px) {
@@ -318,9 +322,9 @@ html {
     }
     
     .create-fireteam-button {
-        width: 30%;
-        height: 75px;
-        font-size: 1vw;
+        width: 20%;
+        height: 50px;
+        font-size: 0.75vw;
         margin-bottom: 0;
     }
 }
@@ -332,6 +336,11 @@ html {
 
     .site-intro-root {
         height: 20%;
+    }
+
+    .create-fireteam-button {
+        width: 15%;
+        font-size: 0.5vw;
     }
 }
 

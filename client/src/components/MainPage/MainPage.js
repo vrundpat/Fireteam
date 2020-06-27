@@ -10,25 +10,44 @@ class MainPage extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { isModalOpen: false };
+        this.state = { isModalOpen: false};
         this.generate_fireteams.bind(this);
         this.toggleModal.bind(this);
+        this.nextPage.bind(this);
+        this.prevPage.bind(this);
+        this.firstPage.bind(this);
+        this.lastPage.bind(this);
     }
 
     toggleModal = () => this.setState({isModalOpen: !this.state.isModalOpen})
 
     generate_fireteams = () => {
         var temp = []
-        for (var i = 0; i < this.props.fireteamState.all_fireteams.length; i++) {
-            temp.push(<Fireteam fireteam={this.props.fireteamState.all_fireteams[i]} />);
-        }
-
+        for (var i = 0; i < this.props.fireteamState.currently_viewing.length; i++) temp.push(<Fireteam fireteam={this.props.fireteamState.currently_viewing[i]} />);
         return temp;
     }
 
+    nextPage = () => {
+        var temp = this.props.fireteamState.last_fireteam_index;
+        this.props.fireteamState.first_fireteam_index = temp;
+        this.props.fireteamState.last_fireteam_index += this.props.fireteamState.fireteams_per_page;
+    }
+
+    prevPage = () => {
+
+    }
+
+    firstPage = () => {
+
+    }
+
+    lastPage = () => {
+        
+    }
+
     componentWillMount() {
-        this.timer = setInterval(() => this.props.all_fireteams(), 2000);
-        // this.props.all_fireteams();
+        this.props.all_fireteams();
+        this.timer = setInterval(() => this.props.all_fireteams(), 1000);
     }
     
     componentWillUnmount() {
@@ -67,6 +86,12 @@ class MainPage extends Component {
                     </p>
                     <button className="create-fireteam-button" onClick={this.toggleModal}>CREATE FIRETEAM</button>
                     <CreateModal isModalOpen={this.state.isModalOpen} toggleModal={this.toggleModal}/>
+                </div>
+                <div className="pagnation-buttons">
+                    <button onClick={this.nextPage}>Next</button>
+                    <button onClick={this.prevPage}>Previous</button>
+                    <button onClick={this.firstPage}>First</button>
+                    <button onClick={this.lastPage}>Last</button>
                 </div>
                 <div className="all-fireteams-contianer">
                     {/* <Fireteam fireteam={test} /> */}

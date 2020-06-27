@@ -1,6 +1,6 @@
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import React, { Component } from 'react';
-import { Redirect} from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Alert } from 'reactstrap';
 import { create_fireteam } from '../../actions/fireteamActions';
@@ -48,8 +48,6 @@ class CreateModal extends Component {
 
         this.props.create_fireteam(fireteam_info, leader_info);
         setTimeout(() => {
-            // console.log("Create Fail: " + this.props.create_fail);
-            // console.log("isCreating: " + this.props.isCreating  + "\n\n");
             if (this.props.create_fail === false) {
                 this.props.toggleModal();
             }
@@ -149,12 +147,14 @@ class CreateModal extends Component {
     unauthenicated_modal = () => {
         return (
             <div className="modal-button-container">
-                <button className="modal-login-button" onClick={<Redirect to='/login'/>}>Login</button>
-                <p>Or</p>
-                <button className="modal-register-button">Register</button>
+                <NavLink className="modal-login-button modal-btn-text" to='/login'>Login</NavLink>
+                <p className="modal-middle-text">Or</p>
+                <NavLink className="modal-register-button modal-btn-text" to='/register'>Register</NavLink>
             </div>
         )
     }
+
+
     render() {
         return (
             <div className="modal-root">
@@ -188,8 +188,6 @@ export default connect(mapStateToProps, { create_fireteam, clear_error })(Create
 
 
 /* TODOS: 
-    - Finish unauthenticated CreateModal
-    - Test unauthenticated CreateModal's responsiveness on all devices
     - Add Pagnation in the MainPage for all-fireteams
     - Start JoinModal (authenticated and unauthenticated)
     - Re-do login and register pages????

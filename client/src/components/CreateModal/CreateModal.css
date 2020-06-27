@@ -6,6 +6,11 @@
 .modal-header {
     color: #50a1ff !important;
     float: left !important;
+    border-bottom: 0 !important;
+}
+
+.modal-footer {
+    border-top: 0 !important;
 }
 
 .modal-title {
@@ -57,11 +62,17 @@
     align-items: center;
 }
 
+.modal-button-container a {
+    text-decoration: none !important;
+    color: whitesmoke !important;
+}
+
 .modal-login-button {
     width: 80%;
     outline: none;
     border: none;
     background-color: #50a1ff;
+    min-height: 50px;
 }
 
 .modal-register-button {
@@ -69,6 +80,21 @@
     outline: none;
     border: none;
     background-color: #50a1ff;
+    min-height: 50px;
+}
+
+.modal-btn-text {
+    font-size: 125%;
+    color: whitesmoke;
+    letter-spacing: 2px;
+    font-weight: 300;
+    text-align: center;
+    margin: auto;
+    padding-top: 2%;
+}
+
+.modal-middle-text {
+    text-transform: uppercase;
 }
 
 .modal-button-container p {
