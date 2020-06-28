@@ -111,7 +111,7 @@ html {
 .pagination-button {
     outline: none; 
     border: none;
-    width: 10%;
+    width: 15%;
     background-color: #50a1ff;
     color: whitesmoke;
     margin: 0% 0.25%;
@@ -345,7 +345,7 @@ html {
     }
 
     .pagination-buttons-container {
-        width: 50%;
+        width: 60%;
         margin: auto;
     }
 
@@ -385,6 +385,22 @@ html {
     .mainpage-jumbotron {
         height: 100%;
     }
+
+    .site-intro-root {
+        height: 30%;
+    }
+
+    .create-fireteam-button {
+        font-weight: 250;
+    }
+
+    .pagination-buttons-root {
+        height: 5%;
+    }
+
+    .pagination-button {
+        width: 15%;
+    }
 }
 
 @media only screen and (min-width: 1445px) and (max-width: 1823px) {
@@ -421,6 +437,20 @@ html {
         font-size: 0.75vw;
         margin-bottom: 0;
     }
+
+    .pagination-buttons-root {
+        height: 3%;
+    }
+
+    .pagination-buttons-container {
+        width: 25%;
+        margin: auto;
+    }
+
+    .pagination-button {
+        width: 20%;
+        font-size: 12px;
+    }
 }
 
 @media only screen and (min-width: 2100px) {
@@ -429,12 +459,26 @@ html {
     }
 
     .site-intro-root {
-        height: 20%;
+        height: 19%;
     }
 
     .create-fireteam-button {
         width: 15%;
         font-size: 0.5vw;
+    }
+
+    .pagination-buttons-root {
+        height: 2%;
+    }
+
+    .pagination-buttons-container {
+        width: 20%;
+        margin: auto;
+    }
+
+    .pagination-button {
+        width: 20%;
+        font-size: 12px;
     }
 }
 
@@ -453,6 +497,10 @@ html {
     .create-fireteam-button {
         font-weight: 250;
     }
+
+    .pagination-buttons-root {
+        height: 10%;
+    }
 }
 
 @media screen and (orientation: landscape) and (min-width: 769px) and (max-width: 1023px) {
@@ -467,6 +515,18 @@ html {
     .create-fireteam-button {
         font-weight: 250;
     }
+
+    .site-intro-root {
+        height: 60%;
+    }
+
+    .create-fireteam-button {
+        font-weight: 250;
+    }
+
+    .pagination-buttons-root {
+        height: 10%;
+    }
 }
 
 /* For Landscape Tablets */
@@ -476,6 +536,10 @@ html {
     }
 
     .site-intro-root {
-        height: 30%;
+        height: 35%;
+    }
+
+    .pagination-buttons-root {
+        height: 7%;
     }
 }

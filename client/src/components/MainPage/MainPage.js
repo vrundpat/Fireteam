@@ -46,9 +46,7 @@ class MainPage extends Component {
     }
 
     componentWillMount() {
-        this.props.all_fireteams();
-        this.props.all_fireteams();
-        // this.timer = setInterval(() => this.props.all_fireteams(), 1000);
+        this.timer = setInterval(() => this.props.all_fireteams(), 1000);
     }
     
     componentWillUnmount() {
