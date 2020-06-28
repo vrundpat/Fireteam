@@ -8,10 +8,6 @@ const initialState = {
     create_fail: false,
     join_fail: false,
     all_fireteams: [],
-    currently_viewing: [],
-    fireteams_per_page: 5,
-    first_fireteam_index: 0,
-    last_fireteam_index: 5
 }
 
 export default function(state = initialState, action) {
@@ -63,7 +59,6 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 all_fireteams: action.payload,
-                currently_viewing: state.all_fireteams.slice(state.first_fireteam_index, state.last_fireteam_index)
             }
         
         case GET_FIRETEAM:

@@ -10,7 +10,13 @@ class MainPage extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { isModalOpen: false};
+        this.state = { 
+            isModalOpen: false, 
+            currentPage: 1, 
+            fireteams_per_page: 5,
+            last_index: 5,
+            first_index: 0,
+            fireteams: []};
         this.generate_fireteams.bind(this);
         this.toggleModal.bind(this);
         this.nextPage.bind(this);
@@ -19,40 +25,59 @@ class MainPage extends Component {
         this.lastPage.bind(this);
     }
 
-    toggleModal = () => this.setState({isModalOpen: !this.state.isModalOpen})
-
-    generate_fireteams = () => {
-        var temp = []
-        for (var i = 0; i < this.props.fireteamState.currently_viewing.length; i++) temp.push(<Fireteam fireteam={this.props.fireteamState.currently_viewing[i]} />);
-        return temp;
+    nextPage = async () => {
+        if (this.state.currentPage !== Math.ceil(this.props.fireteamState.all_fireteams.length / this.state.fireteams_per_page)) {
+            await this.setState({ currentPage: this.state.currentPage + 1 });
+            await this.setState({ last_index: this.state.currentPage * this.state.fireteams_per_page });
+            await this.setState({ first_index: this.state.last_index - this.state.fireteams_per_page });
+            // console.log("Next: " + this.state.currentPage, this.state.first_index, this.state.last_index);
+        }
     }
 
-    nextPage = () => {
-        var temp = this.props.fireteamState.last_fireteam_index;
-        this.props.fireteamState.first_fireteam_index = temp;
-        this.props.fireteamState.last_fireteam_index += this.props.fireteamState.fireteams_per_page;
+    prevPage = async () => {
+        if (this.state.currentPage !== 1) {
+            await this.setState({ currentPage: this.state.currentPage - 1 });
+            await this.setState({ last_index: this.state.currentPage * this.state.fireteams_per_page });
+            await this.setState({ first_index: this.state.last_index - this.state.fireteams_per_page });
+            // console.log("Previous: " + this.state.currentPage, this.state.first_index, this.state.last_index);
+        }
     }
 
-    prevPage = () => {
-
+    firstPage = async () => {
+        await this.setState({ currentPage: 1 });
+        await this.setState({ last_index: this.state.currentPage * this.state.fireteams_per_page });
+        await this.setState({ first_index: this.state.last_index - this.state.fireteams_per_page });
+        // console.log("First Page: " + this.state.currentPage, this.state.first_index, this.state.last_index);
     }
 
-    firstPage = () => {
-
-    }
-
-    lastPage = () => {
-        
+    lastPage = async () => {
+        await this.setState({ currentPage: Math.ceil(this.props.fireteamState.all_fireteams.length / this.state.fireteams_per_page) });
+        await this.setState({ last_index: this.state.currentPage * this.state.fireteams_per_page });
+        await this.setState({ first_index: this.state.last_index - this.state.fireteams_per_page });
+        // console.log("Last Page: " + this.state.currentPage, this.state.first_index, this.state.last_index);
     }
 
     componentWillMount() {
-        this.timer = setInterval(() => this.props.all_fireteams(), 1000);
+        this.props.all_fireteams();
+        this.timer = setInterval(() => this.props.all_fireteams(), 10000);
     }
     
     componentWillUnmount() {
         clearInterval(this.timer);
         this.timer = null;
     }
+
+    generate_fireteams() {
+        console.log("Re-render " + new Date().getSeconds());
+        var temp = []
+        for (var i = 0; i < this.state.fireteams.length; i++) {
+            temp.push(<Fireteam fireteam={this.state.fireteams[i]} />);
+        }
+        return temp;
+    }
+
+    toggleModal = () => this.setState({isModalOpen: !this.state.isModalOpen})
+
 
     render() {
         var test = {
@@ -67,6 +92,7 @@ class MainPage extends Component {
         }
 
         return (
+           
             <div className="mainpage-background-root">
                 <div className="mainpage-jumbotron">
                     <div className="mainpage-blurscreen">
@@ -88,15 +114,17 @@ class MainPage extends Component {
                 </div>
                 <div className="pagination-buttons-root">
                     <div className="pagination-buttons-container">
+                        <button className="pagination-button" type="button" onClick={this.firstPage}>First</button>
                         <button className="pagination-button" type="button" onClick={this.nextPage}>Next</button>
                         <button className="pagination-button" type="button" onClick={this.prevPage}>Previous</button>
-                        <button className="pagination-button" type="button" onClick={this.firstPage}>First</button>
                         <button className="pagination-button" type="button" onClick={this.lastPage}>Last</button>
                     </div>
                 </div>
+                <div className="page-number">
+                    <h6>Showing {this.state.currentPage} of {Math.ceil(this.props.fireteamState.all_fireteams.length / this.state.fireteams_per_page)}</h6>
+                </div>
                 <div className="all-fireteams-contianer">
-                    {/* <Fireteam fireteam={test} /> */}
-                    {this.generate_fireteams()}
+                    {this.props.fireteamState.all_fireteams.slice(this.state.first_index, this.state.last_index).map((fireteam) => <> <Fireteam fireteam={fireteam} key={fireteam._id}/> </>)}
                 </div>
             </div>
         )
