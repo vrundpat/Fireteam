@@ -1,8 +1,8 @@
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import React, { Component } from 'react';
-import { NavLink} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Alert } from 'reactstrap';
+import UnauthenicatedModal from '../UnauthenicatedModal/UnauthenticatedModal';
 import { create_fireteam } from '../../actions/fireteamActions';
 import { clear_error } from '../../actions/errorActions'
 import './CreateModal.css';
@@ -15,7 +15,6 @@ class CreateModal extends Component {
             leader_power_val: 750
         }
         this.authenticated_modal.bind(this);
-        this.unauthenicated_modal.bind(this);
         this.handleSliderValue.bind(this);
         this.handleModalSubmit.bind(this);
     }
@@ -144,17 +143,6 @@ class CreateModal extends Component {
         )
     }
 
-    unauthenicated_modal = () => {
-        return (
-            <div className="modal-button-container">
-                <NavLink className="modal-login-button modal-btn-text" to='/login'>Login</NavLink>
-                <p className="modal-middle-text">Or</p>
-                <NavLink className="modal-register-button modal-btn-text" to='/register'>Register</NavLink>
-            </div>
-        )
-    }
-
-
     render() {
         return (
             <div className="modal-root">
@@ -163,7 +151,7 @@ class CreateModal extends Component {
                         <h3>Create your Fireteam</h3>
                     </ModalHeader>
                     <ModalBody>
-                        {this.props.authenticated ? this.authenticated_modal() : this.unauthenicated_modal()}
+                        {this.props.authenticated ? this.authenticated_modal() : <UnauthenicatedModal />}
                     </ModalBody>
                     <ModalFooter>
                         {this.props.authenticated ? <Button color="primary" onClick={this.handleModalSubmit}>Create Fireteam</Button> : null}

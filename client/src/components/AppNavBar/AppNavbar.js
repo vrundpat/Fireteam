@@ -86,7 +86,7 @@ class AppNavbar extends Component {
     navbarConstants = () => {
         return (
             <div className="navbar-container">
-                <NavbarBrand activeClassName="active" to="/" tag={RRNavLink} id="navbar-brand">Fireteam</NavbarBrand>
+                <NavbarBrand activeClassName="active" to="/" tag={RRNavLink} id="navbar-brand"><span className="fa fa-cubes"></span>Fireteam</NavbarBrand>
                 <NavbarToggler onClick={this.toggleCollapse}></NavbarToggler>
                 <Collapse isOpen={this.state.collapsed} navbar>
                     {this.props.authenticated ? this.loggedInNavBar() : this.guestNavBar()}
