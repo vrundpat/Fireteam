@@ -1,0 +1,142 @@
+.modal-content {
+    background: rgba(0, 0, 0, 0.7) !important;
+    color: whitesmoke !important;
+}
+
+.modal-header {
+    color: #50a1ff !important;
+    float: left !important;
+    border-bottom: 0 !important;
+}
+
+.modal-footer {
+    border-top: 0 !important;
+}
+
+.modal-title {
+    font-weight: 150 !important;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.close {
+    color: whitesmoke !important;
+    float: right !important;
+}
+
+.member-power-slider-root p {
+    margin-bottom: 0;
+}
+
+.member-power-slider {
+    width: 100%;
+}
+
+.member-power-text {
+    font-size: 0.9vw;
+}
+
+.power-value {
+    color: #50a1ff;
+    font-weight: 600;
+}
+
+
+@media only screen and (max-width: 320px) {
+    .member-power-text {
+        font-size: 5vw;
+    }
+
+    .power-req-text {
+        font-size: 5vw;
+    }
+
+    .modal-body select {
+        font-size: 10px !important;
+    }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 499px) {
+    .member-power-text {
+        font-size: 4vw;
+    }
+
+    .power-req-text {
+        font-size: 4vw;
+    }
+
+    .modal-body select {
+        font-size: 10px !important;
+    }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 768px) {
+    .member-power-text {
+        font-size: 3vw;
+    }
+
+    .power-req-text {
+        font-size: 3vw;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .member-power-text {
+        font-size: 2vw;
+    }
+
+    .power-req-text {
+        font-size: 2vw;
+    }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1224px) {
+    .member-power-text {
+        font-size: 0.9vw;
+    }
+
+    .power-req-text {
+        font-size: 1vw;
+    }
+}
+
+@media only screen and (min-width: 1225px) and (max-width: 1881px) {
+    .member-power-text {
+        font-size: 0.9vw;
+    }
+
+    .power-req-text {
+        font-size: 1vw;
+    }
+}
+
+@media only screen and (min-width: 1882px) and (max-width: 2000px) {
+    .member-power-text {
+        font-size: 0.9vw;
+    }
+
+    .power-req-text {
+        font-size: 1vw;
+    }
+}
+
+@media only screen and (min-width: 2001px) and (max-width: 2399px) {
+    .member-power-text {
+        font-size: 0.9vw;
+    }
+
+    .power-req-text {
+        font-size: 1vw;
+    }
+}
+
+@media only screen and (min-width: 2500px) {
+    .member-power-text {
+        font-size: 0.9vw;
+    }
+
+    .power-req-text {
+        font-size: 1vw;
+    }
+}
+
+

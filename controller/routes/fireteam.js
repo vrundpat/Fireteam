@@ -77,7 +77,9 @@ router.post('/join', verifyUser, async (request, response) => {
     const fireteam_to_join = await FireTeam.findById(fireteam_id);
     const targetFireteam_capacity = fireteam_to_join.capacity;
 
-    if(fireteam_to_join.power_requirement > new_member.light_level) return response.status(400).json({msg: "You power does not meet this fireteams power requirement"});
+    if (fireteam_to_join.power_requirement !== "None") {
+        if(Number(fireteam_to_join.power_requirement) > Number(new_member.light_level)) return response.status(400).json({msg: "You power does not meet this fireteams power requirement"});
+    }
 
     if (fireteam_to_join.current_members.some(member => member.username == new_member.username))  return response.status(400).json({msg: "This user is aleady in the fireteam!"});
 

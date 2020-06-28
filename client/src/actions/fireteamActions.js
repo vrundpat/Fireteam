@@ -32,7 +32,8 @@ export const create_fireteam = (fireteam_info, leader_info) => dispatch => {
 export const join_fireteam = (member_info, fireteam_id) => dispatch => {
     dispatch({type: JOIN_FIRETEAM});
     const params = {id: fireteam_id}
-    axios.post('/fireteam/join', member_info, {params})
+    const headers = {"Content-type": "application/json", "auth-token": localStorage.getItem('auth-token')};
+    axios.post('/fireteam/join', member_info, {params, headers})
         .then(response => {
             dispatch({type: JOIN_SUCCESS, payload: response.data});
             dispatch({type: CLEAR_ERROR});

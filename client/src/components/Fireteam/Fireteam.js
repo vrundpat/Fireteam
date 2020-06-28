@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import JoinModal from '../JoinModal/JoinModal';
 import './Fireteam.css'
 
 class Fireteam extends Component {
 
     constructor(props) {
         super(props);
+        this.state = { isModalOpen: false };
         this.get_platform.bind(this);
         this.get_members.bind(this);
         this.get_join_button.bind(this);
         this.get_power_requirement.bind(this);
+        this.toggleModal.bind(this);
     }
+
+    toggleModal = () => this.setState({isModalOpen: !this.state.isModalOpen});
 
     get_join_button = () => {
         if (this.props.authenticated) {
@@ -22,7 +27,7 @@ class Fireteam extends Component {
             }
         }
         if (this.props.fireteam.current_members.length === this.props.fireteam.capacity) return ( <button className="fireteam-join-button full-fireteam" disabled={true}>FULL</button> )
-        else return ( <button className="fireteam-join-button">JOIN FIRETEAM</button> )
+        else return ( <button className="fireteam-join-button" onClick={this.toggleModal}>JOIN FIRETEAM</button> )
     }
 
     get_platform = (platform_name) => {
@@ -55,6 +60,7 @@ class Fireteam extends Component {
                     <div className="fireteam-info-left-column">
                         <div className="info-container">
                             {this.get_join_button()}
+                            <JoinModal isModalOpen={this.state.isModalOpen} toggleModal={this.toggleModal} fireteam_id={this.props.fireteam._id}/>
                             <div className="fireteam-leader info-tile">
                                 <h7><i className="fa fa-user left-col-i"></i>{this.props.fireteam.leader.consoleID} <span className="leader-power">1000</span></h7>
                             </div>
