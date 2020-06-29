@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Alert } from 'reactstrap';
 import UnauthenicatedModal from '../UnauthenicatedModal/UnauthenticatedModal';
-import { create_fireteam } from '../../actions/fireteamActions';
+import { create_fireteam, all_fireteams } from '../../actions/fireteamActions';
 import { clear_error } from '../../actions/errorActions'
 import './CreateModal.css';
 
@@ -48,6 +48,7 @@ class CreateModal extends Component {
         this.props.create_fireteam(fireteam_info, leader_info);
         setTimeout(() => {
             if (this.props.create_fail === false) {
+                this.props.all_fireteams();
                 this.props.toggleModal();
             }
         }, 200);
@@ -172,11 +173,5 @@ const mapStateToProps = state => ({
     error_status: state.errorReducer.status
 });
 
-export default connect(mapStateToProps, { create_fireteam, clear_error })(CreateModal);
+export default connect(mapStateToProps, { create_fireteam, clear_error, all_fireteams })(CreateModal);
 
-
-/* TODOS: 
-    - Add Pagnation in the MainPage for all-fireteams
-    - Start JoinModal (authenticated and unauthenticated)
-    - Re-do login and register pages????
-*/

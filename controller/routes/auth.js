@@ -4,7 +4,7 @@ const jwt =  require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
 const router = Router();
-const jwtSecret = require('../../keys').jwtSecret;
+const jwtSecret = process.env.JWT_secret;
 
 
 /**

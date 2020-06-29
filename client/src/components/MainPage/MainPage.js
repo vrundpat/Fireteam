@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import AppNavbar from '../AppNavBar/AppNavbar';
 import { connect } from 'react-redux';
-import { create_fireteam, join_fireteam, all_fireteams, get_fireteam } from '../../actions/fireteamActions';
+import { all_fireteams} from '../../actions/fireteamActions';
+import { clear_error } from '../../actions/errorActions';
 import Fireteam from '../Fireteam/Fireteam';
 import CreateModal from '../CreateModal/CreateModal'
 import './MainPage.css';
@@ -76,7 +77,10 @@ class MainPage extends Component {
         return temp;
     }
 
-    toggleModal = () => this.setState({isModalOpen: !this.state.isModalOpen})
+    toggleModal = () => {
+        this.props.clear_error();
+        this.setState({isModalOpen: !this.state.isModalOpen});
+    }
 
 
     render() {
@@ -141,6 +145,6 @@ const mapStateToProps = state => ({
 
 });
 
-export default connect(mapStateToProps, { create_fireteam, join_fireteam, all_fireteams, get_fireteam })(MainPage);
+export default connect(mapStateToProps, { clear_error, all_fireteams })(MainPage);
 
 

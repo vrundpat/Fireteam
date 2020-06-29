@@ -1,12 +1,11 @@
 const jwt = require('jsonwebtoken');
-const jwtSecret = require('../keys').jwtSecret;
 
 const verifyUser = (request, response, next) => {
     try {
         const token = request.headers['auth-token'];
         if (!token) return response.status(401).json({msg: "Authorization denied, no token."});
 
-        const decoded_user_info = jwt.verify(token, jwtSecret);
+        const decoded_user_info = jwt.verify(token, process.env.JWT_secret);
         request.user_info = decoded_user_info;
         next();
 

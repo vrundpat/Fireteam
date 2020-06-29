@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { clear_error } from '../../actions/errorActions'
 import JoinModal from '../JoinModal/JoinModal';
 import './Fireteam.css'
 
@@ -15,7 +16,10 @@ class Fireteam extends Component {
         this.toggleModal.bind(this);
     }
 
-    toggleModal = () => this.setState({isModalOpen: !this.state.isModalOpen});
+    toggleModal = () => {
+        this.props.clear_error();
+        this.setState({isModalOpen: !this.state.isModalOpen});
+    }
 
     get_join_button = () => {
         if (this.props.authenticated) {
@@ -107,4 +111,4 @@ const mapStateToProps = state => ({
     error_status: state.errorReducer.status
 });
 
-export default connect(mapStateToProps, { })(Fireteam);
+export default connect(mapStateToProps, { clear_error })(Fireteam);

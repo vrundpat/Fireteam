@@ -97,7 +97,7 @@ class JoinModal extends Component {
             <div className="modal-root">
                 <Modal isOpen={this.props.isModalOpen} toggle={this.props.toggleModal}>
                     <ModalHeader className="text-center" toggle={this.props.toggleModal}>
-                        <h3>Create your Fireteam</h3>
+                        <h3>Join Fireteam</h3>
                     </ModalHeader>
                     <ModalBody>
                         {this.props.authenticated ? this.authenticated_modal() : <UnauthenicatedModal />}
