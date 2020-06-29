@@ -25,7 +25,7 @@ function validate(user, isNewMember) {
 router.post('/create', verifyUser, async (request, response) => {
     const {leader, activity_type, description, capacity, platform, power_requirement} = request.body;
     if (!validate(leader, false) || activity_type == "" || description == "" || capacity == "" || platform == "") return response.status(400).json({msg: "Please enter all fields"});
-
+    
     try {
         const sample_fireteam = FireTeam({
             leader,
@@ -82,9 +82,7 @@ router.post('/join', verifyUser, async (request, response) => {
     }
 
     if (fireteam_to_join.current_members.some(member => member.username == new_member.username))  return response.status(400).json({msg: "This user is aleady in the fireteam!"});
-
     if (fireteam_to_join.platform != new_member.platform) return response.status(400).json({msg: "Mismatched platforms, please join a fireteam on the correct platform!"});
-    
     if (fireteam_to_join.current_members.length >= targetFireteam_capacity) return response.status(400).json({msg: "Fireteam full! Please join another fireteam!"});
 
     try {

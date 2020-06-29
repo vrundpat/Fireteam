@@ -59,6 +59,8 @@ router.post('/register', async (request, response) => {
     if (password.replace(/\s/g, '').length === 0) return response.status(400).json({msg: "Please enter a valid password"});
     if (consoleID.replace(/\s/g, '').length === 0) return response.status(400).json({msg: "Please enter a valid consoleID"});
     if (username.length < 3) return response.status(400).json({msg: "Username must be at least 3 characters long"});
+    if (username.length > 20) return response.status(400).json({msg: "Username must not be more than 20 characters lomg"});
+    if (consoleID.length > 25) return response.status(400).json({msg: "ConsoleID must not be more than 25 characters lomg"});
     if (consoleID.length < 3) return response.status(400).json({msg: "ConsoleID must be at least 3 characters long"});
     if (password.length < 8) return response.status(400).json({msg: "Passowrd must be at least 8 characters long"});
 
