@@ -17,6 +17,7 @@ class CreateModal extends Component {
         this.authenticated_modal.bind(this);
         this.handleSliderValue.bind(this);
         this.handleModalSubmit.bind(this);
+        this.activeTypeOptions.bind(this);
     }
 
     handleSliderValue = (event) => {
@@ -52,6 +53,21 @@ class CreateModal extends Component {
                 this.props.toggleModal();
             }
         }, 200);
+    }
+
+    activeTypeOptions = () => {
+        const options = [  'Trials of Osiris', 'Event: Contact', 'Dungeon: Prophecy', 'Nightfall: The Ordeal', 
+                            'Raid: Leviathan', 'Raid: Leviathan - Eater of Worlds', 'Raid: Leviathan - Spire of Stars',
+                            'Raid: The Last Wish', 'Raid: Scourage of the Past', 'Raid: Crown of Sorrow', 'Raid: Garden of Salvation',
+                            'Nightmare Hunt', 'Crucible: Quickplay', 'Crucible: Competitive/Survival', 'Gambit', 
+                            'Gambit Prime', 'Reckoning', 'Menagerie: Normal', 'Menagerie: Heroic', 'Altars of Sorrow', 
+                            'Blind Well', 'Escalation Protocol', 'Forge Ignition'
+                        ]
+        var accumulator = []
+        for (var i = 0; i < options.length; i++) {
+            accumulator.push(<option value={options[i]}>{options[i]}</option>)
+        }
+        return accumulator;
     }
 
     authenticated_modal = () => {
@@ -114,7 +130,7 @@ class CreateModal extends Component {
                         <div className="col form-group">
                             <select id="fireteam-activity" className="form-control font-lg">
                                 <option selected="Leader Guardian Type" value={""}>Choose Activity</option>
-                                <option value="Dungeon: Prophecy">Dungeon: Prophecy</option>
+                                {this.activeTypeOptions()}
                             </select>
                             </div>
                     </div>
