@@ -69,27 +69,40 @@ a:hover {
     .nav-item {
         font-size: 1.1vw;
     }
+
+    #navbarUser {
+        margin-top: 5%;
+    }
 }
 
 @media only screen and (min-width: 1823px) and (max-width: 2200px) {
-  #navbar-brand {
-      font-size: 3vw;
-  }
+    #navbar-brand {
+        font-size: 3vw;
+    }
 
-  .nav-item {
-      font-size: 2vw;
-      padding: 2% 2%;
-  }
+    .nav-item {
+        font-size: 2vw;
+        padding: 2% 2%;
+    }
+
+    #navbarUser {
+        margin-top: 10%;
+    }
 }
 
 @media only screen and (min-width: 1882px) {
     #navbar-brand {
         font-size: 1vw;
+        font-weight: 400;
     }
   
     .nav-item {
         font-size: 0.76vw;
         padding: 2% 2%;
+    }
+
+    #navbarUser {
+        margin-top: 20%;
     }
 }
 
