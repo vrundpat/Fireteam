@@ -2,6 +2,7 @@ const User = require('../../models/user');
 const Router = require('express');
 const jwt =  require('jsonwebtoken');
 const bcrypt = require('bcrypt');
+const validator = require('validator');
 
 const router = Router();
 const jwtSecret = process.env.JWT_secret;
@@ -16,13 +17,13 @@ router.post('/login', async (request, response) => {
     
     const {username, password} = request.body;
     
-    // Sanitize and Validation
-    //   TODO: Add sanitization
     if (!username || !password) return response.status(400).json({msg: "Please enter all fields"});
 
+    const validated_username = validator.escape(username);
+    
     // Find use with matching username and check passwords
     try {
-        const user = await User.findOne({username});
+        const user = await User.findOne({username: validated_username});
         if (!user) return response.status(400).json({msg: "User does not exist"});
 
         const correct_password = await bcrypt.compare(password, user.password);
@@ -33,7 +34,7 @@ router.post('/login', async (request, response) => {
         response.status(200).json({
             token: auth_token,
             user: {
-                username: user.username,
+                username: username,
                 consoleID: user.consoleID
             }
         });
@@ -54,22 +55,31 @@ router.post('/register', async (request, response) => {
 
     // Validate and sanitize input
     if (!username || !password || !consoleID) return response.status(400).json({msg: "Please enter all fields"});
+    if (username.replace(/\s/g, '').length === 0) return response.status(400).json({msg: "Please enter a valid sername"});
+    if (password.replace(/\s/g, '').length === 0) return response.status(400).json({msg: "Please enter a valid password"});
+    if (consoleID.replace(/\s/g, '').length === 0) return response.status(400).json({msg: "Please enter a valid consoleID"});
+    if (username.length < 3) return response.status(400).json({msg: "Username must be at least 3 characters long"});
+    if (consoleID.length < 3) return response.status(400).json({msg: "ConsoleID must be at least 3 characters long"});
+    if (password.length < 8) return response.status(400).json({msg: "Passowrd must be at least 8 characters long"});
+
+    const validated_username = String(validator.escape(username));
+    const validated_consoleID = validator.escape(consoleID);
 
     try {
-        
+
         // Check is user with same username already exists 
-        const existing_user = await User.findOne({username});
+        const existing_user = await User.findOne({username: validated_username});
         if (existing_user) return response.status(400).json({msg: "Username already in use"});
         
         // Hash the password
         const hashed_password = await bcrypt.hash(password, await bcrypt.genSalt(10));
-        if (!hashed_password) return response.status(400).json({msg: "Something went wrong during hashing. Try again."});
+        if (!hashed_password) return response.status(400).json({msg: "Something went wrong, please try again"});
         
         // Create the user 
         const new_user = User({
-            username: username,
+            username: validated_username,
             password: hashed_password,
-            consoleID: consoleID
+            consoleID: validated_consoleID
         });
         
         // Save the user to the database
@@ -80,13 +90,13 @@ router.post('/register', async (request, response) => {
         response.status(200).json({
             token: auth_token,
             user: {
-                username: new_user.username,
-                consoleID: new_user.consoleID
+                username: username,
+                consoleID: consoleID
             }
         });
 
     } catch (error) {
-        return response.status(400).json({msg: "Something went wrong, please try again!"});
+        return response.status(400).json({msg: "Something went wrong, please try again"});
     }
 })
 
