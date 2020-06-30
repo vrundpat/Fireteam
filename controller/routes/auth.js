@@ -55,7 +55,7 @@ router.post('/register', async (request, response) => {
 
     // Validate and sanitize input
     if (!username || !password || !consoleID) return response.status(400).json({msg: "Please enter all fields"});
-    if (username.replace(/\s/g, '').length === 0) return response.status(400).json({msg: "Please enter a valid sername"});
+    if (username.replace(/\s/g, '').length === 0) return response.status(400).json({msg: "Please enter a valid username"});
     if (password.replace(/\s/g, '').length === 0) return response.status(400).json({msg: "Please enter a valid password"});
     if (consoleID.replace(/\s/g, '').length === 0) return response.status(400).json({msg: "Please enter a valid consoleID"});
     if (username.length < 3) return response.status(400).json({msg: "Username must be at least 3 characters long"});
