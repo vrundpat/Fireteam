@@ -14,6 +14,7 @@ class Fireteam extends Component {
         this.get_join_button.bind(this);
         this.get_power_requirement.bind(this);
         this.toggleModal.bind(this);
+        this.calculate_time.bind(this);
     }
 
     toggleModal = () => {
@@ -57,6 +58,27 @@ class Fireteam extends Component {
         return accumulator;
     }
 
+    calculate_time = () => {
+        var current_time = new Date(Date.now());
+        var fireteam_time_UTC = new Date(this.props.fireteam.time_created);
+
+        // Time difference in seconds
+        var diff = Math.abs(current_time - fireteam_time_UTC);
+        var time_difference_seconds = Math.floor(diff / 1000);
+
+        if (0 <= time_difference_seconds && time_difference_seconds <= 60) return `${time_difference_seconds} seconds ago`;
+
+        var time_difference_minutes = Math.floor(time_difference_seconds / 60);
+        if (0 <= time_difference_minutes && time_difference_minutes <= 59) return `${time_difference_minutes} minutes ago`;
+
+        var time_difference_hours = Math.floor(time_difference_minutes / 60)
+        if (0 <= time_difference_hours && time_difference_hours <= 24) return `${time_difference_hours} hours ago`;
+
+        var time_differnece_days = Math.floor(time_difference_hours / 24)
+        if (time_differnece_days === 1) return `${time_differnece_days} day ago`;
+        return `${time_differnece_days} days ago`;
+    }
+
     render() {
         return (
             <div className="fireteam-root">
@@ -78,7 +100,7 @@ class Fireteam extends Component {
                                 <h7><i className="fa fa-users left-col-i"></i>{this.props.fireteam.current_members.length} / {this.props.fireteam.capacity} Guardians</h7>
                             </div>
                             <div className="fireteam-time-created info-tile">
-                                <h7><i className="fa fa-calendar left-col-i"></i>Time Created</h7>
+                                <h7><i className="fa fa-calendar left-col-i"></i>{this.calculate_time()}</h7>
                             </div>
                         </div>
                     </div>
