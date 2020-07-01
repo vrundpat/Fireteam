@@ -1,16 +1,18 @@
 const verifyUser = require('../authMiddleware');
 const Router = require('express');
 const FireTeam = require('../../models/fireteam');
+const Filter = require('bad-words');
+const validator = require('validator');
 
 const router = Router();
 
 function validate(user, isNewMember) {
     if (isNewMember) {
-        if (!user.username || user.guardianType == "" || !user.light_level || user.platform == "" || !user.consoleID) return false;
+        if (!user.username || user.guardianType === "" || !user.light_level || user.platform === "" || !user.consoleID) return false;
         else return true;
     }  
     else {
-        if (!user.username || user.guardianType == "" || !user.light_level || !user.consoleID) return false;
+        if (!user.username || user.guardianType === "" || !user.light_level || !user.consoleID) return false;
         else return true;
     }
 }
@@ -24,13 +26,14 @@ function validate(user, isNewMember) {
  */
 router.post('/create', verifyUser, async (request, response) => {
     const {leader, activity_type, description, capacity, platform, power_requirement} = request.body;
+    const profanity_filter = new Filter();
     if (!validate(leader, false) || activity_type == "" || description == "" || capacity == "" || platform == "") return response.status(400).json({msg: "Please enter all fields"});
-    
+    var validated_description = profanity_filter.clean(validator.escape(description).replace(/&#x2F;/g, "/"));
     try {
         const sample_fireteam = FireTeam({
             leader,
             activity_type,
-            description,
+            description: validated_description,
             capacity,
             platform,
             power_requirement,
