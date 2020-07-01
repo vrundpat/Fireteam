@@ -27,7 +27,7 @@ app.listen(port, () => console.log(`Server listening on port ${port}...`));
 
 
 // For production
-// app.use(express.static('client/build'));
-// app.get('*', (request, response) => {
-//   response.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-// });
+app.use(express.static('client/build'));
+app.get('*', (request, response) => {
+  response.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+});
