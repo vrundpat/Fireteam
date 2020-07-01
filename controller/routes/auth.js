@@ -3,6 +3,7 @@ const Router = require('express');
 const jwt =  require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const validator = require('validator');
+const Filter = require('bad-words');
 
 const router = Router();
 const jwtSecret = process.env.JWT_secret;
@@ -52,6 +53,7 @@ router.post('/login', async (request, response) => {
 router.post('/register', async (request, response) => {
     
     const {username, password, consoleID} = request.body;
+    const porfanity_filter = new Filter();
 
     // Validate and sanitize input
     if (!username || !password || !consoleID) return response.status(400).json({msg: "Please enter all fields"});
@@ -63,9 +65,10 @@ router.post('/register', async (request, response) => {
     if (consoleID.length > 25) return response.status(400).json({msg: "ConsoleID must not be more than 25 characters lomg"});
     if (consoleID.length < 3) return response.status(400).json({msg: "ConsoleID must be at least 3 characters long"});
     if (password.length < 8) return response.status(400).json({msg: "Passowrd must be at least 8 characters long"});
+    if (porfanity_filter.isProfane(username)) return response.status(400).json({msg: "Username contains profanity, please choose another username"});
+    if (porfanity_filter.isProfane(consoleID)) return response.status(400).json({msg: "ConsoleID contains profanity, please choose another consoleID"});
 
-    const validated_username = String(validator.escape(username));
-    const validated_consoleID = validator.escape(consoleID);
+    const validated_username = validator.escape(username);
 
     try {
 
@@ -81,7 +84,7 @@ router.post('/register', async (request, response) => {
         const new_user = User({
             username: validated_username,
             password: hashed_password,
-            consoleID: validated_consoleID
+            consoleID: consoleID
         });
         
         // Save the user to the database

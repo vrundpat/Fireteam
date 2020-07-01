@@ -84,17 +84,6 @@ class MainPage extends Component {
 
 
     render() {
-        var test = {
-            leader: {"consoleID": "testLeader", "light_level": 1000},
-            current_members: [{"consoleID" : "testLeader", "light_level": 1000}, {"consoleID" : "test2", "light_level": 1000}, {"consoleID" : "test3", "light_level": 1000}, {"consoleID" : "test4", "light_level": 1000}, {"consoleID" : "test5", "light_level": 1000}, {"consoleID" : "test6", "light_level": 1000}],
-            activity_type: "Dungeon: Prophecy",
-            description: "Need help with Prophecy dungeon /join",
-            platform: "PS4",
-            capacity: "6",
-            time_created: "...",
-            power_requirement: "None"
-        }
-
         return (
            
             <div className="mainpage-background-root">

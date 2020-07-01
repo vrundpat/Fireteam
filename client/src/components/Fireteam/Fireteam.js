@@ -27,7 +27,7 @@ class Fireteam extends Component {
             if (this.props.fireteam.leader.consoleID === this.props.user.consoleID) {
                 return <button className="fireteam-join-button lead-fireteam" disabled={true}>FIRETEAM LEADER</button>
             }
-            if (this.props.fireteam.current_members.some(member => member.consoleID === this.props.user.consoleID)) {
+            if (this.props.fireteam.current_members.some(member => member.username === this.props.user.username)) {
                 return <button className="fireteam-join-button joined-fireteam" disabled={true}>JOINED FIRETEAM</button>
             }
         }
@@ -69,13 +69,13 @@ class Fireteam extends Component {
         if (0 <= time_difference_seconds && time_difference_seconds <= 60) return `${time_difference_seconds} seconds ago`;
 
         var time_difference_minutes = Math.floor(time_difference_seconds / 60);
-        if (0 <= time_difference_minutes && time_difference_minutes <= 59) return time_difference_minutes == 1 ? `${time_difference_minutes} minute ago` : `${time_difference_minutes} minutes ago`
+        if (0 <= time_difference_minutes && time_difference_minutes <= 59) return time_difference_minutes === 1 ? `${time_difference_minutes} minute ago` : `${time_difference_minutes} minutes ago`
             
         var time_difference_hours = Math.floor(time_difference_minutes / 60)
-        if (0 <= time_difference_hours && time_difference_hours <= 24) return time_difference_hours == 1 ? `${time_difference_hours} hour ago` : `${time_difference_hours} hour ago`;
+        if (0 <= time_difference_hours && time_difference_hours <= 24) return time_difference_hours === 1 ? `${time_difference_hours} hour ago` : `${time_difference_hours} hours ago`;
 
         var time_differnece_days = Math.floor(time_difference_hours / 24)
-        if (time_differnece_days === 1) return time_differnece_days == 1 ? `${time_differnece_days} day ago` : `${time_differnece_days} days ago`;
+        if (time_differnece_days === 1) return time_differnece_days === 1 ? `${time_differnece_days} day ago` : `${time_differnece_days} days ago`;
     }
 
     render() {

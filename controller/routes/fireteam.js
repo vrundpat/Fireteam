@@ -28,7 +28,9 @@ router.post('/create', verifyUser, async (request, response) => {
     const {leader, activity_type, description, capacity, platform, power_requirement} = request.body;
     const profanity_filter = new Filter();
     if (!validate(leader, false) || activity_type == "" || description == "" || capacity == "" || platform == "") return response.status(400).json({msg: "Please enter all fields"});
+
     var validated_description = profanity_filter.clean(validator.escape(description).replace(/&#x2F;/g, "/"));
+
     try {
         const sample_fireteam = FireTeam({
             leader,
