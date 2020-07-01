@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const bodyparser = require('body-parser');
 const authRoutes = require('./controller/routes/auth');
 const fireteamRoutes = require('./controller/routes/fireteam');
+const path = require('path');
 
 
 // MongoDB Connection SetUp
@@ -19,9 +20,14 @@ const port = 8080;
 // Middleware
 app.use(bodyparser.json());
 
-
 // Routes 
 app.use('/users', authRoutes);
 app.use('/fireteam', fireteamRoutes);
-app.get('/', (request, response) => response.send("Root Route!"));
 app.listen(port, () => console.log(`Server listening on port ${port}...`));
+
+
+// For production
+// app.use(express.static('client/build'));
+// app.get('*', (request, response) => {
+//   response.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+// });

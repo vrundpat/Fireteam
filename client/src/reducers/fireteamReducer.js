@@ -8,6 +8,7 @@ const initialState = {
     create_fail: false,
     join_fail: false,
     all_fireteams: [],
+    current_server_time: null
 }
 
 export default function(state = initialState, action) {
@@ -58,7 +59,8 @@ export default function(state = initialState, action) {
         case ALL_FIRETEAMS:
             return {
                 ...state,
-                all_fireteams: action.payload,
+                all_fireteams: action.payload.all_fireteams,
+                current_server_time: action.payload.current_time
             }
         
         case GET_FIRETEAM:
