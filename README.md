@@ -22,7 +22,7 @@ Instructions to run locally:
       2) In the ```.env``` file, add the following:
          ```
          DB_URI=YOUR-MONGODB-DB-URI
-         jwtSecret=Your preferred json webtoken secret used for issuing/verifying tokens
+         JWT_Secret=Your preferred json webtoken secret used for issuing/verifying tokens
          ```
   4) From the project root:
      ```
