@@ -66,13 +66,13 @@ class Fireteam extends Component {
         var diff = Math.abs(current_server_time - fireteam_time_UTC);
 
         var time_difference_seconds = Math.floor(diff / 1000);
-        if (0 <= time_difference_seconds && time_difference_seconds <= 59) return "here"// `${time_difference_seconds} seconds ago`;
+        if (0 <= time_difference_seconds && time_difference_seconds <= 59) return `${time_difference_seconds} seconds ago`;
 
         var time_difference_minutes = Math.floor(time_difference_seconds / 60);
-        if (0 <= time_difference_minutes && time_difference_minutes <= 59) return "here"//time_difference_minutes === 1 ? `${time_difference_minutes} minute ago` : `${time_difference_minutes} minutes ago`
+        if (0 <= time_difference_minutes && time_difference_minutes <= 59) return time_difference_minutes === 1 ? `${time_difference_minutes} minute ago` : `${time_difference_minutes} minutes ago`
             
         var time_difference_hours = Math.floor(time_difference_minutes / 60)
-        if (0 <= time_difference_hours && time_difference_hours <= 24) return "here"//time_difference_hours === 1 ? `${time_difference_hours} hour ago` : `${time_difference_hours} hours ago`;
+        if (0 <= time_difference_hours && time_difference_hours <= 24) return time_difference_hours === 1 ? `${time_difference_hours} hour ago` : `${time_difference_hours} hours ago`;
 
         var time_differnece_days = Math.floor(time_difference_hours / 24)
         return time_differnece_days === 1 ? `${time_differnece_days} day ago` : `${time_differnece_days} days ago`;
@@ -87,7 +87,7 @@ class Fireteam extends Component {
                             {this.get_join_button()}
                             <JoinModal isModalOpen={this.state.isModalOpen} toggleModal={this.toggleModal} fireteam_id={this.props.fireteam._id}/>
                             <div className="fireteam-leader info-tile">
-                                <h7><i className="fa fa-user left-col-i"></i>{this.props.fireteam.leader.consoleID} <span className="leader-power">1000</span></h7>
+                                <h7><i className="fa fa-user left-col-i"></i>{this.props.fireteam.leader.consoleID} <span className="leader-power">{this.props.fireteam.leader.light_level}</span></h7>
                             </div>
                             <div className="fireteam-platform info-tile">
                                 <h7>{this.get_platform(this.props.fireteam.platform)}</h7>
