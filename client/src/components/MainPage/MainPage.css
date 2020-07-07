@@ -52,7 +52,7 @@ html {
     margin: 1% 0% 3% 0%;
     width: 40%;
     height: 40%;
-    background-color: #50a1ff;
+    background-color: red;
     font-size: 1.25vw;
     font-weight: 250;
     font-family: Arial, Helvetica, sans-serif;
@@ -112,7 +112,7 @@ html {
     outline: none; 
     border: none;
     width: 15%;
-    background-color: #50a1ff;
+    background-color: red;
     color: whitesmoke;
     margin: 0% 0.25%;
 }
@@ -171,7 +171,6 @@ html {
         margin: 1% 0% 3% 0%;
         width: 60%;
         height: 30%;
-        background-color: #50a1ff;
         font-size: 3vw;
         font-weight: 400;
         font-family: Arial, Helvetica, sans-serif;

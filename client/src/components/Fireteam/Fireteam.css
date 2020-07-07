@@ -8,32 +8,32 @@
     font-size: 100%;
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 5px;
-    background-color: #50a1ff;
+    background-color: red;
     font-weight: 600;
     color: whitesmoke;
-    border-color: #50a1ff;
+    border-color: red;
     margin-bottom: 5%;
 }
 
 .fireteam-info {
     margin-bottom: 5%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .full-fireteam {
-    background-color: rgb(199, 80, 80);
+    background-color: whitesmoke;
     border: none;
     color: black;
 }
 
 .joined-fireteam {
-    background-color: whitesmoke;
+    background-color: lightskyblue;
     color: black;
     border: none;
 }
 
 .lead-fireteam {
-    background-color: green;
+    background-color: rgb(135, 235, 144);
     color: black;
     border: none;
 }
@@ -46,19 +46,19 @@
 }
 
 .power-req {
-    background-color: lightskyblue;
+    background-color: rgb(238, 34, 34);
     color: black;
     padding: 2% 2%;
     margin-left: 2%;
     font-size: 12px;
-    font-weight: 250;
+    font-weight: 550;
 }
 
 .right-col-fireteam-activity-type {
     margin: 2% 0%;
     width: 100%;
     font-size: 24px;
-    color: #50a1ff;
+    color: red;
     font-weight: 800;
     text-align: center;
 }
@@ -66,7 +66,7 @@
 .right-col-fireteam-description {
     width: 100%;
     height: 20%;
-    font-weight: 220;
+    font-weight: 320;
     text-align: center;
     margin-bottom: 5%;
 }
@@ -77,13 +77,13 @@
 }
 
 .fireteam-member {
-    color: rgb(0, 132, 255);
+    color: white;
     margin: 0% 3% 0% 3%;
     font-weight: 250;
 }
 
 .member-logo {
-    color: whitesmoke;
+    color: red;
 }
 
 .member-list {
@@ -113,19 +113,19 @@
 }
 
 .fireteam-leader i {
-    color: yellow;
+    color: red;
     margin-top: 3%;
     margin-left: 5.5%;
     font-size: 20px;
 }
 
 .leader-power {
-    background-color: lightskyblue;
+    background-color: rgb(238, 34, 34);
     color: black;
     margin-left: 3%;
     padding: 2% 2%;
     font-size: 12px;
-    font-weight: 250;
+    font-weight: 350;
 }
 
 .member-power {
