@@ -87,7 +87,7 @@ class CreateModal extends Component {
                      <div className="row">
                         <div className="col form-group leader-power-slider-root">
                             <p className="leader-power-text">Leader Power Level: <span className="power-value">{this.state.leader_power_val}</span></p>
-                            <input className="leader-power-slider" type="range" name="leader_power_val" min="750" max="1070" value={this.state.leader_power_val} onInput={this.handleSliderValue}/>
+                            <input className="leader-power-slider" type="range" name="leader_power_val" min="750" max="1080" value={this.state.leader_power_val} onInput={this.handleSliderValue}/>
                         </div>
                     </div>               
                     <div className="row">
@@ -138,7 +138,7 @@ class CreateModal extends Component {
                     <div className="row">
                         <div className="col form-group power-req-slider-root">
                             <p className="power-req-text fireteam-power-requirement">Power Requirement: <span className="power-value">{this.state.req_slider_val}</span></p>
-                            <input className="power-req-slider" type="range" name="req_slider_val" min="750" max="1070" value={this.state.req_slider_val} onInput={this.handleSliderValue}/>
+                            <input className="power-req-slider" type="range" name="req_slider_val" min="750" max="1080" value={this.state.req_slider_val} onInput={this.handleSliderValue}/>
                         </div>
                     </div>
 
