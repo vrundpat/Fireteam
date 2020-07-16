@@ -6,6 +6,7 @@ import UnauthenicatedModal from '../UnauthenicatedModal/UnauthenticatedModal';
 import { create_fireteam, all_fireteams } from '../../actions/fireteamActions';
 import { clear_error } from '../../actions/errorActions'
 import './CreateModal.css';
+import { options } from './Activities'
 
 class CreateModal extends Component {
     constructor(props) {
@@ -56,13 +57,6 @@ class CreateModal extends Component {
     }
 
     activeTypeOptions = () => {
-        const options = [  'Trials of Osiris', 'Event: Contact', 'Dungeon: Prophecy', 'Nightfall: The Ordeal', 
-                            'Raid: Leviathan', 'Raid: Leviathan - Eater of Worlds', 'Raid: Leviathan - Spire of Stars',
-                            'Raid: The Last Wish', 'Raid: Scourage of the Past', 'Raid: Crown of Sorrow', 'Raid: Garden of Salvation',
-                            'Nightmare Hunt', 'Crucible: Quickplay', 'Crucible: Competitive/Survival', 'Gambit', 
-                            'Gambit Prime', 'Reckoning', 'Menagerie: Normal', 'Menagerie: Heroic', 'Altars of Sorrow', 
-                            'Blind Well', 'Escalation Protocol', 'Forge Ignition'
-                        ]
         var accumulator = []
         for (var i = 0; i < options.length; i++) {
             accumulator.push(<option value={options[i]}>{options[i]}</option>)
