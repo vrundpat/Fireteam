@@ -44,7 +44,7 @@ class RegisterForm extends Component {
                     <h3 className='register-form-title'>Register</h3>
                     <input className="register-input"  onChange={this.onChange} name="username" type="text" placeholder="Username" value={this.state.username}></input>
                     <input className="register-input"  onChange={this.onChange} name="password" type="password" placeholder="Password" value={this.state.password}></input>
-                    <input className="register-input" onChange={this.onChange} name="consoleID" placeholder="Console ID" value={this.state.consoleID}></input>
+                    <input className="register-input" onChange={this.onChange} name="consoleID" placeholder="PSN / Gamertag / SteamId" value={this.state.consoleID}></input>
                     <button type="submit" className="register-submit-button">Submit</button>
                     <Row>
                         <Col>
