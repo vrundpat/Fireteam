@@ -67,7 +67,7 @@ router.post('/register', async (request, response) => {
     if (password.length < 8) return response.status(400).json({msg: "Passowrd must be at least 8 characters long"});
     if (porfanity_filter.isProfane(username)) return response.status(400).json({msg: "Username contains profanity, please choose another username"});
     if (porfanity_filter.isProfane(consoleID)) return response.status(400).json({msg: "ConsoleID contains profanity, please choose another consoleID"});
-
+    if (/\s/g.test(username)) return response.status(400).json({msg: "Username must not contain white spaces"});
     const validated_username = validator.escape(username);
 
     try {
