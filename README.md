@@ -29,4 +29,4 @@ Instructions to run locally:
      npm run dev
      ```
      
-Note: This is not a profuction build, optimization of the building process is not implemented for this repo!
+Note: This is not a production build, optimization of the building process is not implemented for this repo!
