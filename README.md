@@ -1,6 +1,6 @@
 # FireTeam-LFG
 
-A responsive LFG Website for Destiny 2 made using the MERN Stack + Redux (for application wide state management).      
+A responsive LFG Website for Destiny 2 made using the MERN Stack + Redux (for application wide state management) and deployed onto a VPS.      
 Check it out: https://www.destinylfg.us
 
 
@@ -29,4 +29,4 @@ Instructions to run locally:
      npm run dev
      ```
      
-Note: This is not a profuction build, optimization of the building process is not implemented for this repo!
+Note: This is not a production build, optimization of the building process is not implemented for this repo!
