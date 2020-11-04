@@ -3,6 +3,8 @@
 A responsive LFG Website for Destiny 2 made using the MERN Stack + Redux (for application wide state management) and deployed onto a VPS.      
 Check it out: https://www.destinylfg.us
 
+#### Currently, there are ~20-30 users/week on average!
+
 
 Instructions to run locally:
 
