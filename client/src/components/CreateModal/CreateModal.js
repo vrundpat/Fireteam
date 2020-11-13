@@ -81,7 +81,7 @@ class CreateModal extends Component {
                      <div className="row">
                         <div className="col form-group leader-power-slider-root">
                             <p className="leader-power-text">Leader Power Level: <span className="power-value">{this.state.leader_power_val}</span></p>
-                            <input className="leader-power-slider" type="range" name="leader_power_val" min="750" max="1150" value={this.state.leader_power_val} onInput={this.handleSliderValue}/>
+                            <input className="leader-power-slider" type="range" name="leader_power_val" min="750" max="1400" value={this.state.leader_power_val} onInput={this.handleSliderValue}/>
                         </div>
                     </div>               
                     <div className="row">

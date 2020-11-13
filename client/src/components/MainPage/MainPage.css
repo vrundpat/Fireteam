@@ -16,7 +16,8 @@ html {
 .mainpage-jumbotron {
     width: 100%;
     height: 90%;
-    background-image: url('../../images/mainpage-jumbotron.jpg');
+    /* background-image: url('../../images/beyond-light.jpg'); */
+    background-image: url("https://wallpapercave.com/wp/wp7420493.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -36,7 +37,8 @@ html {
     width: 100%;
     height: 35%;
     padding: 5% 5% 5% 5%;
-    background-color: #24292e;
+    /* background-color: #24292e; */
+    background-color: rgb(21, 29, 39);
     text-align: center;
     color: whitesmoke;
 }
@@ -52,7 +54,8 @@ html {
     margin: 1% 0% 3% 0%;
     width: 40%;
     height: 40%;
-    background-color: red;
+    /* background-color: red; */
+    background-color: rgb(72, 118, 159);
     font-size: 1.25vw;
     font-weight: 250;
     font-family: Arial, Helvetica, sans-serif;
@@ -64,7 +67,8 @@ html {
 .all-fireteams-contianer {
     height: 100%;
     overflow: auto;
-    background-color: #24292e;
+    /* background-color: #24292e; */
+    background-color:rgb(21, 29, 39);
     border-top: 2rem solid rgba(0, 0, 0, 0.01);
 }
 
@@ -96,7 +100,8 @@ html {
 .pagination-buttons-root {
     width: 100%;
     height: 5%;
-    background-color: #24292e;
+    /* background-color: #24292e; */
+    background-color: rgb(21, 29, 39);
     border: none;
 }
 
@@ -112,13 +117,15 @@ html {
     outline: none; 
     border: none;
     width: 15%;
-    background-color: red;
+    /* background-color: red; */
+    background-color: rgb(72, 118, 159);
     color: whitesmoke;
     margin: 0% 0.25%;
 }
 
 .page-number h6 {
-    background-color: #24292e;
+    /* background-color: #24292e; */
+    background-color: rgb(21, 29, 39);
     text-align: center;
     color: whitesmoke;
     font-family: Arial, Helvetica, sans-serif;
@@ -226,7 +233,7 @@ html {
     }
 
     .create-fireteam-button {
-        height: 30%;
+        height: 40%;
         font-size: 1vw;
     }
 

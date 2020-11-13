@@ -69,7 +69,7 @@ class JoinModal extends Component {
                      <div className="row">
                         <div className="col form-group member-power-slider-root">
                             <p className="member-power-text">Member Power Level: <span className="power-value">{this.state.member_power_val}</span></p>
-                            <input className="member-power-slider" type="range" name="member_power_val" min="750" max="1150" value={this.state.member_power_val} onInput={this.handleSliderValue}/>
+                            <input className="member-power-slider" type="range" name="member_power_val" min="750" max="1400" value={this.state.member_power_val} onInput={this.handleSliderValue}/>
                         </div>
                     </div>               
                     <div className="row">
