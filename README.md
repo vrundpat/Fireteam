@@ -1,4 +1,4 @@
-# FireTeam-LFG
+# Fireteam
 
 A responsive LFG Website for Destiny 2 made using the MERN Stack + Redux (for application wide state management) and deployed onto a VPS.      
 Check it out: https://www.destinylfg.us
