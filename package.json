@@ -4,7 +4,7 @@
   "description": "Destiny LFG Site using the MERRN Stack",
   "main": "server.js ",
   "scripts": {
-    "server": "node server.js",
+    "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,6 +20,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-validator": "^6.6.1",
+    "fs-extra": "^9.0.1",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.20",
     "mongoose": "^5.10.11",
