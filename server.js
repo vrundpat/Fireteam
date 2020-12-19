@@ -28,15 +28,22 @@ app.listen(port, () => console.log(`Server listening on port ${port}...`));
 
 
 // For Maintenance
-app.get('/', async (req, res) => {
-	res.sendFile(path.resolve(__dirname, 'client', 'public', 'maintenance.html'));
-})
-app.use(express.static('client/public'));
+// app.get('/', async (req, res) => {
+// 	res.sendFile(path.resolve(__dirname, 'client', 'public', 'maintenance.html'));
+// })
+// app.use(express.static('client/public'));
 
 
 // For production
 app.use(express.static('client/build'));
 
-app.get('/', (request, response) => {
-	response.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+app.get('/', (req, res) => {
+	res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 });
+
+
+// Custom 404
+app.use(express.static('client/public'));
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'client', 'public', '404.html'));
+})

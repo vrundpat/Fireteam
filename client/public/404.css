@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+}
+
+#root {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://www.mobygames.com/images/promo/original/d56fe09b272e4cdc924c2c3138869a3f.jpg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+
+#banner-root {
+    width: 100vw;
+    min-height: 300px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    position: absolute;
+    margin: auto;
+    border-top: solid 3px rgba(255, 0, 255, 0.5);
+    border-bottom: solid 20px rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+}
+
+#four-o-four-warning {
+    position: absolute;
+    color: seashell;
+    font-weight: 200;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+}
+
+#links {
+    display: flex;
+}
+
