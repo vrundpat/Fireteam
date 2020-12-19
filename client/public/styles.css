@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+}
+
+#root {
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    background-image: url('https://d1lss44hh2trtw.cloudfront.net/assets/article/2018/09/05/how-to-unlock-the-dreaming-city-in-destiny-2_feature.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+
+#banner-root {
+    width: 100vw;
+    min-height: 300px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    position: absolute;
+    margin: auto;
+    border-top: solid 3px rgba(255, 0, 0, 0.5);
+    border-bottom: solid 20px rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+}
+
+#maintenance-warning {
+    position: absolute;
+    color: seashell;
+    font-weight: 200;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+}

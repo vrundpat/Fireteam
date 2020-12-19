@@ -6,6 +6,7 @@ const bodyparser = require('body-parser');
 const authRoutes = require('./controller/routes/auth');
 const fireteamRoutes = require('./controller/routes/fireteam');
 const path = require('path');
+const fs = require('fs-extra');
 
 
 // MongoDB Connection SetUp
@@ -26,8 +27,16 @@ app.use('/fireteam', fireteamRoutes);
 app.listen(port, () => console.log(`Server listening on port ${port}...`));
 
 
+// For Maintenance
+app.get('/', async (req, res) => {
+	res.sendFile(path.resolve(__dirname, 'client', 'public', 'maintenance.html'));
+})
+app.use(express.static('client/public'));
+
+
 // For production
 app.use(express.static('client/build'));
-app.get('*', (request, response) => {
-  response.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+
+app.get('/', (request, response) => {
+	response.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 });
