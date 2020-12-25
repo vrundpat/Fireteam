@@ -5,7 +5,7 @@ body {
 #root {
     width: 100vw;
     height: 100vh;
-    background-image: url('https://www.mobygames.com/images/promo/original/d56fe09b272e4cdc924c2c3138869a3f.jpg');
+    background-image: url('./404.jpg');
     background-repeat: no-repeat;
     background-position: right;
     background-size: cover;
