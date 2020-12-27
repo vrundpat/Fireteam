@@ -23,6 +23,10 @@ const UserSchema = new Schema ({
         type: String,
         required: true
     },
+
+    last_created: {
+        type: Date
+    }
 })
 
 

@@ -3,6 +3,7 @@ const Router = require('express');
 const FireTeam = require('../../models/fireteam');
 const Filter = require('bad-words');
 const validator = require('validator');
+const User = require('../../models/user');
 
 const router = Router();
 
@@ -31,6 +32,20 @@ router.post('/create', verifyUser, async (request, response) => {
 
     var validated_description = profanity_filter.clean(validator.escape(description).replace(/&#x2F;/g, "/"));
 
+    // Pull the user from the database and error
+    const user = await User.findById(request.user_info.id);
+    if(!user || user === undefined) {
+        return response.status(400).json({ msg: "User not found!" });
+    }
+
+    // Ensure this user has not created a fireteam in the past 30 minutes
+    const current_date = new Date();
+    const last_user_created_date = new Date(user.last_created);
+
+    if(current_date - last_user_created_date < Number(process.env.FIRETEAM_TIMEOUT)) {
+        return response.status(400).json({ msg: "You may only create a fireteam once every 30 minutes!" });
+    }
+    
     try {
         const sample_fireteam = FireTeam({
             leader,
@@ -55,6 +70,10 @@ router.post('/create', verifyUser, async (request, response) => {
                 }
             },
         );
+
+        // Save the date this fireteam was created under the user and save
+        user.last_created = Date.now();
+        await user.save();
 
         const fireteam = await FireTeam.findById(new_fireteam._id)
 
