@@ -6,7 +6,6 @@ const bodyparser = require('body-parser');
 const authRoutes = require('./controller/routes/auth');
 const fireteamRoutes = require('./controller/routes/fireteam');
 const path = require('path');
-const fs = require('fs-extra');
 
 
 // MongoDB Connection SetUp
@@ -38,6 +37,14 @@ app.listen(port, () => console.log(`Server listening on port ${port}...`));
 app.use(express.static('client/build'));
 
 app.get('/', (req, res) => {
+	res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+});
+
+app.get('/login', (req, res) => {
+	res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+});
+
+app.get('/register', (req, res) => {
 	res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 });
 
