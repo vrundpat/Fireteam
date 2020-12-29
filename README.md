@@ -8,6 +8,7 @@ A responsive LFG Website for Destiny 2 made using the MERN Stack + Redux (for ap
 
 
 ## Instructions to run locally:
+#### Please Note: This product is subject to protection clauses; refer to the License in this repository for further details.
 
  1) In the project root:
  ```javascript
