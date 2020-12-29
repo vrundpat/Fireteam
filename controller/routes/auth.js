@@ -52,11 +52,11 @@ router.post('/login', async (request, response) => {
  */
 router.post('/register', async (request, response) => {
     
-    const {username, password, consoleID} = request.body;
+    const {username, password, consoleID, confirm_password} = request.body;
     const porfanity_filter = new Filter();
 
     // Validate and sanitize input
-    if (!username || !password || !consoleID) return response.status(400).json({msg: "Please enter all fields"});
+    if (!username || !password || !consoleID || !confirm_password) return response.status(400).json({msg: "Please enter all fields"});
     if (username.replace(/\s/g, '').length === 0) return response.status(400).json({msg: "Please enter a valid username"});
     if (password.replace(/\s/g, '').length === 0) return response.status(400).json({msg: "Please enter a valid password"});
     if (consoleID.replace(/\s/g, '').length === 0) return response.status(400).json({msg: "Please enter a valid consoleID"});
@@ -64,7 +64,8 @@ router.post('/register', async (request, response) => {
     if (username.length > 20) return response.status(400).json({msg: "Username must not be more than 20 characters lomg"});
     if (consoleID.length > 25) return response.status(400).json({msg: "ConsoleID must not be more than 25 characters lomg"});
     if (consoleID.length < 3) return response.status(400).json({msg: "ConsoleID must be at least 3 characters long"});
-    if (password.length < 8) return response.status(400).json({msg: "Passowrd must be at least 8 characters long"});
+    if (password.length < 8) return response.status(400).json({msg: "Password must be at least 8 characters long"});
+    if (password !== confirm_password) return response.status(400).json({msg: "Passwords do not match"});
     if (porfanity_filter.isProfane(username)) return response.status(400).json({msg: "Username contains profanity, please choose another username"});
     if (porfanity_filter.isProfane(consoleID)) return response.status(400).json({msg: "ConsoleID contains profanity, please choose another consoleID"});
     if (/\s/g.test(username)) return response.status(400).json({msg: "Username must not contain white spaces"});
