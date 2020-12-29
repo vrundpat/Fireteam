@@ -14,16 +14,18 @@
     width: 80%;
     outline: none;
     border: none;
-    background-color: #50a1ff;
+    background-color: rgb(75, 132, 187);
     min-height: 50px;
+    border-radius: 15px;
 }
 
 .modal-register-button {
     width: 80%;
     outline: none;
     border: none;
-    background-color: #50a1ff;
+    background-color: rgb(75, 132, 187);
     min-height: 50px;
+    border-radius: 15px;
 }
 
 .modal-btn-text {
