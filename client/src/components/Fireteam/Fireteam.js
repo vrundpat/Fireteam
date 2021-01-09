@@ -39,6 +39,8 @@ class Fireteam extends Component {
         if (platform_name === "PS4") return ( <i className="fa fa-gamepad gamepad"><span className="ps4 console-logo">PS4</span></i>)
         else if (platform_name === "Xbox") return ( <i className="fa fa-gamepad gamepad"><span className="xbox console-logo">Xbox</span></i>)
         else if (platform_name === "Steam") return ( <i className="fa fa-gamepad gamepad"><span className="steam console-logo">Steam</span></i>)
+        else if (platform_name === "PS5") return ( <i className="fa fa-gamepad gamepad"><span className="ps5 console-logo">PS5</span></i>)
+        else if (platform_name === "Stadia") return ( <i className="fa fa-gamepad gamepad"><span className="stadia console-logo">Stadia</span></i>)
         else return ( <i className="fa fa-gamepad"></i> )
 
     }

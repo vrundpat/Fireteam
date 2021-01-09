@@ -104,6 +104,8 @@ class CreateModal extends Component {
                                 <option value="PS4">PS4</option>
                                 <option value="Steam">Steam</option>
                                 <option value="Xbox">Xbox</option>
+                                <option value="PS5">PS5</option>
+                                <option value="Stadia">Stadia</option>
                             </select>
                         </div>
 

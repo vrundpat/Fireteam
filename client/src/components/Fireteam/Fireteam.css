@@ -165,7 +165,19 @@
 }
 
 .steam {
-    background-color: rgb(11, 133, 173);
+    background-color: rgb(49, 195, 232);
+    color: black;
+    display: inline;
+}
+
+.ps5 {
+    background-color: rgba(210, 212, 210);
+    display: inline;
+    color: black;
+}
+
+.stadia {
+    background-color: rgb(224, 50, 40);
     display: inline;
 }
 
