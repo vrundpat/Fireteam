@@ -18,6 +18,8 @@ class MainPage extends Component {
             last_index: 5,
             first_index: 0,
             fireteams: []};
+        
+        this.poll_interval = 30000;
         this.generate_fireteams.bind(this);
         this.toggleModal.bind(this);
         this.nextPage.bind(this);
@@ -60,7 +62,7 @@ class MainPage extends Component {
 
     componentWillMount() {
         this.props.all_fireteams();
-        this.timer = setInterval(() => this.props.all_fireteams(), 10000);
+        this.timer = setInterval(() => this.props.all_fireteams(), this.poll_interval);
     }
     
     componentWillUnmount() {
