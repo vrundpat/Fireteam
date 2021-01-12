@@ -1,4 +1,5 @@
 const middlewareObj = require('../authMiddleware');
+const fireteamMiddleware = require('../fireteamMiddleware');
 const Router = require('express');
 const FireTeam = require('../../models/fireteam');
 const Filter = require('bad-words');
@@ -18,6 +19,14 @@ function validate(user, isNewMember) {
     }
 }
 
+function validateGuardianType(guardianType) {
+    return ["Warlock", "Hunter", "Titan"].some(type => type === guardianType);
+}
+
+function validatePlatformType(platformType) {
+    return ["PS4", "Xbox", "Steam", "PS5", "Stadia"].some(type => type === platformType);
+}
+
 
 /**
  * CREATE ROUTE
@@ -27,6 +36,16 @@ function validate(user, isNewMember) {
  */
 router.post('/create', middlewareObj.verifyUser, async (request, response) => {
     const {leader, activity_type, description, capacity, platform, power_requirement} = request.body;
+
+    // Ensure the platform and gurdarian type of the leader are valid
+    if(!validateGuardianType(leader.guardianType)) {
+        return response.status(400).json({ msg: "Invalid Guardian Type" });
+    }
+
+    if(!validatePlatformType(platform)) {
+        return response.status(400).json({ msg: "Invalid Platform" });
+    }
+
     const profanity_filter = new Filter();
     if (!validate(leader, false) || activity_type == "" || description == "" || capacity == "" || platform == "") return response.status(400).json({msg: "Please enter all fields"});
 
@@ -93,9 +112,19 @@ router.post('/create', middlewareObj.verifyUser, async (request, response) => {
  * Route used to join a fireteam
  * Add verifyUser again, was removed for testing!
  */
-router.post('/join', middlewareObj.verifyUser, async (request, response) => {
+router.post('/join', middlewareObj.verifyUser, fireteamMiddleware.verifyFireteamIdQP, async (request, response) => {
     const fireteam_id = request.query.id;
     const new_member = request.body;
+
+    // Ensure the platform and gurdarian type of the new member are valid
+    if(!validateGuardianType(new_member.guardianType)) {
+        return response.status(400).json({ msg: "Invalid Guardian Type" });
+    }
+    
+    if(!validatePlatformType(new_member.platform)) {
+        return response.status(400).json({ msg: "Invalid Platform" });
+    }
+
     if (!fireteam_id) return response.status(404).json({msg: "Fireteam not found!"});
     if (!validate(new_member, true)) return response.status(400).json({msg: "Please enter all fields"});
 
