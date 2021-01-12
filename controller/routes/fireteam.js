@@ -1,4 +1,4 @@
-const verifyUser = require('../authMiddleware');
+const middlewareObj = require('../authMiddleware');
 const Router = require('express');
 const FireTeam = require('../../models/fireteam');
 const Filter = require('bad-words');
@@ -25,7 +25,7 @@ function validate(user, isNewMember) {
  * @Private
  * Add verifyUser again, was removed for testing!
  */
-router.post('/create', verifyUser, async (request, response) => {
+router.post('/create', middlewareObj.verifyUser, async (request, response) => {
     const {leader, activity_type, description, capacity, platform, power_requirement} = request.body;
     const profanity_filter = new Filter();
     if (!validate(leader, false) || activity_type == "" || description == "" || capacity == "" || platform == "") return response.status(400).json({msg: "Please enter all fields"});
@@ -93,7 +93,7 @@ router.post('/create', verifyUser, async (request, response) => {
  * Route used to join a fireteam
  * Add verifyUser again, was removed for testing!
  */
-router.post('/join', verifyUser, async (request, response) => {
+router.post('/join', middlewareObj.verifyUser, async (request, response) => {
     const fireteam_id = request.query.id;
     const new_member = request.body;
     if (!fireteam_id) return response.status(404).json({msg: "Fireteam not found!"});

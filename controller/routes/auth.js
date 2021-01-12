@@ -3,7 +3,7 @@ const Router = require('express');
 const jwt =  require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const validator = require('validator');
-const Filter = require('bad-words');
+const middlewareObj = require('../authMiddleware');
 
 const router = Router();
 const jwtSecret = process.env.JWT_secret;
@@ -14,7 +14,7 @@ const jwtSecret = process.env.JWT_secret;
  * @POST
  * @Public
  */
-router.post('/login', async (request, response) => {
+router.post('/login', middlewareObj.verifyLoginBody, async (request, response) => {
     
     const {username, password} = request.body;
     
@@ -50,31 +50,14 @@ router.post('/login', async (request, response) => {
  * @Post
  * @Public 
  */
-router.post('/register', async (request, response) => {
+router.post('/register', middlewareObj.verifyRegisterBody, async (request, response) => {
     
     const {username, password, consoleID, confirm_password} = request.body;
-    const porfanity_filter = new Filter();
-
-    // Validate and sanitize input
-    if (!username || !password || !consoleID || !confirm_password) return response.status(400).json({msg: "Please enter all fields"});
-    if (username.replace(/\s/g, '').length === 0) return response.status(400).json({msg: "Please enter a valid username"});
-    if (password.replace(/\s/g, '').length === 0) return response.status(400).json({msg: "Please enter a valid password"});
-    if (consoleID.replace(/\s/g, '').length === 0) return response.status(400).json({msg: "Please enter a valid consoleID"});
-    if (username.length < 3) return response.status(400).json({msg: "Username must be at least 3 characters long"});
-    if (username.length > 20) return response.status(400).json({msg: "Username must not be more than 20 characters lomg"});
-    if (consoleID.length > 25) return response.status(400).json({msg: "ConsoleID must not be more than 25 characters lomg"});
-    if (consoleID.length < 3) return response.status(400).json({msg: "ConsoleID must be at least 3 characters long"});
-    if (password.length < 8) return response.status(400).json({msg: "Password must be at least 8 characters long"});
-    if (password !== confirm_password) return response.status(400).json({msg: "Passwords do not match"});
-    if (porfanity_filter.isProfane(username)) return response.status(400).json({msg: "Username contains profanity, please choose another username"});
-    if (porfanity_filter.isProfane(consoleID)) return response.status(400).json({msg: "ConsoleID contains profanity, please choose another consoleID"});
-    if (/\s/g.test(username)) return response.status(400).json({msg: "Username must not contain white spaces"});
-    const validated_username = validator.escape(username);
 
     try {
 
         // Check is user with same username already exists 
-        const existing_user = await User.findOne({username: validated_username});
+        const existing_user = await User.findOne({username: username});
         if (existing_user) return response.status(400).json({msg: "Username already in use"});
         
         // Hash the password
@@ -83,7 +66,7 @@ router.post('/register', async (request, response) => {
         
         // Create the user 
         const new_user = User({
-            username: validated_username,
+            username: username,
             password: hashed_password,
             consoleID: consoleID
         });
@@ -102,6 +85,7 @@ router.post('/register', async (request, response) => {
         });
 
     } catch (error) {
+        console.log(error);
         return response.status(400).json({msg: "Something went wrong, please try again"});
     }
 })
