@@ -5,9 +5,11 @@ const FireTeam = require('../../models/fireteam');
 const Filter = require('bad-words');
 const validator = require('validator');
 const User = require('../../models/user');
+const ACTIVITIES = require('../activities');
 
 const router = Router();
 
+// Helper functions
 function validate(user, isNewMember) {
     if (isNewMember) {
         if (!user.username || user.guardianType === "" || !user.light_level || user.platform === "" || !user.consoleID) return false;
@@ -27,6 +29,9 @@ function validatePlatformType(platformType) {
     return ["PS4", "Xbox", "Steam", "PS5", "Stadia"].some(type => type === platformType);
 }
 
+// Helper constants
+const MAX_POWER = 1400;
+const MIN_POWER = 1050;
 
 /**
  * CREATE ROUTE
@@ -44,6 +49,20 @@ router.post('/create', middlewareObj.verifyUser, async (request, response) => {
 
     if(!validatePlatformType(platform)) {
         return response.status(400).json({ msg: "Invalid Platform" });
+    }
+
+    // Ensure the leader's power and the power requirement are valid
+    if(!validator.isNumeric(String(leader.light_level), {no_symbols: true}) || Number(leader.light_level) > MAX_POWER || Number(leader.light_level) < MIN_POWER) {
+        return response.status(400).json({ msg: "Invalid Leader Light Level" });
+    }
+
+    if(!validator.isNumeric(String(power_requirement), {no_symbols: true}) || Number(power_requirement) > MAX_POWER || Number(power_requirement) < MIN_POWER) {
+        return response.status(400).json({ msg: "Invalid Power Requirement" });
+    }
+
+    // Ensure the activity type is a valid activity
+    if(!ACTIVITIES.some(activity => activity === activity_type)) {
+        return response.status(400).json({ msg: "Invalid Activity Type" });
     }
 
     const profanity_filter = new Filter();
@@ -123,6 +142,11 @@ router.post('/join', middlewareObj.verifyUser, fireteamMiddleware.verifyFireteam
     
     if(!validatePlatformType(new_member.platform)) {
         return response.status(400).json({ msg: "Invalid Platform" });
+    }
+
+    // Ensure the member's power is valid
+    if(!validator.isNumeric(String(new_member.light_level), {no_symbols: true}) || Number(new_member.light_level) > MAX_POWER || Number(new_member.light_level) < MIN_POWER) {
+        return response.status(400).json({ msg: "Invalid Leader Light Level" });
     }
 
     if (!fireteam_id) return response.status(404).json({msg: "Fireteam not found!"});

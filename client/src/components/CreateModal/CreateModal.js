@@ -12,8 +12,8 @@ class CreateModal extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            req_slider_val: 750,
-            leader_power_val: 750
+            req_slider_val: 1050,
+            leader_power_val: 1050
         }
         this.authenticated_modal.bind(this);
         this.handleSliderValue.bind(this);
@@ -67,13 +67,13 @@ class CreateModal extends Component {
     authenticated_modal = () => {
         return (
                 <form onSubmit={this.handleModalSubmit}>
-                    <h5>Leader Information</h5>
+                    <h5 className="text-center" id="input-label">Leader Information</h5>
                     <br/>
                     <div className="row">
                         <div className="col">
                             <div className="form-group">
-                                <label>Leader's ConsoleID</label>
-                                <input className="form-control" type="text" placeholder={this.props.user.consoleID} readOnly/>
+                                <label>Leader's Console ID</label>
+                                <input className="form-control" id="input-color" type="text" placeholder={this.props.user.consoleID} readOnly/>
                             </div>
                         </div>
                     </div>
@@ -81,12 +81,12 @@ class CreateModal extends Component {
                      <div className="row">
                         <div className="col form-group leader-power-slider-root">
                             <p className="leader-power-text">Leader Power Level: <span className="power-value">{this.state.leader_power_val}</span></p>
-                            <input className="leader-power-slider" type="range" name="leader_power_val" min="750" max="1400" value={this.state.leader_power_val} onInput={this.handleSliderValue}/>
+                            <input className="leader-power-slider" type="range" name="leader_power_val" min="1050" max="1400" value={this.state.leader_power_val} onInput={this.handleSliderValue}/>
                         </div>
                     </div>               
                     <div className="row">
                             <div className="col form-group">
-                                <select id="leader-guardianType" className="form-control font-lg">
+                                <select id="leader-guardianType" className="form-control font-lg option-color">
                                     <option selected="Leader Guardian Type" value={""}>Leader Guardian Type</option>
                                     <option value="Hunter">Hunter</option>
                                     <option value="Warlock">Warlock</option>
@@ -95,11 +95,11 @@ class CreateModal extends Component {
                             </div>
                     </div>
                     <br/>
-                    <h5>Fireteam Information</h5>
+                    <h5 className="text-center" id="input-label">Fireteam Information</h5>
                     <br/>
                     <div className="row">
                         <div className="col form-group">
-                            <select id="fireteam-platform" className="form-control font-sm">
+                            <select id="fireteam-platform" className="form-control font-sm option-color">
                                 <option selected="Choose Platform" value={""}>Fireteam Platform</option>
                                 <option value="PS4">PS4</option>
                                 <option value="Steam">Steam</option>
@@ -110,7 +110,7 @@ class CreateModal extends Component {
                         </div>
 
                         <div className="col form-group">
-                            <select id="fireteam-capacity" className="form-control font-sm">
+                            <select id="fireteam-capacity" className="form-control font-sm option-color">
                                 <option selected="Choose Capacity" value={""}>Fireteam Capacity</option>
                                 <option value={1}>1</option>
                                 <option value={2}>2</option>
@@ -124,7 +124,7 @@ class CreateModal extends Component {
 
                     <div className="row">
                         <div className="col form-group">
-                            <select id="fireteam-activity" className="form-control font-lg">
+                            <select id="fireteam-activity" className="form-control font-lg option-color">
                                 <option selected="Leader Guardian Type" value={""}>Choose Activity</option>
                                 {this.activeTypeOptions()}
                             </select>
@@ -134,7 +134,7 @@ class CreateModal extends Component {
                     <div className="row">
                         <div className="col form-group power-req-slider-root">
                             <p className="power-req-text fireteam-power-requirement">Power Requirement: <span className="power-value">{this.state.req_slider_val}</span></p>
-                            <input className="power-req-slider" type="range" name="req_slider_val" min="750" max="1150" value={this.state.req_slider_val} onInput={this.handleSliderValue}/>
+                            <input className="power-req-slider" type="range" name="req_slider_val" min="1050" max="1400" value={this.state.req_slider_val} onInput={this.handleSliderValue}/>
                         </div>
                     </div>
 
@@ -142,7 +142,7 @@ class CreateModal extends Component {
                         <div className="col">
                             <div className="form-group">
                                 <label for="exampleFormControlTextarea1">Leave a message for your fireteam members!</label>
-                                <textarea class="form-control" id="fireteam-description" rows="3"></textarea>
+                                <textarea class="form-control textarea-color" id="fireteam-description" rows="3"></textarea>
                             </div>
                         </div>
                     </div>
@@ -159,15 +159,15 @@ class CreateModal extends Component {
     render() {
         return (
             <div className="modal-root">
-                <Modal isOpen={this.props.isModalOpen} toggle={this.props.toggleModal}>
-                    <ModalHeader className="text-center" toggle={this.props.toggleModal}>
+                <Modal isOpen={this.props.isModalOpen} toggle={this.props.toggleModal} centered={true} size="md" animation={true}>
+                    <ModalHeader className="text-center">
                         <h3>Create your Fireteam</h3>
                     </ModalHeader>
                     <ModalBody>
                         {this.props.authenticated ? this.authenticated_modal() : <UnauthenicatedModal />}
                     </ModalBody>
                     <ModalFooter>
-                        {this.props.authenticated ? <Button color="primary" onClick={this.handleModalSubmit}>Create Fireteam</Button> : null}
+                        {this.props.authenticated ? <Button className="modal-submit" onClick={this.handleModalSubmit}>Create Fireteam</Button> : null}
                         <Button color="secondary" onClick={this.props.toggleModal}>Cancel</Button>
                     </ModalFooter>
                 </Modal>

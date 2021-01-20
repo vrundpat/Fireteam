@@ -12,7 +12,7 @@ class JoinModal extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { member_power_val: 750 };
+        this.state = { member_power_val: 1050 };
         this.authenticated_modal.bind(this);
         this.handleModalSubmit.bind(this);
     }
@@ -44,20 +44,18 @@ class JoinModal extends Component {
     authenticated_modal = () => {
         return (
             <form onSubmit={this.handleModalSubmit}>
-                    <h5>Member Information</h5>
-                    <br/>
                     <div className="row">
                         <div className="col">
                             <div className="form-group">
                                 <label>Members ConsoleID</label>
-                                <input className="form-control" type="text" placeholder={this.props.user.consoleID} readOnly/>
+                                <input className="form-control" type="text" id="input-color" placeholder={this.props.user.consoleID} readOnly/>
                             </div>
                         </div>
                     </div>
 
                     <div className="row">
                         <div className="col form-group">
-                            <select id="member-platform" className="form-control font-sm">
+                            <select id="member-platform" className="form-control font-sm option-color">
                                <option selected="Choose Platform" value={""}>Member Platform</option>
                                 <option value="PS4">PS4</option>
                                 <option value="Steam">Steam</option>
@@ -71,12 +69,12 @@ class JoinModal extends Component {
                      <div className="row">
                         <div className="col form-group member-power-slider-root">
                             <p className="member-power-text">Member Power Level: <span className="power-value">{this.state.member_power_val}</span></p>
-                            <input className="member-power-slider" type="range" name="member_power_val" min="750" max="1400" value={this.state.member_power_val} onInput={this.handleSliderValue}/>
+                            <input className="member-power-slider" type="range" name="member_power_val" min="1050" max="1400" value={this.state.member_power_val} onInput={this.handleSliderValue}/>
                         </div>
                     </div>               
                     <div className="row">
                             <div className="col form-group">
-                                <select id="member-guardianType" className="form-control font-lg">
+                                <select id="member-guardianType" className="form-control font-lg option-color">
                                     <option selected="Member Guardian Type" value={""}>Member Guardian Type</option>
                                     <option value="Hunter">Hunter</option>
                                     <option value="Warlock">Warlock</option>
@@ -97,15 +95,15 @@ class JoinModal extends Component {
     render() {
         return (
             <div className="modal-root">
-                <Modal isOpen={this.props.isModalOpen} toggle={this.props.toggleModal}>
-                    <ModalHeader className="text-center" toggle={this.props.toggleModal}>
+                <Modal isOpen={this.props.isModalOpen} toggle={this.props.toggleModal} centered={true} size="md" animation={true}>
+                    <ModalHeader className="text-center">
                         <h3>Join Fireteam</h3>
                     </ModalHeader>
                     <ModalBody>
                         {this.props.authenticated ? this.authenticated_modal() : <UnauthenicatedModal />}
                     </ModalBody>
                     <ModalFooter>
-                        {this.props.authenticated ? <Button color="primary" onClick={this.handleModalSubmit}>Join Fireteam</Button> : null}
+                        {this.props.authenticated ? <Button className="modal-submit" onClick={this.handleModalSubmit}>Join Fireteam</Button> : null}
                         <Button color="secondary" onClick={this.props.toggleModal}>Cancel</Button>
                     </ModalFooter>
                 </Modal>

@@ -5,7 +5,8 @@
 
 .modal-header {
     color: rgb(75, 132, 187) !important;
-    float: left !important;
+    display: block !important;
+    padding-top: 5% !important;
     border-bottom: 0 !important;
 }
 
@@ -15,12 +16,40 @@
 
 .modal-title {
     font-weight: 150 !important;
+    text-transform: capitalize;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .close {
     color: whitesmoke !important;
     float: right !important;
+}
+
+.modal-submit {
+    background-color: rgb(75, 132, 187) !important;
+}
+
+
+#input-label {
+    color: whitesmoke;
+}
+
+#input-color {
+    background-color: rgb(75, 132, 187);
+}
+
+#input-color::placeholder {
+    color: whitesmoke;
+}
+
+.option-color {
+    background-color: rgb(75, 132, 187) !important;
+    color: whitesmoke !important;
+}
+
+.textarea-color {
+    background-color: rgb(75, 132, 187) !important;
+    color: whitesmoke !important;
 }
 
 .leader-power-slider-root p {

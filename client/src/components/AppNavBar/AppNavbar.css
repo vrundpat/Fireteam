@@ -69,10 +69,6 @@ a:hover {
     .nav-item {
         font-size: 1.1vw;
     }
-
-    #navbarUser {
-        margin-top: 5%;
-    }
 }
 
 @media only screen and (min-width: 1823px) and (max-width: 2200px) {
@@ -83,10 +79,6 @@ a:hover {
     .nav-item {
         font-size: 2vw;
         padding: 2% 2%;
-    }
-
-    #navbarUser {
-        margin-top: 10%;
     }
 }
 
@@ -99,10 +91,6 @@ a:hover {
     .nav-item {
         font-size: 0.76vw;
         padding: 2% 2%;
-    }
-
-    #navbarUser {
-        margin-top: 20%;
     }
 }
 

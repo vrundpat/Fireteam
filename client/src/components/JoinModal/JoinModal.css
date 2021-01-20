@@ -4,8 +4,9 @@
 }
 
 .modal-header {
-    color: #50a1ff !important;
-    float: left !important;
+    color: rgb(75, 132, 187) !important;
+    display: block !important;
+    padding-top: 5% !important;
     border-bottom: 0 !important;
 }
 
@@ -16,6 +17,10 @@
 .modal-title {
     font-weight: 150 !important;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.modal-submit {
+    background-color: rgb(75, 132, 187) !important;
 }
 
 .close {
@@ -38,6 +43,23 @@
 .power-value {
     color: #50a1ff;
     font-weight: 600;
+}
+
+#input-label {
+    color: whitesmoke;
+}
+
+#input-color {
+    background-color: rgb(75, 132, 187);
+}
+
+#input-color::placeholder {
+    color: whitesmoke;
+}
+
+.option-color {
+    background-color: rgb(75, 132, 187) !important;
+    color: whitesmoke !important;
 }
 
 
