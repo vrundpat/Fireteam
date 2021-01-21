@@ -115,7 +115,7 @@ fireteamMiddleware.verifyCreateFireteamBody = (request, response, next) => {
 
     const fireteamInfo = {
         activity_type: request.body.activity_type, 
-        description: request.body.activity_type, 
+        description: request.body.description, 
         capacity: request.body.capacity, 
         platform: request.body.platform, 
         power_requirement: request.body.power_requirement
