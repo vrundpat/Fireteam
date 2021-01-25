@@ -127,7 +127,7 @@ fireteamMiddleware.verifyCreateFireteamBody = (request, response, next) => {
         }
 
         // Trim for any whitespace on both ends
-        fireteamInfo[key] = validator.trim(fireteamInfo[key]);
+        fireteamInfo[key] = validator.trim(String(fireteamInfo[key]));
         
         // If trimming resulted in empty strings, field is invalid
         if(fireteamInfo[key].length == 0) {
