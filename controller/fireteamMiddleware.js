@@ -54,7 +54,7 @@ fireteamMiddleware.validateMember = (request, response, next) => {
         }
 
         // Trim for any whitespace on both ends
-        memberInfo[key] = validator.trim(memberInfo[key]);
+        memberInfo[key] = validator.trim(String(memberInfo[key]));
         
         // If trimming resulted in empty strings, field is invalid
         if(memberInfo[key].length == 0) {
