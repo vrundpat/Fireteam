@@ -24,7 +24,8 @@ middlewareObj.verifyRegisterBody = (request, response, next) => {
         username: request.body.username,
         password: request.body.password,
         confirm_password: request.body.confirm_password,
-        consoleID: request.body.consoleID
+        consoleID: request.body.consoleID,
+        email: request.body.email
     }
 
     const porfanity_filter = new Filter();
@@ -70,6 +71,11 @@ middlewareObj.verifyRegisterBody = (request, response, next) => {
 
     if(authInfo.password !== authInfo.confirm_password) {
         return response.status(400).json({ msg: "Passwords do not match" });
+    }
+
+    // Ensure email is valid
+    if(!validator.isEmail(authInfo.email)) {
+        return response.status(400).json({ msg: "Invalid Email" });
     }
 
     // Escape the username of any HTML or DOM

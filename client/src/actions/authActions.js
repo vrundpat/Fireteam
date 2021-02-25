@@ -11,9 +11,9 @@ import {
 
 
 // Register User
-export const register = ({username, consoleID, password, confirm_password}) => dispatch => {
+export const register = ({username, consoleID, password, confirm_password, email}) => dispatch => {
     const header_info = {headers: {"Content-type": "application/json"}};
-    const new_user = JSON.stringify({username, password, consoleID, confirm_password})
+    const new_user = JSON.stringify({username, password, consoleID, confirm_password, email})
     axios.post('/users/register', new_user, header_info)
         .then(response => {
           dispatch({type: REGISTER_SUCCESS, payload: response.data});
@@ -42,7 +42,3 @@ export const login = ({username, password}) => dispatch => {
 
 // Logout User
 export const logout = () => dispatch => dispatch({type: LOGOUT_SUCCESS});
-
-
-
-

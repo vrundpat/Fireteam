@@ -36,7 +36,8 @@ router.post('/login', middlewareObj.verifyLoginBody, async (request, response) =
             token: auth_token,
             user: {
                 username: username,
-                consoleID: user.consoleID
+                consoleID: user.consoleID,
+                hasRegisteredEmail: user.email !== "N/A"
             }
         });
     } catch (error) {
@@ -52,27 +53,31 @@ router.post('/login', middlewareObj.verifyLoginBody, async (request, response) =
  */
 router.post('/register', middlewareObj.verifyRegisterBody, async (request, response) => {
     
-    const {username, password, consoleID, confirm_password} = request.body;
+    const {username, password, consoleID, confirm_password, email} = request.body;
 
     try {
 
         // Check is user with same username already exists 
         const existing_user = await User.findOne({username: username});
         if (existing_user) return response.status(400).json({msg: "Username already in use"});
+
+        const existing_email = await User.findOne({email: email});
+        if(existing_email) return response.status(400).json({msg: "Email already in use"});
         
         // Hash the password
         const hashed_password = await bcrypt.hash(password, await bcrypt.genSalt(10));
         if (!hashed_password) return response.status(400).json({msg: "Something went wrong, please try again"});
         
         // Create the user 
-        const new_user = User({
+        const new_user = await User({
             username: username,
             password: hashed_password,
-            consoleID: consoleID
+            consoleID: consoleID,
+            email: email
         });
         
         // Save the user to the database
-        new_user.save();
+        await new_user.save();
 
         // Generate authenitcation token and send back some user information with the token
         const auth_token = jwt.sign({ id: new_user._id, username: new_user.username, consoleID: new_user.consoleID}, jwtSecret);
@@ -80,7 +85,8 @@ router.post('/register', middlewareObj.verifyRegisterBody, async (request, respo
             token: auth_token,
             user: {
                 username: username,
-                consoleID: consoleID
+                consoleID: consoleID,
+                hasRegisteredEmail: true,
             }
         });
 

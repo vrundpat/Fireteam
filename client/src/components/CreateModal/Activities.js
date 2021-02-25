@@ -1,17 +1,23 @@
-export const options = [  
-
+export const options = [
+    
     'Story: The Red War',
     'Story: Curse of Osiris',
     'Story: Warmind',
     'Story: Forsaken',
     'Story: Shadowkeep',
     'Story: Beyond Light',
+    'Bounties',
     
-    'Raid: Garden of Salvation',
-    'Raid: Deep Stone Crypt (Yet to be released)',
+    'Raid: Garden of Salvation - Normal',
+    'Raid: Garden of Salvation - Prestige',
+    'Raid: The Last Wish',
+    'Raid: Deep Stone Crypt',
 
     'Empire Hunts',
-                            
+    'Wrathborn Hunts',
+    'Battlegrounds',
+
+    'Vanguard Strikes',
     'Nightmare Hunt - Legend',
     'Nightmare Hunt - Master', 
     'Nightfall The Ordeal', 
@@ -19,46 +25,58 @@ export const options = [
     'Nightfall The Ordeal - Master', 
     'Nightfall The Ordeal - Grandmaster', 
 
-
-    'Crucible: Quickplay', 
-    'Crucible: Competitive/Survival', 
+    'Crucible: Clash',
+    'Crucible: Control',
+    'Crucible: Elimination',
+    'Crucible: Mayham Clash',
+    'Crucible: Rotator Modes',
+    'Crucible: Survival', 
     'Crucible: Iron Banner',
     'Crucible: Trials of Osiris',
     'Crucible: Private Match', 
 
     'Gambit',
-    'Gambit Prime',
+    'Gambit: Private Match',
 
-    'Public Activity: Europa',
+    'Patrol: Europa',
+    'Patrol: Nessus',
+    'Patrol: Moon',
+    'Patrol: Dreaming City',
+    'Patrol: Tangled Shore',
+    'Patrol: Cosmodrome',
+    'Patrol: EDZ',
+    'Moon: Altars of Sorrow',
+    'Public Activity: Europa Events',
     'Public Activity: Blind Well', 
-    'Public Activity: Story Missions/Adventures', 
+    'Public Activity: Adventures', 
     'Public Activity: Lost Sector',
     'Public Activity: Public Events',
 
     'Dungeon: Pit of Hersey', 
     'Dungeon: Shattered Throne', 
-    'Dungeon: Prophecy (Temporarily Unavailable)', 
+    'Dungeon: Prophecy', 
 
+    'Exotic Quest: Dead Mans Tale',
     'Exotic Quest: Cloudstrike',
-    'Exotic Quest: Hawkmoon (Unreleased)',
+    'Exotic Quest: Hawkmoon',
     'Exotic Quest: The Lament',
     'Exotic Quest: Salvations Drip',
-    'Exotic Quest: Duality',
-    'Exotic Quest: Eyes of Tomorrow',
     'Exotic Quest: Bastion',
     'Exotic Quest: Deatbringer',
     'Exotic Quest: Devils Ruin',
     'Exotic Quest: Divine Fragmentation',
     'Exotic Quest: Leviathans Breath',
     'Exotic Quest: Malfeasance',
-    'Exotic Quest: The Last Word',
     'Exotic Quest: Xenophage',
     'Exotic Quest: Ruinous Effigy',
-
+    'Exotic Quest: Thorn',
+    'Exotic Quest: Last Word',
+    'Exotic Quest: Chaperone',
+    
+    'Exotic Mission: Presage',
     'Exotic Mission: The Whisper Normal',
     'Exotic Mission: The Whisper Heroic',
     'Exotic Mission: Outbreak Perfected Normal',
-    'Exotic Mission: Outbreak Perfected Heroic', 
+    'Exotic Mission: Outbreak Perfected Heroic'
 
-    'Bounties',
 ]

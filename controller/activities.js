@@ -15,6 +15,7 @@ const ACTIVITIES = [
 
     'Empire Hunts',
     'Wrathborn Hunts',
+    'Battlegrounds',
 
     'Vanguard Strikes',
     'Nightmare Hunt - Legend',
@@ -55,6 +56,7 @@ const ACTIVITIES = [
     'Dungeon: Shattered Throne', 
     'Dungeon: Prophecy', 
 
+    'Exotic Quest: Dead Mans Tale',
     'Exotic Quest: Cloudstrike',
     'Exotic Quest: Hawkmoon',
     'Exotic Quest: The Lament',
@@ -70,12 +72,12 @@ const ACTIVITIES = [
     'Exotic Quest: Thorn',
     'Exotic Quest: Last Word',
     'Exotic Quest: Chaperone',
-
+    
+    'Exotic Mission: Presage',
     'Exotic Mission: The Whisper Normal',
-
     'Exotic Mission: The Whisper Heroic',
     'Exotic Mission: Outbreak Perfected Normal',
-    'Exotic Mission: Outbreak Perfected Heroic', 
+    'Exotic Mission: Outbreak Perfected Heroic'
 
 ]
 

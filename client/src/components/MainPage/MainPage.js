@@ -5,6 +5,7 @@ import { all_fireteams} from '../../actions/fireteamActions';
 import { clear_error } from '../../actions/errorActions';
 import Fireteam from '../Fireteam/Fireteam';
 import CreateModal from '../CreateModal/CreateModal'
+import EmailModal from '../EmailModal/EmailModal'
 import './MainPage.css';
 
 class MainPage extends Component {
@@ -106,6 +107,7 @@ class MainPage extends Component {
                     </p>
                     <button className="create-fireteam-button" onClick={this.toggleModal}>CREATE FIRETEAM</button>
                     <CreateModal isModalOpen={this.state.isModalOpen} toggleModal={this.toggleModal}/>
+                    { this.props.authenticated && !this.props.user.hasRegisteredEmail ? <EmailModal/> : null }
                 </div>
                 <div className="pagination-buttons-root">
                     <div className="pagination-buttons-container">

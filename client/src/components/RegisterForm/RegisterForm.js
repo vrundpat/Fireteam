@@ -15,7 +15,7 @@ class RegisterForm extends Component {
         this.onChange.bind(this);
         this.attempt_to_register.bind(this);
         this.errorMessage.bind(this);
-        this.state = {username: '', password: '', consoleID: '', confirm_password: ''};
+        this.state = {username: '', password: '', consoleID: '', confirm_password: '', email: ''};
     }
 
     attempt_to_register = (event) => {
@@ -43,6 +43,7 @@ class RegisterForm extends Component {
                 <form className="register-form-root" onSubmit={this.attempt_to_register}>
                     <h3 className='register-form-title'>Register</h3>
                     <input className="register-input"  onChange={this.onChange} name="username" type="text" placeholder="Username" value={this.state.username}></input>
+                    <input className="register-input" onChange={this.onChange} name="email" type="text" placeholder="Email" value={this.state.email}></input>
                     <input className="register-input" onChange={this.onChange} name="consoleID" placeholder="PSN/XBL/SteamID" value={this.state.consoleID}></input>
                     <input className="register-input"  onChange={this.onChange} name="password" type="password" placeholder="Password" value={this.state.password}></input>
                     <input className="register-input" onChange={this.onChange} name="confirm_password" type="password" placeholder="Confirm Password" value={this.state.confirm_password}></input>
@@ -67,7 +68,3 @@ const mapStatetoProps = state => ({
 });
 
 export default connect(mapStatetoProps, { register, clear_error })(RegisterForm);
-
-
-
-

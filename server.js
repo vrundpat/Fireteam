@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const bodyparser = require('body-parser');
 const authRoutes = require('./controller/routes/auth');
 const fireteamRoutes = require('./controller/routes/fireteam');
+const userRoutes = require('./controller/routes/user');
 const path = require('path');
 
 
@@ -23,6 +24,7 @@ app.use(bodyparser.json());
 // Routes 
 app.use('/users', authRoutes);
 app.use('/fireteam', fireteamRoutes);
+app.use('/essentials', userRoutes);
 app.listen(port, () => console.log(`Server listening on port ${port}...`));
 
 

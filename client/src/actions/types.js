@@ -20,3 +20,8 @@ export const JOIN_FAIL = 'JOIN_FAIL';
 export const ALL_FIRETEAMS = 'ALL_FIRETEAMS';
 export const GET_FIRETEAM = 'GET_FIRETEAM';
 
+// User types
+export const SET_EMAIL_ERROR = 'SET_EMAIL_ERROR';
+export const SET_EMAIL_SUCCESS = 'SET_EMAIL_SUCCESS';
+export const SET_EMAIL_REQUESTED = 'SET_EMAIL_REQUESTED';
+export const UPDATE_EMAIL = 'UPDATE_EMAIL';

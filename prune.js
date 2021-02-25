@@ -1,6 +1,7 @@
 require('dotenv').config()
 const mongoose = require('mongoose');
 const FireTeam = require('./models/fireteam');
+const User = require('./models/user');
 
 /* This function will be responsible of removing fireteams that are older than 2 months */
 async function prune(current_date, offset) {
@@ -30,6 +31,20 @@ async function prune(current_date, offset) {
     await mongoose.disconnect();
     console.log("Disconnected from databse...");
     return;
+}
+
+async function addNewField(field_name, field_value) {
+    // MongoDB Connection SetUp
+    const database = process.env.DB_URI;
+    await mongoose.connect(database, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true})
+    .then(() => console.log("Successfully connected to Database...\n"))
+    .catch((error) => console.log(`${error}`));
+
+    // Add the new field to all user documents
+    const users = await User.updateMany({}, {$set: {"email": "N/A"}});
+
+    await mongoose.disconnect();
+    console.log("Disconnected from databse...");
 }
 
 // Only prune when the site is undermaintenace, as it will prevent data corruptioin

@@ -5,6 +5,7 @@ import {
     LOGOUT_SUCCESS,
     REGISTER_SUCCESS,
     REGISTER_FAIL,
+    UPDATE_EMAIL,
   } from '../actions/types';
 
   
@@ -39,6 +40,14 @@ export default function(state = initialState, action) {
         authenticated: false,
         isLoading: false,
       };
+    case UPDATE_EMAIL:
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          hasRegisteredEmail: action.payload
+        }
+      }
     default:
         return state;
   }  

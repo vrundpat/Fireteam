@@ -14,6 +14,11 @@ const UserSchema = new Schema ({
         required: true
     },
 
+    email: {
+        type: String,
+        required: true,
+    },
+
     register_date: {
         type: Date,
         default: Date.now
