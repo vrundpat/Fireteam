@@ -57,11 +57,19 @@ middlewareObj.verifyRegisterBody = (request, response, next) => {
 
     // Length checks for the Username
     if(authInfo.username.length < 8) {
-        return response.status(400).json({ msg: "Usernames must be at least 8 charactes" });
+        return response.status(400).json({ msg: "Usernames must be at least 8 characters!" });
     }
 
     if(authInfo.username.length > 25) {
-        return response.status(400).json({ msg: "Usernames must be at most 25 charactes" });
+        return response.status(400).json({ msg: "Usernames must not be more than 25 characters!" });
+    }
+
+    if(authInfo.consoleID.length < 8) {
+        return response.status(400).json({ msg: "Console IDs must be at least 8 characters!" });
+    }
+
+    if(authInfo.consoleID.length > 25) {
+        return response.status(400).json({ msg: "Console IDs must not be more than 25 characters!" });
     }
 
     // Password length and equality checks
