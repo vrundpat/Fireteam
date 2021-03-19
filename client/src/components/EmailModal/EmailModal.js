@@ -32,11 +32,21 @@ class EmailModal extends Component {
 
     handleModalSubmit = async () => {
         this.props.setEmail(this.state.email);
-        setTimeout(() => {
-            if (this.props.isSet === true && this.props.isSetting === false) {
-                this.toggleModal();
-            }
-        }, 200);
+
+        // Wait for a 200 response from the server
+        while(this.state.isSetting) { }
+        
+        // After the response is received, check if the email was successfuly set
+        if(this.props.isSet === true) {
+            this.toggleModal();
+        }
+
+        /* Old method of handling synchronous calls to the server */
+        // setTimeout(() => {
+        //     if (this.props.isSet === true && this.props.isSetting === false) {
+        //         this.toggleModal();
+        //     }
+        // }, 200);
     }
 
     render() {
