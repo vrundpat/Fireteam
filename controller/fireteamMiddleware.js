@@ -7,8 +7,10 @@ const fireteamMiddleware = {};
 
 // Helper constants
 const MAX_POWER = 1400;
-const MIN_POWER = 1050;
+const MIN_POWER = 1100;
 const profanity_filter = new Filter();
+const MEMBERS_NEEDED_LOW = 1
+const MEMBERS_NEEDED_HIGH = 5;
 
 // Helper functions
 function validateGuardianType(guardianType) {
@@ -24,7 +26,7 @@ function validatePowerLevel(light_level) {
 }
 
 function validateCapacity(capacity) {
-    return validator.isNumeric(String(capacity)) && Number(capacity) > 0 && Number(capacity) <= 6;
+    return validator.isNumeric(String(capacity)) && Number(capacity) >= MEMBERS_NEEDED_LOW && Number(capacity) <= MEMBERS_NEEDED_HIGH;
 }
 
 
@@ -152,7 +154,7 @@ fireteamMiddleware.verifyCreateFireteamBody = (request, response, next) => {
 
     // Validate fireteam capacity
     if(!validateCapacity(fireteamInfo.capacity)) {
-        return response.status(400).json({ msg: "Invalid Fireteam Capacity" });
+        return response.status(400).json({ msg: "Invalid Number of Members Needed" });
     }
 
     // Validate fireteam power requirement
@@ -162,6 +164,7 @@ fireteamMiddleware.verifyCreateFireteamBody = (request, response, next) => {
 
     // Update request body to reflect validated data
     fireteamInfo.leader = request.body.leader;
+    fireteamInfo.capacity = Number(fireteamInfo.capacity) + 1;
     request.body = fireteamInfo;
 
     return next();

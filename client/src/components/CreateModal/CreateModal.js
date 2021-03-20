@@ -12,8 +12,8 @@ class CreateModal extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            req_slider_val: 1050,
-            leader_power_val: 1050
+            req_slider_val: 1100,
+            leader_power_val: 1100
         }
         this.authenticated_modal.bind(this);
         this.handleSliderValue.bind(this);
@@ -81,7 +81,7 @@ class CreateModal extends Component {
                      <div className="row">
                         <div className="col form-group leader-power-slider-root">
                             <p className="leader-power-text">Leader Power Level: <span className="power-value">{this.state.leader_power_val}</span></p>
-                            <input className="leader-power-slider" type="range" name="leader_power_val" min="1050" max="1400" value={this.state.leader_power_val} onInput={this.handleSliderValue}/>
+                            <input className="leader-power-slider" type="range" name="leader_power_val" min="1100" max="1400" value={this.state.leader_power_val} onInput={this.handleSliderValue}/>
                         </div>
                     </div>               
                     <div className="row">
@@ -111,13 +111,12 @@ class CreateModal extends Component {
 
                         <div className="col form-group">
                             <select id="fireteam-capacity" className="form-control font-sm option-color">
-                                <option selected="Choose Capacity" value={""}>Fireteam Capacity</option>
+                                <option selected="Choose Capacity" value={""}>Guardians Needed</option>
                                 <option value={1}>1</option>
                                 <option value={2}>2</option>
                                 <option value={3}>3</option>
                                 <option value={4}>4</option>
                                 <option value={5}>5</option>
-                                <option value={6}>6</option>
                             </select>
                         </div>
                     </div>
@@ -134,7 +133,7 @@ class CreateModal extends Component {
                     <div className="row">
                         <div className="col form-group power-req-slider-root">
                             <p className="power-req-text fireteam-power-requirement">Power Requirement: <span className="power-value">{this.state.req_slider_val}</span></p>
-                            <input className="power-req-slider" type="range" name="req_slider_val" min="1050" max="1400" value={this.state.req_slider_val} onInput={this.handleSliderValue}/>
+                            <input className="power-req-slider" type="range" name="req_slider_val" min="1100" max="1400" value={this.state.req_slider_val} onInput={this.handleSliderValue}/>
                         </div>
                     </div>
 
