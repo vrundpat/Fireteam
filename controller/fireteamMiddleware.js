@@ -162,6 +162,11 @@ fireteamMiddleware.verifyCreateFireteamBody = (request, response, next) => {
         return response.status(400).json({ msg: "Invalid Power Requirement" });
     }
 
+    // Validate length of the description
+    if(fireteamInfo.description.length > Number(process.env.FIRETEAM_DESCRIPTION_LIMIT)) {
+        return response.status(400).json({ msg: `Descriptions may not be more than ${process.env.FIRETEAM_DESCRIPTION_LIMIT} characters long` })
+    }
+
     // Update request body to reflect validated data
     fireteamInfo.leader = request.body.leader;
     fireteamInfo.capacity = Number(fireteamInfo.capacity) + 1;

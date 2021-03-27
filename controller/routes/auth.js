@@ -57,12 +57,15 @@ router.post('/register', middlewareObj.verifyRegisterBody, async (request, respo
 
     try {
 
-        // Check is user with same username already exists 
+        // Check is user with same username, email, or console id already exists 
         const existing_user = await User.findOne({username: username});
         if (existing_user) return response.status(400).json({msg: "Username already in use"});
 
         const existing_email = await User.findOne({email: email});
         if(existing_email) return response.status(400).json({msg: "Email already in use"});
+
+        const existing_console_id = await User.findOne({consoleID: consoleID});
+        if(existing_console_id) return response.status(400).json({msg: "Console ID already in use"});
         
         // Hash the password
         const hashed_password = await bcrypt.hash(password, await bcrypt.genSalt(10));

@@ -53,7 +53,7 @@ class CreateModal extends Component {
                 this.props.all_fireteams();
                 this.props.toggleModal();
             }
-        }, 200);
+        }, 350);
     }
 
     activeTypeOptions = () => {

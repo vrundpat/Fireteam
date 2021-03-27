@@ -38,7 +38,7 @@ class JoinModal extends Component {
                 this.props.all_fireteams();
                 this.props.toggleModal();
             }
-        }, 200);
+        }, 350);
     }
 
     authenticated_modal = () => {

@@ -28,6 +28,7 @@ A responsive LFG Website for Destiny 2 made using the MERN Stack + Redux (for ap
          DB_URI=YOUR-MONGODB-DB-URI
          JWT_Secret=Your preferred json webtoken secret used for issuing/verifying tokens
          FIRETEAM_TIMEOUT=Time between fireteam creations imposed on the users in milliseconds
+         FIRETEAM_DESCRIPTION_LIMIT=Maximum length of the fireteam description field
          BUILD=dev
          ```
   4) From the project root:
