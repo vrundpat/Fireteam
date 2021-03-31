@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Alert } from 'reactstrap';
 import { clear_error } from '../../actions/errorActions'
 import { setEmail } from '../../actions/userActions';
+import { logout } from '../../actions/authActions';
 import './EmailModal.css';
 
 
@@ -19,6 +20,7 @@ class EmailModal extends Component {
         this.toggleModal.bind(this);
         this.handleEmailInput.bind(this);
         this.handleModalSubmit.bind(this);
+        this.handleLougout.bind(this);
     }
 
     toggleModal() {
@@ -49,6 +51,10 @@ class EmailModal extends Component {
         // }, 200);
     }
 
+    handleLougout = () => {
+        this.props.logout();
+    }
+
     render() {
         return (
             <div className="modal-root">
@@ -75,6 +81,7 @@ class EmailModal extends Component {
                         </div>
                     </ModalBody>
                     <ModalFooter>
+                        <Button className="danger" onClick={this.handleLougout}>Logout</Button>
                         <Button className="modal-submit" onClick={this.handleModalSubmit}>Submit Email</Button>
                     </ModalFooter>
                 </Modal>
@@ -94,4 +101,4 @@ const mapStateToProps = state => ({
     isSetting: state.userReducer.isSetting
 });
 
-export default connect(mapStateToProps, { clear_error, setEmail })(EmailModal);
+export default connect(mapStateToProps, { clear_error, setEmail, logout })(EmailModal);
