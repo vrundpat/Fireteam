@@ -1,5 +1,7 @@
 # Fireteam
 
+## This respository no longer reflects additional features provided by the deployed version of this application.
+
 A responsive LFG Website for Destiny 2 made using the MERN Stack + Redux (for application wide state management) and deployed onto a DigitalOcean droplet.
 <br></br>
 #### Check it out: https://www.destinylfg.us
