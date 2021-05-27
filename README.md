@@ -1,12 +1,12 @@
 # Fireteam
 
-## This respository no longer reflects additional features provided by the deployed version of this application.
+## This respository no longer reflects additional features provided by the deployed version of this application as of May, 2021.
 
 A responsive LFG Website for Destiny 2 made using the MERN Stack + Redux (for application wide state management) and deployed onto a DigitalOcean droplet.
 <br></br>
 #### Check it out: https://www.destinylfg.us
 
-#### Currently, there are ~100 users/week on average!
+#### Currently, there are ~400 users/week on average!
 
 
 ## Instructions to run locally:
