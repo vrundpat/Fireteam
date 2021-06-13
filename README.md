@@ -15,9 +15,9 @@ A responsive LFG Website for Destiny 2 made using the MERN Stack + Redux (for ap
 
 ##
 ### Technologies Used: 
-[![Generic badge](https://img.shields.io/badge/Database-MongoDB-<COLOR>.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Backend-Express-<COLOR>.svg)](https://shields.io/)
-[![Generic badge](https://img.shields.io/badge/Frontend-React-<COLOR>.svg)](https://shields.io/)
-[![Generic badge](https://img.shields.io/badge/StatePersistence-Redux-<COLOR>.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/Database-MongoDB-blue.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Backend-Express-blue.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/Frontend-React-blue.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/StatePersistence-Redux-blue.svg)](https://shields.io/)
 
 
 ## Instructions to run locally:
