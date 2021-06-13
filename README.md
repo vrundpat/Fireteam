@@ -1,12 +1,24 @@
 # Fireteam
 
-## This respository no longer reflects additional features provided by the deployed version of this application as of May, 2021.
-
 A responsive LFG Website for Destiny 2 made using the MERN Stack + Redux (for application wide state management) and deployed onto a DigitalOcean droplet.
-<br></br>
+<br>
 #### Check it out: https://www.destinylfg.us
 
-#### Currently, there are ~400 users/week on average!
+###
+[![Weekly Users](https://img.shields.io/badge/Weekly%20Users-400+-information)]()
+[![Release](https://img.shields.io/badge/Version-1.2.0-blue)]()
+[![Analytics](https://img.shields.io/badge/Analytics-GA-pink)]()
+[![Generic badge](https://img.shields.io/badge/Website-Up-<COLOR>.svg)](https://shields.io/)
+[![Product Maintained](https://img.shields.io/badge/Product%20Maintained-Yes-orange)]()
+[![Repo Maintained](https://img.shields.io/badge/Repository%20Maintained-No-red)]()
+[![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
+
+
+##
+### Technologies Used: 
+[![Generic badge](https://img.shields.io/badge/Database-MongoDB-<COLOR>.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Backend-Express-<COLOR>.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/Frontend-React-<COLOR>.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/StatePersistence-Redux-<COLOR>.svg)](https://shields.io/)
 
 
 ## Instructions to run locally:
