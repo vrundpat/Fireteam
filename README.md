@@ -8,13 +8,13 @@ A responsive LFG Website for Destiny 2 made using the MERN Stack + Redux (for ap
 [![Weekly Users](https://img.shields.io/badge/Weekly%20Users-400+-information)]()
 [![Release](https://img.shields.io/badge/Version-1.2.0-blue)]()
 [![Analytics](https://img.shields.io/badge/Analytics-GA-pink)]()
-[![Generic badge](https://img.shields.io/badge/Website-Up-<COLOR>.svg)](https://shields.io/)
 [![Product Maintained](https://img.shields.io/badge/Product%20Maintained-Yes-orange)]()
 [![Repo Maintained](https://img.shields.io/badge/Repository%20Maintained-No-red)]() [![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
 
 
 ##
 ### Technologies Used: 
+[![Weekly Users](https://img.shields.io/badge/Framework-NodeJS-blue)]()
 [![Generic badge](https://img.shields.io/badge/Database-MongoDB-blue.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Backend-Express-blue.svg)](https://shields.io/)
 [![Generic badge](https://img.shields.io/badge/Frontend-React-blue.svg)](https://shields.io/)
 [![Generic badge](https://img.shields.io/badge/StatePersistence-Redux-blue.svg)](https://shields.io/)
