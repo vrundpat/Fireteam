@@ -5,7 +5,7 @@ A responsive LFG Website for Destiny 2 made using the MERN Stack + Redux (for ap
 #### Check it out: https://www.destinylfg.us
 
 ###
-[![Weekly Users](https://img.shields.io/badge/Weekly%20Users-400+-information)]()
+[![Weekly Users](https://img.shields.io/badge/Weekly%20Users-400+-blue)]()
 [![Release](https://img.shields.io/badge/Version-1.2.0-blue)]()
 [![Analytics](https://img.shields.io/badge/Analytics-GA-pink)]()
 [![Product Maintained](https://img.shields.io/badge/Product%20Maintained-Yes-orange)]()
