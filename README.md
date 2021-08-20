@@ -11,17 +11,25 @@ A responsive LFG Website for Destiny 2 made using the MERN Stack + Redux (for ap
 [![Product Maintained](https://img.shields.io/badge/Product%20Maintained-Yes-orange)]()
 [![Repo Maintained](https://img.shields.io/badge/Repository%20Maintained-No-red)]() [![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
 
+## Previews of v2.0.0
+|        |        |
+|--------|--------|
+|![Home](https://github.com/vrundpat/Fireteam/blob/master/client/src/images/MainPageJumbotronGif.gif)| ![Home](https://github.com/vrundpat/Fireteam/blob/master/client/src/images/LoginPageGif.gif)|
+|![Home](https://github.com/vrundpat/Fireteam/blob/master/client/src/images/RegisterPageGif.gif)|![Home](https://github.com/vrundpat/Fireteam/blob/master/client/src/images/CreateModal.png)|
+|![Home](https://github.com/vrundpat/Fireteam/blob/master/client/src/images/JoinModal.png)|![Home](https://github.com/vrundpat/Fireteam/blob/master/client/src/images/MainPageScrollGif.gif)|
+
 
 ##
-### Technologies Used: 
+## Technologies Used: 
 [![Weekly Users](https://img.shields.io/badge/Framework-NodeJS-blue)]()
 [![Generic badge](https://img.shields.io/badge/Database-MongoDB-blue.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Backend-Express-blue.svg)](https://shields.io/)
 [![Generic badge](https://img.shields.io/badge/Frontend-React-blue.svg)](https://shields.io/)
 [![Generic badge](https://img.shields.io/badge/State%20Persistence-Redux-blue.svg)](https://shields.io/)
 
-
-## Instructions to run locally:
-#### Please Note: This product is subject to protection clauses; refer to the License in this repository for further details.
+##
+### Note: This repository is limited to v1.0.0. Expect drastic changes in design from the previews above.
+###
+#### Instructions to run locally:
 
  1) In the project root:
  ```javascript
@@ -48,6 +56,4 @@ A responsive LFG Website for Destiny 2 made using the MERN Stack + Redux (for ap
      ```javascript
      npm run dev
      ```
-  5) Open port 8080 in a browser to see have a local version of the site!
-     
-Note: This is not a production build, optimization of the building process is not implemented for this repo!
+  5) Open port ```8080``` in a browser to see a local version of the site! This is not a production build, optimization of the building process is not implemented for this repo.
