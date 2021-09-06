@@ -5,7 +5,7 @@ A responsive LFG Website for Destiny 2 made using the MERN Stack + Redux (for ap
 #### Check it out: https://www.destinylfg.us
 
 ###
-[![Weekly Users](https://img.shields.io/badge/Weekly%20Users-400+-blue)]()
+[![Weekly Users](https://img.shields.io/badge/Weekly%20Users-500+-blue)]()
 [![Release](https://img.shields.io/badge/Version-2.0.0-blue)]()
 [![Analytics](https://img.shields.io/badge/Analytics-GA-pink)]()
 [![Product Maintained](https://img.shields.io/badge/Product%20Maintained-Yes-orange)]()
@@ -19,16 +19,21 @@ A responsive LFG Website for Destiny 2 made using the MERN Stack + Redux (for ap
 |![Home](https://github.com/vrundpat/Fireteam/blob/master/client/src/images/JoinModal.png)|![Home](https://github.com/vrundpat/Fireteam/blob/master/client/src/images/MainPageScrollGif.gif)|
 
 
-##
+
 ## Technologies Used: 
 [![Weekly Users](https://img.shields.io/badge/Framework-NodeJS-blue)]()
 [![Generic badge](https://img.shields.io/badge/Database-MongoDB-blue.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Backend-Express-blue.svg)](https://shields.io/)
 [![Generic badge](https://img.shields.io/badge/Frontend-React-blue.svg)](https://shields.io/)
 [![Generic badge](https://img.shields.io/badge/State%20Persistence-Redux-blue.svg)](https://shields.io/)
 
+## This repository is limited to v1.0.0. Expect drastic changes in design from the previews above. Some notable missing functionality inclues, but isn't limited to:
+ - Controller and UI automated testing
+ - OAuth & authorization persistence
+ - Notification System
+ - Optimized Controller Middleware
+ - Animations via framer-motion
+ - MDBReact Styling
 ##
-### Note: This repository is limited to v1.0.0. Expect drastic changes in design from the previews above.
-###
 #### Instructions to run locally:
 
  1) In the project root:
