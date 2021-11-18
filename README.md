@@ -26,13 +26,14 @@ A responsive LFG Website for Destiny 2 made using the MERN Stack + Redux (for ap
 [![Generic badge](https://img.shields.io/badge/Frontend-React-blue.svg)](https://shields.io/)
 [![Generic badge](https://img.shields.io/badge/State%20Persistence-Redux-blue.svg)](https://shields.io/)
 
-## This repository is limited to v1.0.0. Expect drastic changes in design from the previews above. Some notable missing functionality inclues, but isn't limited to:
+## Changes missing from Repo (v1.0 vs v2.0):
  - Controller and UI automated testing
  - OAuth & authorization persistence
  - Notification System
  - Optimized Controller Middleware
  - Animations via framer-motion
  - MDBReact Styling
+ 
 ##
 #### Instructions to run locally:
 
