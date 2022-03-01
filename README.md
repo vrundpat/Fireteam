@@ -6,7 +6,7 @@ A responsive LFG Website for Destiny 2 made using the MERRN Stack, deployed onto
 
 ###
 [![Weekly Users](https://img.shields.io/badge/Weekly%20Users-500+-blue)]()
-[![Release](https://img.shields.io/badge/Version-2.0.0-blue)]()
+[![Release](https://img.shields.io/badge/Version-3.0.0-blue)]()
 [![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
 
 ## Previews of v2.0.0
